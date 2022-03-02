@@ -37,12 +37,11 @@ sim:
 	@echo
 	@echo "-- VERILATE ----------------"
 	$(VERILATOR) $(VERILATOR_FLAGS) $(VERILATOR_INPUT)
+	$(MAKE) -j -C obj_dir -f ../Makefile_obj
 	@echo
 	@echo "-- BUILD -------------------"
 ###################################################
-	@rm -rf obj_dir
 	@rm -rf dump.vcd
-	$(MAKE) -j -C obj_dir -f ../Makefile_obj
 
 	@echo
 	@echo "-- RUN ---------------------"
