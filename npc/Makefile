@@ -12,21 +12,21 @@ VERILATOR_FLAGS += -cc --exe
 # Generate makefile dependencies (not shown as complicates the Makefile)
 #VERILATOR_FLAGS += -MMD
 # Optimize
-VERILATOR_FLAGS += -Os -x-assign 0
+VERILATOR_FLAGS += -Os 
 # Warn abount lint issues; may not want this on less solid designs
 VERILATOR_FLAGS += -Wall
 # Make waveforms
 VERILATOR_FLAGS += --trace
 # Check SystemVerilog assertions
-VERILATOR_FLAGS += --assert
+#VERILATOR_FLAGS += --assert
 # Generate coverage analysis
 # Run Verilator in debug mode
 #VERILATOR_FLAGS += --debug
 # Add this trace to get a backtrace in gdb
 #VERILATOR_FLAGS += --gdbbt
-
+VERILATOR_FLAGS += --build
 # Input files for Verilator
-VERILATOR_INPUT = -f     top.v    sim.cpp
+VERILATOR_INPUT =     csrc/top.v    vsrc/sim.cpp
 
 all:
 	@echo "Write this Makefile by your self."
