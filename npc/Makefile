@@ -37,12 +37,9 @@ sim:
 	@echo
 	@echo "-- VERILATE ----------------"
 	$(VERILATOR) $(VERILATOR_FLAGS) $(VERILATOR_INPUT)
-	$(MAKE) -j -C obj_dir -f ../Makefile_obj
 	@echo
 	@echo "-- BUILD -------------------"
 ###################################################
-	@rm -rf dump.vcd
-
 	@echo
 	@echo "-- RUN ---------------------"
 	@rm -rf logs
@@ -51,8 +48,6 @@ sim:
 
 	@echo
 	@echo "-- COVERAGE ----------------"
-	@rm -rf logs/annotated
-	$(VERILATOR_COVERAGE) --annotate logs/annotated logs/coverage.dat
 	@sed -i '3c $timescale 1us/1ns $end' dump.vcd
 	@sleep 1s 
 	@echo "-- DONE --------------------"
