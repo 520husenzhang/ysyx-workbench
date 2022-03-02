@@ -56,3 +56,7 @@ sim:
 	@gtkwave   dump.vcd
 	@echo
 include ../Makefile
+export NVBOARD_HOME= 55
+
+
+ export  NVBOARD_HOME="home/tiger/ysyx-workbench/nvboard"
