@@ -6,7 +6,7 @@
 ######################################################################
 
 # Set up variables
-
+VERILATOR =verilator
 # Generate C++ in executable form
 VERILATOR_FLAGS += -cc --exe
 # Generate makefile dependencies (not shown as complicates the Makefile)
