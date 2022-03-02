@@ -25,8 +25,7 @@ VERILATOR_FLAGS += --trace
 #VERILATOR_FLAGS += --gdbbt
 VERILATOR_FLAGS += --build
 # Input files for Verilator
-VERILATOR_FLAGS += --timescale 1us/1ns
-VERILATOR_INPUT =     csrc/top.v    vsrc/sim.cpp
+VERILATOR_INPUT =     ./csrc/top.v    ./vsrc/sim.cpp
 #VERILATOR_INPUT =     top.v    sim.cpp
 all:
 	@echo "Write this Makefile by your self."
