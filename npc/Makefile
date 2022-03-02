@@ -49,7 +49,7 @@ sim:
 
 	@echo
 	@echo "-- COVERAGE ----------------"
-
+	@sed -i "s/timescale 1s/timescale 1us/1"  dump.vcd
 
 	@sleep 1s 
 	@echo "-- DONE --------------------"
