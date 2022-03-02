@@ -48,7 +48,7 @@ sim:
 
 	@echo
 	@echo "-- COVERAGE ----------------"
-	@sed -i '3c \$timescale 1us/1ns \$end' dump.vcd
+	sed -i '3c $timescale 1us/1ns $end' dump.vcd
 	@sleep 1s 
 	@echo "-- DONE --------------------"
 	@echo "To see waveforms"
