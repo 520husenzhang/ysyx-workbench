@@ -26,7 +26,7 @@ VERILATOR_FLAGS += --assert
 #VERILATOR_FLAGS += --gdbbt
 
 # Input files for Verilator
-VERILATOR_INPUT = -f    vsrc/top.v  csrc/sim.cpp
+VERILATOR_INPUT = -f    ./vsrc/top.v   ./csrc/sim.cpp
 
 all:
 	@echo "Write this Makefile by your self."
