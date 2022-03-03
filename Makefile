@@ -1,5 +1,5 @@
 STUID = ysyx_22040422
-STUNAME =张虎森
+STUNAME =张虎lin
 
 # DO NOT modify the following code!!!
 
