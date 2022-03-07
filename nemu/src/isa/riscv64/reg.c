@@ -16,7 +16,7 @@ void isa_reg_display() {
   printf("a6 is %lx ",cpu.gpr[16]); printf(" a7 is %lx ",cpu.gpr[17]); printf(" s2 is %lx",cpu.gpr[18]);printf(" s3 is %lx",cpu.gpr[19]);printf(" s4 is %lx",cpu.gpr[20]);printf(" s5 is %lx",cpu.gpr[21]);printf(" s6 is %lx",cpu.gpr[22]); printf(" s7 is %lx\n",cpu.gpr[23]);  //     "a6", "a7", "s2", "s3", "s4", "s5", "s6", "s7",
   printf("s8 is %lx ",cpu.gpr[24]); printf(" s9 is %lx ",cpu.gpr[25]); printf(" s10 is %lx",cpu.gpr[26]);printf(" s11 is %lx",cpu.gpr[27]);printf(" t3 is %lx",cpu.gpr[28]);printf(" t4 is %lx",cpu.gpr[29]);printf(" t5 is %lx",cpu.gpr[30]); printf(" t6 is %lx\n\n",cpu.gpr[31]);    //       "s8", "s9", "s10", "s11", "t3", "t4", "t5", "t6"
 
-  printf("PC is %lx ",cpu.pc);   //p
+  printf("PC is %lx\n",cpu.pc);   //p
 
 }
 
