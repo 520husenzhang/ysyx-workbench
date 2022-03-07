@@ -71,9 +71,16 @@ return 0;
 
 //扫描内存
 static int cmd_x(char *args){
-
-
+  u_int16_t  arg1,arg2 ; 
+   
+ char *token = strtok(args, " ");  //第一个数字 
+ arg1= atoi(token); 
+ arg2=  atoi(strtok(NULL, " "));
+printf("%x",arg1);
+printf("%x",arg2);
 return 0;  
+
+
 }
 
 static struct {
