@@ -76,8 +76,8 @@ static int cmd_x(char *args){
  char *token = strtok(args, " ");  //第一个数字 
  arg1= atoi(token); 
  arg2=  atoi(strtok(NULL, " "));
-printf("%x",arg1);
-printf("%x",arg2);
+printf("%d",arg1);
+printf("%d",arg2);
 return 0;  
 
 
