@@ -27,8 +27,13 @@ static char* rl_gets() {
   return line_read;
 }
 
+
+
+static int cmd_help(char *args) ;
+
+
 static int cmd_c(char *args) {
-  cpu_exec(-1);
+  cpu_exec(-1);   //尽可能多的 执行
   return 0;
 }
 
@@ -37,16 +42,44 @@ static int cmd_q(char *args) {
   return -1;
 }
 
-static int cmd_help(char *args);
+
+static int cmd_si(char *args) {
+   //单步执行n次
+ u_int number= atoi(args); 
+ u_int i  ;
+ for(i=0; i< number ;i++) 
+ {
+  
+  cpu_exec(1)  ;
+
+ }
+return 0;
+}
+//打印程序状态  
+static int cmd_info(char *args){
+
+return 0;
+
+}
+
+//扫描内存
+static int cmd_x(char *args){
+
+
+return 0;  
+}
 
 static struct {
   const char *name;
   const char *description;
-  int (*handler) (char *);
+  int (*handler) (char *);   //函数 指针
 } cmd_table [] = {
   { "help", "Display informations about all supported commands", cmd_help },
   { "c", "Continue the execution of the program", cmd_c },
-  { "q", "Exit NEMU", cmd_q },
+  { "q", "Exit NEMU", cmd_q },   //退出
+  { "si", "exec_once", cmd_si },   //单步执行
+  { "info", "show_program_state", cmd_info },    //打印寄存器
+  { "x", "scan ram", cmd_x },    //
 
   /* TODO: Add more commands */
 
@@ -86,7 +119,7 @@ void sdb_mainloop() {
     cmd_c(NULL);
     return;
   }
-
+     
   for (char *str; (str = rl_gets()) != NULL; ) {
     char *str_end = str + strlen(str);
 
@@ -110,7 +143,7 @@ void sdb_mainloop() {
     int i;
     for (i = 0; i < NR_CMD; i ++) {
       if (strcmp(cmd, cmd_table[i].name) == 0) {
-        if (cmd_table[i].handler(args) < 0) { return; }
+        if (cmd_table[i].handler(args) < 0) { return; }  //带入参数 执行
         break;
       }
     }
@@ -123,6 +156,6 @@ void init_sdb() {
   /* Compile the regular expressions. */
   init_regex();
 
-  /* Initialize the watchpoint pool. */
+  /* 初始化 查看点 */
   init_wp_pool();
 }
