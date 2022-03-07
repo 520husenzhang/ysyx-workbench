@@ -3,7 +3,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include "sdb.h"
-
+#include <memory/vaddr.h>
 static int is_batch_mode = false;
 
 void init_regex();
@@ -72,12 +72,16 @@ return 0;
 //扫描内存
 static int cmd_x(char *args){
   u_int16_t  arg1,arg2 ; 
-   
  char *token = strtok(args, " ");  //第一个数字 
- arg1= atoi(token); 
- arg2=  atoi(strtok(NULL, " "));
-printf("%d",arg1);
-printf("%d",arg2);
+ arg1= atoi(token);     //len 
+ arg2=  atoi(strtok(NULL, " "));  //地址
+
+printf("%lx",  vaddr_read(arg2,arg1) );
+
+
+
+
+
 return 0;  
 
 
