@@ -76,7 +76,7 @@ static int cmd_x(char *args){
  arg1= atoi(token);     //len 
  arg2=  atoi(strtok(NULL, " "));  //地址
 
-printf("%lx",  vaddr_read(arg2,arg1) );
+printf("%d, %d",  arg2,arg1 );
 
 
 
