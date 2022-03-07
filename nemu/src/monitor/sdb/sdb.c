@@ -55,9 +55,16 @@ static int cmd_si(char *args) {
  }
 return 0;
 }
+
+extern CPU_state cpu ;  //cpu  状态变量
+
 //打印程序状态  
 static int cmd_info(char *args){
-
+    if(*args=='r')
+   {
+      isa_reg_display()  ;
+   
+   }
 return 0;
 
 }
