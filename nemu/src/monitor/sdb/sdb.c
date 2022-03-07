@@ -80,7 +80,7 @@ static int cmd_x(char *args){
 sscanf(args,"%d 0x%x",&len,&addr);  
 // printf("%d, %d",  len,addr );
 
- printf( "%#lx",vaddr_read(addr,len));
+ printf( "addr %#x is %#lx",addr,vaddr_read(addr,len));
 
 
 
