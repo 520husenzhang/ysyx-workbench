@@ -78,10 +78,13 @@ static int cmd_x(char *args){
  //arg2=  atoi(strtok(NULL, " "));  //地址
 
 sscanf(args,"%d %x",&len,&addr);  
- printf("%d, %d",  len,addr );
+// printf("%d, %d",  len,addr );
 
-return 0;  
+ printf( "%lx",vaddr_read(addr,len));
 
+
+
+return 0;
 
 }
 
