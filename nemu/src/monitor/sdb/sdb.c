@@ -71,13 +71,14 @@ return 0;
 
 //扫描内存
 static int cmd_x(char *args){
-  u_int16_t  arg1,arg2 ; 
+  int   len;   // len  1 2  4
+  paddr_t addr  ;  //读取 开始地址
  //har *token = strtok(args, " ");  //第一个数字 
  //arg1= atoi(token);     //len 
  //arg2=  atoi(strtok(NULL, " "));  //地址
 
-sscanf(args,"%hd %hx",&arg1,&arg2);  
- printf("%d, %d",  arg2,arg1 );
+sscanf(args,"%d %x",&len,&addr);  
+ printf("%d, %d",  len,addr );
 
 return 0;  
 
