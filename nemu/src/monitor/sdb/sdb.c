@@ -83,7 +83,7 @@ sscanf(args,"%d 0x%x",&LEN,&addr);
 int i; 
  for (i = 0; i < LEN; i++)
  {
-   printf( "addr %#x is %#lx \n",addr+i,vaddr_read(addr+i,4));
+   printf( "addr %#x is %#lx \n",addr+i,vaddr_read(addr+i*4,4));
 
 
  }
