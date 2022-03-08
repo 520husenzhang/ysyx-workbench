@@ -71,16 +71,23 @@ return 0;
 
 //扫描内存
 static int cmd_x(char *args){
-  int   len;   // len  1 2  4
+  int   LEN;   //  几个4字节？
   paddr_t addr  ;  //读取 开始地址
  //har *token = strtok(args, " ");  //第一个数字 
  //arg1= atoi(token);     //len 
  //arg2=  atoi(strtok(NULL, " "));  //地址
 
-sscanf(args,"%d 0x%x",&len,&addr);  
+sscanf(args,"%d 0x%x",&LEN,&addr);  
 // printf("%d, %d",  len,addr );
+//循环输出
+int i; 
+ for (i = 0; i < LEN; i++)
+ {
+   printf( "addr %#x is %#lx \n",addr+i,vaddr_read(addr+i,4));
 
- printf( "addr %#x is %#lx",addr,vaddr_read(addr,len));
+
+ }
+ 
 
 
 
