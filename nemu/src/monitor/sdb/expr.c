@@ -27,7 +27,7 @@ static struct rule {
   {"\\-",'-'},                //减号
   {"\\*",'*'},                       //乘号
   {"",'/'},                       //除号
-  {"\(",'/'},        //括号
+
 }; 
   //规则表长度
 #define NR_REGEX ARRLEN(rules)
