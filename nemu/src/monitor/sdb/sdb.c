@@ -93,9 +93,11 @@ return 0;
 //表达式求职   
 static int cmd_p(char *args){
   //args 为表达式字符串 
-  bool *success =NULL  ;
+  bool  init =false  ;
+  bool *success  ;
+  success=&init  ;
   
-     expr(args,success);    //调用make-token 函数
+  expr(args,success);    //调用make-token 函数
  if( (*success)== false)
  {
    //解析失败
