@@ -205,7 +205,7 @@ int dominant_operator(int p , int q){
             pr = pir(tokens[i].type);
             dom = i;  //定位主操作符
         }      
-      printf("PR is %d",pr);
+      printf("PR is %d\n",pr);
     }          
    // printf("%d\n",left_n);
      printf("dom is in %d\n \n",dom);
