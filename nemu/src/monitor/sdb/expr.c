@@ -150,7 +150,6 @@ static bool make_token(char *e) {
 
   }
   
-  printf("jb");
   return true;
 }
 
