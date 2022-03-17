@@ -218,6 +218,7 @@ uint32_t  regex_eval(int p, int q){
    uint32_t  val1 ;
    uint32_t  val2; 
    int OP;   
+   printf("enter p=%d,q=%d\n",p,q);
   if (p > q) {
     /* Bad expression */
     printf("error happen, p>q!  P==%d,Q==%d",p,q);  
@@ -245,7 +246,6 @@ uint32_t  regex_eval(int p, int q){
   else {
 
     OP = dominant_operator( p , q) ;      //返回主操作符位置
-    printf("OP IS %d \n",OP);  
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
 
