@@ -198,15 +198,17 @@ int dominant_operator(int p , int q){
                 if(left_n == 0)
                 break;
             }         //找到匹配的右括号 
-            if(i > q)break;
+            if(i > q)break;   
         }      
         else if(tokens[i].type == TK_NUM) continue;  //数字跳过  
         else if(pir(tokens[i].type ) > pr){    
             pr = pir(tokens[i].type);
             dom = i;  //定位主操作符
+            printf("1 PR is %d\n",pr);  
         }      
-      printf("PR is %d\n",pr);
+    
     }          
+     printf("2 PR is %d\n",pr); 
    // printf("%d\n",left_n);
      printf("dom is in %d\n \n",dom);
     return dom;
