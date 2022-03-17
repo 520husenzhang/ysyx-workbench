@@ -256,7 +256,7 @@ word_t expr(char *e, bool *success) {
 
 
   /* TODO: Insert codes to evaluate the expression. */
-   printf("res is %d \n",regex_eval(0,nr_token-1) )   ;
+   printf("\n \n res is %d \n",regex_eval(0,nr_token-1) )   ;
 
   return 0;
 }
