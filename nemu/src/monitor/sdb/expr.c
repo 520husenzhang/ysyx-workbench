@@ -98,8 +98,6 @@ void init_tokens()
      tokens[i].type=0;
   }
 }
-
-
 //给出一个待求值表达式, 我们首先要识别出其中的token,  返回false 表示解析 失败
 static bool make_token(char *e) {
   int position = 0;
@@ -212,6 +210,7 @@ int dominant_operator(int p , int q){
 
     }          
    // printf("%d\n",left_n);
+     printf("dom is in %d",dom);
     return dom;
 }     
 
