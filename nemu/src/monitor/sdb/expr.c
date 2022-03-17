@@ -195,17 +195,20 @@ int dominant_operator(int p , int q){
                 if(tokens[i].type == TK_BRA_L) left_n += 1;
                 else if(tokens[i].type == TK_BRA_R) left_n --;
                 i++;
-                if(left_n == 0)
+                if(left_n == 0){
                 break;
+                }
             }         //找到匹配的右括号 
             if(i > q)break;   
-        }      
-        else if(tokens[i].type == TK_NUM) continue;  //数字跳过  
-        else if(pir(tokens[i].type ) > pr){    
+        }   // 1.遇到括号
+
+        else if(tokens[i].type == TK_NUM) continue;  //数字跳过    2.数字
+
+        else if(pir(tokens[i].type ) > pr){            //运算符 
             pr = pir(tokens[i].type);
             dom = i;  //定位主操作符
-            printf("1 PR is %d\n",pr);  
-        }      
+            printf("1 PR is %d\n",pr);     
+        }         
     
     }          
      printf("2 PR is %d\n",pr); 
