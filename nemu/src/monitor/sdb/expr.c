@@ -94,6 +94,7 @@ static bool make_token(char *e) {
   int position = 0;
   int i;
   int cnt;
+  
   regmatch_t pmatch;
 
   nr_token = 0;
@@ -118,12 +119,16 @@ static bool make_token(char *e) {
         switch (rules[i].token_type) {
          case TK_NOTYPE :             ;break ;
          case TK_NUM : tokens[nr_token].type=rules[i].token_type;
-                    strncpy(tokens[nr_token].str, substr_start, substr_len);
+                    //strncpy(tokens[nr_token].str, temp, substr_len); //
+                    //strncpy(tokens[nr_token].str, substr_start, substr_len);
+                    strcpy(tokens[nr_token].str, substr_start);
                     nr_token++ ;                     ;break ;
 
          
          default:  
-                    tokens[nr_token].type=rules[i].token_type; strncpy(tokens[nr_token].str, substr_start, substr_len);
+                    tokens[nr_token].type=rules[i].token_type; 
+                    strcpy(tokens[nr_token].str, substr_start);
+                    //strncpy(tokens[nr_token].str, substr_start, substr_len);
                     nr_token++ ;
                   
         }
