@@ -119,7 +119,7 @@ static bool make_token(char *e) {
   for(cnt=0;cnt<nr_token;cnt++)
   {
 
-  printf("rule %d  is  type=%d ,  str=%s   ",cnt ,tokens[cnt].type,tokens[cnt].str); 
+  printf("rule %d  is  type=%d ,  str=%s  \n ",cnt ,tokens[cnt].type,tokens[cnt].str); 
 
   }
   return true;
