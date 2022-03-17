@@ -93,7 +93,7 @@ static int nr_token __attribute__((used))  = 0;  //指示已经被识别出的to
 static bool make_token(char *e) {
   int position = 0;
   int i;
-  //int cnt;
+  int cnt;
   regmatch_t pmatch;
 
   nr_token = 0;
@@ -142,7 +142,13 @@ static bool make_token(char *e) {
 
   }
   
+  
+  for(cnt=0;cnt<nr_token;cnt++)
+  {
 
+  printf("rule %d  is  type=%d ,  str=%s  \n ",cnt ,tokens[cnt].type,tokens[cnt].str); 
+
+  }
   
   printf("jb");
   return true;
