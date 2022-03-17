@@ -244,12 +244,15 @@ uint32_t  regex_eval(int p, int q){
 
 
 word_t expr(char *e, bool *success) {
+   printf("begin ");
   if (!make_token(e)) {
     *success = false;
   printf("fuck");
     return 0;
   }
-  printf("11");
+  printf("end");
+
+  
   /* TODO: Insert codes to evaluate the expression. */
    printf("res is %d ",regex_eval(0,nr_token-1) )   ;
 
