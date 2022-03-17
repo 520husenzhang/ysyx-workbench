@@ -141,12 +141,14 @@ static bool make_token(char *e) {
 
 
   }
+  
   for(cnt=0;cnt<nr_token;cnt++)
   {
 
   printf("rule %d  is  type=%d ,  str=%s  \n ",cnt ,tokens[cnt].type,tokens[cnt].str); 
 
   }
+  printf("jb");
   return true;
 }
 
@@ -252,7 +254,7 @@ word_t expr(char *e, bool *success) {
   }
   printf("end");
 
-  
+
   /* TODO: Insert codes to evaluate the expression. */
    printf("res is %d ",regex_eval(0,nr_token-1) )   ;
 
