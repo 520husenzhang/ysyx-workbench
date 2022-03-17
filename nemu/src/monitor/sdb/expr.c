@@ -161,11 +161,9 @@ static bool make_token(char *e) {
   
   for(cnt=0;cnt<nr_token;cnt++)
   {
-
   printf("rule %d  is  type=%d ,  str=%s  \n ",cnt ,tokens[cnt].type,tokens[cnt].str); 
-  printf("\n \n");
   }
-  
+  printf("\n \n");
   return true;
 }
 
@@ -247,9 +245,10 @@ uint32_t  regex_eval(int p, int q){
   else {
 
     OP = dominant_operator( p , q) ;      //返回主操作符位置
+    printf("OP IS %d \n",OP);  
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
-    printf("OP IS %d \n",OP);  
+
 
     switch (tokens[OP].type ) {
       case '+': return val1 + val2;  break;
