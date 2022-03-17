@@ -201,11 +201,11 @@ int dominant_operator(int p , int q){
             if(i > q)break;
         }      
         else if(tokens[i].type == TK_NUM) continue;  //数字跳过  
-        else if(pir(tokens[i].type ) >= pr){    
+        else if(pir(tokens[i].type ) > pr){    
             pr = pir(tokens[i].type);
             dom = i;  //定位主操作符
         }      
-
+      printf("PR is %d",pr);
     }          
    // printf("%d\n",left_n);
      printf("dom is in %d\n \n",dom);
