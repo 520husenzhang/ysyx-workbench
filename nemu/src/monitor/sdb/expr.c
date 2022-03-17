@@ -7,8 +7,10 @@
 
 enum {
   TK_NOTYPE = 256,  
-  TK_EQ,
-  TK_BRA // 括号
+  TK_EQ,   //相等 
+  TK_BRA_L, // 左括号
+  TK_BRA_R,    // 右 括号
+  TK_NUM  //整形数字 
   /* TODO: Add more token types */
 };
   //匹配规则 
@@ -24,10 +26,12 @@ static struct rule {
   {" +", TK_NOTYPE},    // spaces   空格
   {"\\+", '+'},         // plus  加号 
   {"==", TK_EQ},        // equal    相等
-  {"\\-",'-'},                //减号
+  {"-",'-'},                //减号
   {"\\*",'*'},                       //乘号
-  {"",'/'},                       //除号
-
+  {"/",'/'},                       //除号
+  {"[(]",TK_BRA_L},                       //左括号
+  {"[)]",TK_BRA_R},                       //左括号
+  {"[0-9]+",TK_NUM},                       //整形数字 
 }; 
   //规则表长度
 #define NR_REGEX ARRLEN(rules)
@@ -89,14 +93,17 @@ static bool make_token(char *e) {
          */
 
         switch (rules[i].token_type) {
-        // case :                   ;break ;
-        // case :                   ;break ;
+        //  case :                   ;break ;
+        //  case :                   ;break ;
 
 
-          default: TODO();
+          default:  tokens[nr_token].type=rules[i].token_type;
+                    strncpy(tokens[nr_token].str, substr_start, substr_len);
+                    nr_token++ ;
         }
+      
 
-        break;
+        break;  //匹配到了规则当然要break  
       }
     }
 

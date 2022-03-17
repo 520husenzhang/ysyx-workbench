@@ -87,11 +87,23 @@ int i;
 
 
  }
- 
-
-
-
 return 0;
+}
+
+//表达式求职   
+static int cmd_p(char *args){
+  //args 为表达式字符串 
+  bool *success =NULL  ;
+  
+     expr(args,success);    //调用make-token 函数
+ if( (*success)== false)
+ {
+   //解析失败
+   printf("expr is invalid ");
+  return 0 ;
+ }
+
+return 0 ;
 
 }
 
@@ -105,8 +117,8 @@ static struct {
   { "q", "Exit NEMU", cmd_q },   //退出
   { "si", "exec_once", cmd_si },   //单步执行
   { "info", "show_program_state", cmd_info },    //打印寄存器
-  { "x", "scan ram", cmd_x },    //
-
+  { "x", "scan ram", cmd_x },    //  扫描内存
+  {"p","expr conv to value",cmd_p  } ,  //表达式求职   
   /* TODO: Add more commands */
 
 };
@@ -179,7 +191,7 @@ void sdb_mainloop() {
 }
 
 void init_sdb() {
-  /* Compile the regular expressions. */
+  /*初始化正则表达式 */
   init_regex();
 
   /* 初始化 查看点 */
