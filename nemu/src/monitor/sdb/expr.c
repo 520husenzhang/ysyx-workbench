@@ -33,6 +33,28 @@ static struct rule {
   {"[)]",TK_BRA_R},                       //左括号
   {"[0-9]+",TK_NUM},                       //整形数字    8 
 }; 
+
+//操作符 优先级 计算 
+static  int pir (int type){
+  int Priority  ;
+
+    switch (type)
+    {
+    case '+':   Priority=5;     break;
+    case TK_EQ : Priority=8;       break;
+    case '-':  Priority=5;       break;
+    case '*':   Priority=4;      break;
+    case '/':   Priority=4;          break;
+    case TK_BRA_L: Priority=1;        break;
+    case TK_BRA_R:  Priority=1;      break;
+    default:    Priority=1;   break;
+    }
+
+ return   Priority ;   
+}
+
+
+
   //规则表长度
 #define NR_REGEX ARRLEN(rules)
 
@@ -128,6 +150,104 @@ static bool make_token(char *e) {
   return true;
 }
 
+//括号检查函数
+bool check_parentheses(int p ,int q){
+   // printf("--------------\n");  
+    int i,tag = 0;
+    if(tokens[p].type != TK_BRA_L || tokens[q].type != TK_BRA_R) return false; //首尾没有()则为false 
+    for(i = p ; i <= q ; i ++){    
+        if(tokens[i].type == TK_BRA_L) tag++;
+        else if(tokens[i].type == TK_BRA_R) tag--;
+        if(tag == 0 && i < q) return false ;  //(3+4)*(5+3) 返回false
+    }                              
+    if( tag != 0 ) return false;   
+    return true;                   
+} 
+
+
+
+//主操作符寻找函数 
+int dominant_operator(int p , int q){
+               
+    int i ,dom = p, left_n = 0;   //dom 为主操作符的位置  
+    int pr = -1 ;  //最小优先级  数字越大优先级月小 
+    for(i = p ; i <= q ; i++){    //从左往右遍历
+
+        if(tokens[i].type == TK_BRA_L){   //括号匹配  
+            left_n += 1;
+            i++;
+            while(1){
+                if(tokens[i].type == TK_BRA_L) left_n += 1;
+                else if(tokens[i].type == TK_BRA_R) left_n --;
+                i++;
+                if(left_n == 0)
+                break;
+            }         //找到匹配的右括号 
+            if(i > q)break;
+        }      
+        else if(tokens[i].type == TK_NUM) continue;  //数字跳过  
+        else if(pir(tokens[i].type ) >= pr){    
+            pr = pir(tokens[i].type);
+            dom = i;  //定位主操作符
+        }      
+
+    }          
+   // printf("%d\n",left_n);
+    return dom;
+}     
+
+
+
+
+
+//递归函数
+uint32_t  regex_eval(int p, int q){
+   uint32_t RES; 
+   uint32_t  val1 ;
+   uint32_t  val2; 
+   int OP;   
+  if (p > q) {
+    /* Bad expression */
+    printf("error happen, p>q!!!");  
+     assert(0);
+    }
+  else if (p == q) {
+    /* Single token.
+     * 此处应该是一个整形数.
+     */
+      if(tokens[p].type==TK_NUM){
+        sscanf(tokens[p].str,"%d",&RES) ;
+        return  RES; 
+      }    
+      else 
+      {
+      printf("should not be here ");  
+      }
+   }
+  else if (check_parentheses(p, q) == true) {  //
+    /* 表达式由一对匹配的括号包围。
+     *如果是这样，就扔掉括号。
+     */
+    return regex_eval(p + 1, q - 1);
+  }
+  else {
+
+    OP = dominant_operator( p , q) ;      //返回主操作符位置
+    val1 = regex_eval(p, OP - 1);
+    val2 = regex_eval(OP + 1, q);
+
+    switch (tokens[OP].type ) {
+      case '+': return val1 + val2;  break;
+      case '-': return val1 - val2; break;
+      case '*': return val1 * val2;  break;
+      case '/': return val1 / val2; break;
+      default: return 0;assert(0);
+    }
+  }
+  return 0  ;
+   
+}
+
 
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
@@ -136,7 +256,7 @@ word_t expr(char *e, bool *success) {
   }
 
   /* TODO: Insert codes to evaluate the expression. */
-  TODO();
+   regex_eval(0,nr_token-1)     ;
 
   return 0;
 }
