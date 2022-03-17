@@ -83,22 +83,34 @@ typedef struct token {
   char str[32];  //用来保存额外信息，比如数值u大小
 } Token;
 
-
-
-
 //tokens数组用于按顺序存放已经被识别出的token信息,
 static Token tokens[32] __attribute__((used)) = {};
 static int nr_token __attribute__((used))  = 0;  //指示已经被识别出的token数目.
+//初始化数组 tokens
+void init_tokens()
+{
+  int i,j ;
+
+  for(i=0;i<32;i++){     //外部32元素初始化
+      for(j=0;j<32;j++){   //str 和type 初始化 
+           tokens[i].str[j]=0;  
+      }
+     tokens[i].type=0;
+  }
+}
+
+
 //给出一个待求值表达式, 我们首先要识别出其中的token,  返回false 表示解析 失败
 static bool make_token(char *e) {
   int position = 0;
   int i;
   int cnt; 
-  char *temp= '\0';
+
   regmatch_t pmatch;
 
   nr_token = 0;
-
+  init_tokens();
+  //qin
   while (e[position] != '\0') {
     /* 尝试所有的规则. */
     for (i = 0; i < NR_REGEX; i ++) {
@@ -119,7 +131,7 @@ static bool make_token(char *e) {
         switch (rules[i].token_type) {
          case TK_NOTYPE :             ;break ;
          case TK_NUM : tokens[nr_token].type=rules[i].token_type;
-                     strncpy(tokens[nr_token].str, temp, 1); //
+                     //strncpy(tokens[nr_token].str, temp, 1); //
                     strncpy(tokens[nr_token].str, substr_start, substr_len);
                     //strcpy(tokens[nr_token].str, substr_start);
                     nr_token++ ;                     ;break ;
@@ -127,7 +139,7 @@ static bool make_token(char *e) {
          
          default:  
                     tokens[nr_token].type=rules[i].token_type; 
-                    strncpy(tokens[nr_token].str, temp, 1); //
+                    //strncpy(tokens[nr_token].str, temp, 1); //
                     //strcpy(tokens[nr_token].str, substr_start);
                     strncpy(tokens[nr_token].str, substr_start, substr_len);
                     nr_token++ ;  break ;
