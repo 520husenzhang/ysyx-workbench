@@ -208,7 +208,7 @@ int dominant_operator(int p , int q){
 
     }          
    // printf("%d\n",left_n);
-     printf("dom is in %d\n ",dom);
+     printf("dom is in %d\n \n",dom);
     return dom;
 }     
 
