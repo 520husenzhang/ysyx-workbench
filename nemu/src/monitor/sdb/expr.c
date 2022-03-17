@@ -23,7 +23,7 @@ static struct rule {
    * 注意不同规则的优先级   从上到下优先级递减
    */
    //正则表达式
-  {" +", TK_NOTYPE},    // spaces   空格
+  {" +", TK_NOTYPE},    // spaces   空格      0
   {"\\+", '+'},         // plus  加号 
   {"==", TK_EQ},        // equal    相等
   {"-",'-'},                //减号
@@ -31,7 +31,7 @@ static struct rule {
   {"/",'/'},                       //除号
   {"[(]",TK_BRA_L},                       //左括号
   {"[)]",TK_BRA_R},                       //左括号
-  {"[0-9]+",TK_NUM},                       //整形数字 
+  {"[0-9]+",TK_NUM},                       //整形数字    8 
 }; 
   //规则表长度
 #define NR_REGEX ARRLEN(rules)
@@ -71,6 +71,7 @@ static int nr_token __attribute__((used))  = 0;  //指示已经被识别出的to
 static bool make_token(char *e) {
   int position = 0;
   int i;
+  int cnt;
   regmatch_t pmatch;
 
   nr_token = 0;
@@ -115,7 +116,12 @@ static bool make_token(char *e) {
 
 
   }
+  for(cnt=0;cnt<nr_token;cnt++)
+  {
 
+  printf("rule %d  is  type=%d ,  str=%s   ",cnt ,tokens[cnt].type,tokens[cnt].str); 
+
+  }
   return true;
 }
 
