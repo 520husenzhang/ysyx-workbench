@@ -222,7 +222,7 @@ uint32_t  regex_eval(int p, int q){
    int OP;   
   if (p > q) {
     /* Bad expression */
-    printf("error happen, p>q!!!");  
+    printf("error happen, p>q!  P==%d,Q==%d",p,q);  
      //assert(0);
     }
   else if (p == q) {
