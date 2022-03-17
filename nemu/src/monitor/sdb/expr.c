@@ -252,11 +252,11 @@ word_t expr(char *e, bool *success) {
   printf("fuck");
     return 0;
   }
- 
+  *success = true;
 
 
   /* TODO: Insert codes to evaluate the expression. */
-   printf("res is %d ",regex_eval(0,nr_token-1) )   ;
+   printf("res is %d \n",regex_eval(0,nr_token-1) )   ;
 
   return 0;
 }
