@@ -200,6 +200,7 @@ int dominant_operator(int p , int q){
                 break;
                 }
             }         //找到匹配的右括号 
+            i--;
             if(i > q)break;   
         }   // 1.遇到括号
 
