@@ -210,7 +210,7 @@ int dominant_operator(int p , int q){
 
     }          
    // printf("%d\n",left_n);
-     printf("dom is in %d",dom);
+     printf("dom is in %d\n ",dom);
     return dom;
 }     
 
@@ -249,6 +249,7 @@ uint32_t  regex_eval(int p, int q){
     OP = dominant_operator( p , q) ;      //返回主操作符位置
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
+    printf("OP IS %d \n",OP);  
 
     switch (tokens[OP].type ) {
       case '+': return val1 + val2;  break;
