@@ -164,8 +164,6 @@ bool check_parentheses(int p ,int q){
     return true;                   
 } 
 
-
-
 //主操作符寻找函数 
 int dominant_operator(int p , int q){
                
@@ -195,10 +193,6 @@ int dominant_operator(int p , int q){
    // printf("%d\n",left_n);
     return dom;
 }     
-
-
-
-
 
 //递归函数
 uint32_t  regex_eval(int p, int q){
@@ -252,6 +246,7 @@ uint32_t  regex_eval(int p, int q){
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
+  printf("fuck");
     return 0;
   }
   printf("11");
