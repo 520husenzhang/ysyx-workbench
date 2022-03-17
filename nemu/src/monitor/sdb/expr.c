@@ -196,6 +196,7 @@ int dominant_operator(int p , int q){
                 else if(tokens[i].type == TK_BRA_R) left_n --;
                 i++;
                 if(left_n == 0){
+                   printf("I FAND BRA i=%d",i-1);
                 break;
                 }
             }         //找到匹配的右括号 
