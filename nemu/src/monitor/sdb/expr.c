@@ -312,7 +312,7 @@ uint64_t  regex_eval(int p, int q){
   }
   else {
 
-    if(tokens[p].type==TK_DEREF)  //判定是不是 指针解开索引  
+    if( (tokens[p].type==TK_DEREF)&&(p==q-1) )  //判定是不是 指针解开索引  
     { 
 
 
@@ -320,7 +320,7 @@ uint64_t  regex_eval(int p, int q){
            
     
     }
-    else  {
+    
     OP = dominant_operator( p , q) ;      //返回主操作符位置
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
@@ -338,7 +338,7 @@ uint64_t  regex_eval(int p, int q){
                   {return val1 / val2; break;}
       default: return 0;assert(0);
        }
-    }
+    
  
   }
   return 0  ;
