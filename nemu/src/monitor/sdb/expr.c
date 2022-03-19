@@ -36,7 +36,7 @@ static struct rule {
   {"[)]",TK_BRA_R},                       //左括号
   {"[0-9]+",TK_NUM},                       //整形数字    8 
   {"\\$+[a-z]?[0-9,a,p,c]+",TK_REG}   ,//寄存器
-  {"0[x,X][0-9]+", TK_HEX}   //16hex
+  {"0[x,X][0-9,a-f,A-F]+", TK_HEX}   //16hex
 }; 
 
 //操作符 优先级 计算 
