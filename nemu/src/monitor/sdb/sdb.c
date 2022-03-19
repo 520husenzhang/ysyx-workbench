@@ -65,6 +65,13 @@ static int cmd_info(char *args){
       isa_reg_display()  ;
    
    }
+   else if(*args=='w'){
+
+   print_wp();
+
+   }
+
+
 return 0;
 
 }
