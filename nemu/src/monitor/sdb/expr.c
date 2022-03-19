@@ -4,6 +4,7 @@
  * Type 'man regex' for more information about POSIX regex functions.
  */
 #include <regex.h>    //正则表达式库  
+#include <memory/vaddr.h>
 
 enum {
   TK_NOTYPE = 256,  
@@ -53,6 +54,7 @@ static  int pir (int type){
     case '/':   Priority=4;          break;
     case TK_BRA_L: Priority=1;        break;
     case TK_BRA_R:  Priority=1;      break;
+    case TK_DEREF:  Priority=2;       break  ;  //指针运算符
     default:    Priority=1;   break;
     }
 
@@ -282,6 +284,7 @@ uint64_t  regex_eval(int p, int q){
    uint64_t  val1 ;
    uint64_t  val2; 
    int OP;   
+   //paddr_t addr  ;
    printf("enter p=%d,q=%d\n",p,q);
   if (p > q) {
     /* Bad expression */
@@ -290,7 +293,7 @@ uint64_t  regex_eval(int p, int q){
     }
   else if (p == q) {
     /* Single token.
-     * 此处应该是一个整形数 或寄存器索引
+     * 此处应该是一个整形数 或寄存器索引或  hex
      */
       if( (tokens[p].type==TK_NUM) ||(tokens[p].type==TK_REG) || (tokens[p].type==TK_HEX)){
         sscanf(tokens[p].str,"%ld",&RES) ;
@@ -309,6 +312,15 @@ uint64_t  regex_eval(int p, int q){
   }
   else {
 
+    if(tokens[p].type==TK_DEREF)  //判定是不是 指针解开索引  
+    { 
+
+
+        return vaddr_read((regex_eval(p+1,q)) ,4);
+           
+    
+    }
+    else  {
     OP = dominant_operator( p , q) ;      //返回主操作符位置
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
@@ -325,10 +337,11 @@ uint64_t  regex_eval(int p, int q){
                 else 
                   {return val1 / val2; break;}
       default: return 0;assert(0);
+       }
     }
+ 
   }
   return 0  ;
-   
 }
 
 
@@ -339,6 +352,7 @@ word_t expr(char *e, bool *success) {
     return 0;
   }
   *success = true;
+
     /* 找到指针索引 */
  int i ;
 for (i = 0; i < nr_token; i ++) {
