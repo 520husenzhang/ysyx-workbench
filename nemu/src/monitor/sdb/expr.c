@@ -26,6 +26,7 @@ static struct rule {
    * 注意不同规则的优先级   从上到下优先级递减
    */
    //正则表达式
+  {"0[x,X][0-9,a-f,A-F]+", TK_HEX}  , //16hex
   {" +", TK_NOTYPE},    // spaces   空格      0
   {"\\+", '+'},         // plus  加号 
   {"==", TK_EQ},        // equal    相等
@@ -35,8 +36,8 @@ static struct rule {
   {"[(]",TK_BRA_L},                       //左括号
   {"[)]",TK_BRA_R},                       //左括号
   {"[0-9]+",TK_NUM},                       //整形数字    8 
-  {"\\$+[a-z]?[0-9,a,p,c]+",TK_REG}   ,//寄存器
-  {"[0-9]+[x,X]+[0-9,a-f,A-F]+", TK_HEX}   //16hex
+  {"\\$+[a-z]?[0-9,a,p,c]+",TK_REG}   //寄存器
+
 }; 
 
 //操作符 优先级 计算 
