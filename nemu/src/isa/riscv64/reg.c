@@ -21,6 +21,7 @@ void isa_reg_display() {
 }
 //寄存器转值  包括 pc
 word_t isa_reg_str2val(const char *s, bool *success) {
+   printf("jb");
    int REG ;
 
    //1 
