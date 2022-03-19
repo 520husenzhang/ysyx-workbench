@@ -107,10 +107,11 @@ void init_monitor(int argc, char *argv[]) {
   /* Load the image to memory. This will overwrite the built-in image. */
   long img_size = load_img();
 
-  /* Initialize differential testing. */
+  /*差分测试 . */
   init_difftest(diff_so_file, img_size, difftest_port);
 
   /* Initialize the simple debugger. */
+   //包括正则表达式和 查看点  两个子部分
   init_sdb();
 
   IFDEF(CONFIG_ITRACE, init_disasm(

@@ -9,7 +9,7 @@
 uint8_t* guest_to_host(paddr_t paddr);
 /* 将 NEMU 中的主机虚拟地址转换 为 来宾程序中的来宾物理地址 */
 paddr_t host_to_guest(uint8_t *haddr);
-
+//返回是不是索引地址在真实内存中？？ 
 static inline bool in_pmem(paddr_t addr) {
   return (addr >= CONFIG_MBASE) && (addr < (paddr_t)CONFIG_MBASE + CONFIG_MSIZE);
 }
