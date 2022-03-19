@@ -10,7 +10,9 @@ enum {
   TK_EQ,   //相等 
   TK_BRA_L, // 左括号
   TK_BRA_R,    // 右 括号
-  TK_NUM  //整形数字 
+  TK_NUM , //整形数字 
+  TK_DEREF,  //指针索引
+  TK_REG ,// reg
   /* TODO: Add more token types */
 };
   //匹配规则 
@@ -27,11 +29,13 @@ static struct rule {
   {"\\+", '+'},         // plus  加号 
   {"==", TK_EQ},        // equal    相等
   {"-",'-'},                //减号
-  {"\\*",'*'},                       //乘号
+  {"\\*",'*'},                       //乘号  或指针
   {"/",'/'},                       //除号
   {"[(]",TK_BRA_L},                       //左括号
   {"[)]",TK_BRA_R},                       //左括号
   {"[0-9]+",TK_NUM},                       //整形数字    8 
+   
+  {"\\$+[a-z]?[0-9,a,p]+",TK_REG}     //寄存器
 }; 
 
 //操作符 优先级 计算 
@@ -60,6 +64,47 @@ static  int pir (int type){
 
 static regex_t re[NR_REGEX] = {};
 
+
+ //数字转字符串
+ char* itoa(int num,char* str,int radix)
+{
+    char index[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//索引表
+    unsigned unum;//存放要转换的整数的绝对值,转换的整数可能是负数
+    int i=0,j,k;//i用来指示设置字符串相应位，转换之后i其实就是字符串的长度；转换后顺序是逆序的，有正负的情况，k用来指示调整顺序的开始位置;j用来指示调整顺序时的交换。
+ 
+    //获取要转换的整数的绝对值
+    if(radix==10&&num<0)//要转换成十进制数并且是负数
+    {
+        unum=(unsigned)-num;//将num的绝对值赋给unum
+        str[i++]='-';//在字符串最前面设置为'-'号，并且索引加1
+    }
+    else unum=(unsigned)num;//若是num为正，直接赋值给unum
+ 
+    //转换部分，注意转换后是逆序的
+    do
+    {
+        str[i++]=index[unum%(unsigned)radix];//取unum的最后一位，并设置为str对应位，指示索引加1
+        unum/=radix;//unum去掉最后一位
+ 
+    }while(unum);//直至unum为0退出循环
+ 
+    str[i]='\0';//在字符串最后添加'\0'字符，c语言字符串以'\0'结束。
+ 
+    //将顺序调整过来
+    if(str[0]=='-') k=1;//如果是负数，符号不用调整，从符号后面开始调整
+    else k=0;//不是负数，全部都要调整
+ 
+    char temp;//临时变量，交换两个值时用到
+    for(j=k;j<=(i-1)/2;j++)//头尾一一对称交换，i其实就是字符串的长度，索引最大值比长度少1
+    {
+        temp=str[j];//头部赋值给临时变量
+        str[j]=str[i-1+k-j];//尾部赋值给头部
+        str[i-1+k-j]=temp;//将临时变量的值(其实就是之前的头部值)赋给尾部
+    }
+ 
+    return str;//返回转换后的字符串
+ 
+}
 /* Rules are used for many times.
  * Therefore we compile them only once before any usage.
  *初始化正则表达式规则
@@ -103,7 +148,9 @@ static bool make_token(char *e) {
   int position = 0;
   int i;
   int cnt; 
-
+    bool suc=true;
+  bool *success=  &suc;
+  // *success=true ;
   regmatch_t pmatch;
 
   nr_token = 0;
@@ -134,7 +181,11 @@ static bool make_token(char *e) {
                     //strcpy(tokens[nr_token].str, substr_start);
                     nr_token++ ;                     ;break ;
 
-         
+                //寄存器索引  
+        case TK_REG: tokens[nr_token].type=rules[i].token_type;    
+                    strncpy(tokens[nr_token].str, substr_start, substr_len);
+                   //   tokens[nr_token].str= itoa(isa_reg_str2val(tokens[nr_token].str,success),   tokens[nr_token].str,10);                    break     ;
+                   strcpy(tokens[nr_token].str,itoa(isa_reg_str2val(tokens[nr_token].str,success),tokens[nr_token].str,10) );    break     ;
          default:  
                     tokens[nr_token].type=rules[i].token_type; 
                     //strncpy(tokens[nr_token].str, temp, 1); //
@@ -220,10 +271,10 @@ int dominant_operator(int p , int q){
 }     
 
 //递归函数
-uint32_t  regex_eval(int p, int q){
-   uint32_t RES; 
-   uint32_t  val1 ;
-   uint32_t  val2; 
+uint64_t  regex_eval(int p, int q){
+   uint64_t RES; 
+   uint64_t  val1 ;
+   uint64_t  val2; 
    int OP;   
    printf("enter p=%d,q=%d\n",p,q);
   if (p > q) {
@@ -236,7 +287,7 @@ uint32_t  regex_eval(int p, int q){
      * 此处应该是一个整形数.
      */
       if(tokens[p].type==TK_NUM){
-        sscanf(tokens[p].str,"%d",&RES) ;
+        sscanf(tokens[p].str,"%ld",&RES) ;
         return  RES; 
       }    
       else 
@@ -256,7 +307,7 @@ uint32_t  regex_eval(int p, int q){
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
 
-    printf("OP IS %c\nval1 =%d\nval2=%d\n",tokens[OP].type,val1,val2);  
+    printf("OP IS %c\nval1 =%ld\nval2=%ld\n",tokens[OP].type,val1,val2);  
    
     switch (tokens[OP].type ) {
       case '+': return val1 + val2;  break;
@@ -278,14 +329,21 @@ uint32_t  regex_eval(int p, int q){
 word_t expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
-  printf("fuck");
+  printf("expr conv is not success!!");
     return 0;
   }
   *success = true;
-
+    /* 找到指针索引 */
+ int i ;
+for (i = 0; i < nr_token; i ++) {
+  if (tokens[i].type == '*' && (i == 0 || tokens[i - 1].type == TK_BRA_L ||tokens[i - 1].type == '+'||tokens[i - 1].type == '-' ||tokens[i - 1].type == '*' ||tokens[i - 1].type == '/' ) )
+  {
+    tokens[i].type = TK_DEREF;     //乘法替换为 指针索引！！
+  }
+}
 
   /* TODO: Insert codes to evaluate the expression. */
-   printf("\n \n res is %d \n",regex_eval(0,nr_token-1) )   ;
+   printf("\n \n res is %ld \n",regex_eval(0,nr_token-1) )   ;
 
   return 0;
 }
