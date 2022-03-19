@@ -262,7 +262,11 @@ uint32_t  regex_eval(int p, int q){
       case '+': return val1 + val2;  break;
       case '-': return val1 - val2; break;
       case '*': return val1 * val2;  break;
-      case '/': return val1 / val2; break;
+      case '/':  if((tokens[OP+1].type==TK_NUM)&&(atoi(tokens[OP+1].str)==0))
+                {  printf("0 can not be div num");
+                   assert(0);}
+                else 
+                  {return val1 / val2; break;}
       default: return 0;assert(0);
     }
   }
