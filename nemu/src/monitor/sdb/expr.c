@@ -13,6 +13,7 @@ enum {
   TK_NUM , //整形数字 
   TK_DEREF,  //指针索引
   TK_REG ,// reg
+  TK_HEX,  //HEX
   /* TODO: Add more token types */
 };
   //匹配规则 
@@ -34,8 +35,8 @@ static struct rule {
   {"[(]",TK_BRA_L},                       //左括号
   {"[)]",TK_BRA_R},                       //左括号
   {"[0-9]+",TK_NUM},                       //整形数字    8 
-   
-  {"\\$+[a-z]?[0-9,a,p,c]+",TK_REG}     //寄存器
+  {"\\$+[a-z]?[0-9,a,p,c]+",TK_REG}   ,//寄存器
+  {"0[x,X][0-9]+", TK_HEX}   //16hex
 }; 
 
 //操作符 优先级 计算 
@@ -150,6 +151,7 @@ static bool make_token(char *e) {
   int cnt; 
     bool suc=true;
   bool *success=  &suc;
+  long int hex2int;
   // *success=true ;
   regmatch_t pmatch;
 
@@ -175,18 +177,20 @@ static bool make_token(char *e) {
 
         switch (rules[i].token_type) {
          case TK_NOTYPE :             ;break ;
-         case TK_NUM : tokens[nr_token].type=rules[i].token_type;
-                     //strncpy(tokens[nr_token].str, temp, 1); //
-                    strncpy(tokens[nr_token].str, substr_start, substr_len);
-                    //strcpy(tokens[nr_token].str, substr_start);
-                    nr_token++ ;                     ;break ;
+         case TK_NUM : tokens[nr_token].type=rules[i].token_type;     
+                    strncpy(tokens[nr_token].str, substr_start, substr_len);   
+                    nr_token++ ;   break ;
 
                 //寄存器索引  
         case TK_REG: tokens[nr_token].type=rules[i].token_type;    
-                    strncpy(tokens[nr_token].str, substr_start, substr_len);
-                   //   tokens[nr_token].str= itoa(isa_reg_str2val(tokens[nr_token].str,success),   tokens[nr_token].str,10);                    break     ;
+                    strncpy(tokens[nr_token].str, substr_start, substr_len);         
                    strcpy(tokens[nr_token].str,itoa(isa_reg_str2val(tokens[nr_token].str,success),tokens[nr_token].str,10) );  nr_token++ ;    break     ;
 
+        case TK_HEX: tokens[nr_token].type=rules[i].token_type;
+                    strncpy(tokens[nr_token].str, substr_start, substr_len);  
+                    sscanf( tokens[nr_token].str, "%lx", &hex2int );  //16char  转  int
+                    sprintf(tokens[nr_token].str,"%ld",hex2int);                         nr_token++ ;break ;
+             
          default:  
                     tokens[nr_token].type=rules[i].token_type; 
                     //strncpy(tokens[nr_token].str, temp, 1); //
