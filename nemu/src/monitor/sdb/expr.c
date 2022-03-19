@@ -185,7 +185,8 @@ static bool make_token(char *e) {
         case TK_REG: tokens[nr_token].type=rules[i].token_type;    
                     strncpy(tokens[nr_token].str, substr_start, substr_len);
                    //   tokens[nr_token].str= itoa(isa_reg_str2val(tokens[nr_token].str,success),   tokens[nr_token].str,10);                    break     ;
-                   strcpy(tokens[nr_token].str,itoa(isa_reg_str2val(tokens[nr_token].str,success),tokens[nr_token].str,10) );    break     ;
+                   strcpy(tokens[nr_token].str,itoa(isa_reg_str2val(tokens[nr_token].str,success),tokens[nr_token].str,10) );  nr_token++ ;    break     ;
+
          default:  
                     tokens[nr_token].type=rules[i].token_type; 
                     //strncpy(tokens[nr_token].str, temp, 1); //
