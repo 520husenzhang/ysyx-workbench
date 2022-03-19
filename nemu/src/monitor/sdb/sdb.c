@@ -107,8 +107,18 @@ static int cmd_p(char *args){
 
 return 0 ;
 
+
+
+
 }
 
+
+//设置监视点
+static int  cmd_w(char *args){
+
+
+return 0 ;
+}
 static struct {
   const char *name;
   const char *description;
@@ -121,6 +131,7 @@ static struct {
   { "info", "show_program_state", cmd_info },    //打印寄存器
   { "x", "scan ram", cmd_x },    //  扫描内存
   {"p","expr conv to value",cmd_p  } ,  //表达式求职   
+  {"w","watch point",cmd_w  } ,  //监视点
   /* TODO: Add more commands */
 
 };

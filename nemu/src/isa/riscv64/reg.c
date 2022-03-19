@@ -19,7 +19,72 @@ void isa_reg_display() {
   printf("PC is %lx\n",cpu.pc);   //p
 
 }
-
+//寄存器转值  包括 pc
 word_t isa_reg_str2val(const char *s, bool *success) {
-  return 0;
+   int REG ;
+
+   //1 
+   if(strcmp("$0",s)==0)        REG= 0  ;
+   else if(strcmp("$ra",s)==0) REG=  1 ;
+   else if(strcmp("$sp",s)==0) REG= 2  ;
+   else if(strcmp("$gp",s)==0) REG=  3 ;
+   else if(strcmp("$tp",s)==0) REG=  4 ;
+   else if(strcmp("$t0",s)==0) REG=  5 ;
+   else if(strcmp("$t1",s)==0) REG=  6 ;
+   else if(strcmp("$t2",s)==0) REG=  7 ;
+  //2$s
+   else if(strcmp("$s0",s)==0) REG= 8  ;
+   else if(strcmp("$s1",s)==0) REG=  9 ;
+   else if(strcmp("$a0",s)==0) REG=  10 ;
+   else if(strcmp("$a1",s)==0) REG=  11 ;
+   else if(strcmp("$a1",s)==0) REG=  12 ;
+   else if(strcmp("$a3",s)==0) REG=  13 ;
+   else if(strcmp("$a4",s)==0) REG=   14;
+   else if(strcmp("$a5",s)==0) REG=  15 ;
+  //3$s
+   else if(strcmp("$a6",s)==0) REG=  16 ;
+   else if(strcmp("$a7",s)==0) REG= 17  ;
+   else if(strcmp("$s2",s)==0) REG= 18  ;
+   else if(strcmp("$s3",s)==0) REG= 19  ;
+   else if(strcmp("$s4",s)==0) REG=  20 ;
+   else if(strcmp("$s5",s)==0) REG=  21 ;
+   else if(strcmp("$s6",s)==0) REG=  22 ;
+   else if(strcmp("$s7",s)==0) REG=  23 ;
+//4$s
+   else if(strcmp("$s8",s)==0) REG= 24  ;
+   else if(strcmp("$s9",s)==0) REG= 25  ;
+   else if(strcmp("$s10",s)==0) REG= 26  ;
+   else if(strcmp("$s11",s)==0) REG=  27 ;
+   else if(strcmp("$t3",s)==0) REG=  28 ;
+   else if(strcmp("$t4",s)==0) REG=  29 ;
+   else if(strcmp("$t5",s)==0) REG=  30 ;
+   else if(strcmp("$t6",s)==0) REG=  31 ;
+//pc
+   else if(strcmp("$pc",s)==0) REG=  32 ;
+//not found 
+   else   REG= 35 ; 
+
+ 
+  *success=true;   
+  
+   
+   if((REG>=0)&&(REG<=31))  //GPR
+   {return  cpu.gpr[REG] ; }
+   
+   else if(REG==32)
+   {
+
+      return  cpu.pc;
+   }
+   else 
+   {
+     printf("not find  any reg!!");
+    *success=false;   
+
+   }
+  
+   return 0 ;
+
 }
+
+
