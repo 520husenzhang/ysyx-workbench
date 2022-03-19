@@ -100,7 +100,7 @@ int  choose(int num){
   
 }
 //产生rand数
-void  gen_num(){
+int  gen_num(){
 
    int  ret ;
    char buf_num[32]={0};
@@ -108,6 +108,7 @@ void  gen_num(){
    //printf("ret is %d \n",ret);
   itoa(ret,buf_num,10) ;      //整形转字符
   strcat(buf,buf_num);
+  return  ret;
 }
 
 //产生括号函数  
@@ -122,23 +123,31 @@ void gen(char BRA){
 
 
 //产生 随机运算符
-void gen_rand_op(){
+char  gen_rand_op(){
    // + - * /
   switch (choose(4)){
-  case 0:strcat(buf,"+");        break;
-  case 1:strcat(buf,"-");        break;
-  case 2:strcat(buf,"*");        break;
-  default:strcat(buf,"/");        break;
+  case 0:strcat(buf,"+");   return  '+'  ; break;
+  case 1:strcat(buf,"-");  return  '-'   ;   break;
+  case 2:strcat(buf,"*");  return  '*'   ; break;
+  default:strcat(buf,"/");  return  '/'   ;  break;
   }
 }
 
 //产生表达式
-static void gen_rand_expr() {
+static bool gen_rand_expr() {
 
   switch (choose(3)) {
-    case 0: gen_num(); break;  //产生数字
-    case 1: gen('('); gen_rand_expr(); gen(')'); break;  //产生括号表达式 
-    default: gen_rand_expr(); gen_rand_op(); gen_rand_expr(); break;
+    case 0: if(gen_num()==0);
+                return false;   break;  //产生数字
+    case 1: gen('('); gen_rand_expr(); gen(')');return true ;break;  //产生括号表达式 
+    default: gen_rand_expr(); gen_rand_op(); 
+          if((gen_rand_op()=='/')&&(gen_rand_expr()==false))
+          {
+            printf("/0 found !!!");
+           continue ;
+
+          }
+         return true ; break;
   }
   
   
@@ -156,10 +165,15 @@ int main(int argc, char *argv[]) {
     sscanf(argv[1], "%d", &loop);
   }
   int i;
+  int j ;
   for (i = 0; i < loop; i ++) {   //每loop 一次生成一个表达式  
-    memset(buf, 0, sizeof buf);
+    for(j=0;j<65536;j++)    //清0 
+    {
+     buf[j]=0;
 
-    gen_rand_expr(); gen_rand_op(); gen_rand_expr();
+    }
+
+     gen_rand_expr();
    
 
     sprintf(code_buf, code_format, buf);
@@ -188,5 +202,3 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-
-641*140-(339+108*446)*952-16*463*759*916-165
