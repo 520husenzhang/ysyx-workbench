@@ -158,6 +158,7 @@ int main(int argc, char *argv[]) {
   int i;
   for (i = 0; i < loop; i ++) {   //每loop 一次生成一个表达式  
     memset(buf, 0, sizeof buf);
+
     gen_rand_expr(); gen_rand_op(); gen_rand_expr();
    
 
@@ -188,4 +189,4 @@ int main(int argc, char *argv[]) {
 }
 
 
-
+641*140-(339+108*446)*952-16*463*759*916-165

@@ -256,7 +256,8 @@ uint32_t  regex_eval(int p, int q){
     val1 = regex_eval(p, OP - 1);
     val2 = regex_eval(OP + 1, q);
 
-
+    printf("OP IS %c\nval1 =%d\nval2=%d\n",tokens[OP].type,val1,val2);  
+   
     switch (tokens[OP].type ) {
       case '+': return val1 + val2;  break;
       case '-': return val1 - val2; break;
