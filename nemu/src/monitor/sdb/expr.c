@@ -292,7 +292,7 @@ uint64_t  regex_eval(int p, int q){
     /* Single token.
      * 此处应该是一个整形数 或寄存器索引
      */
-      if( (tokens[p].type==TK_NUM) ||(tokens[p].type==TK_REG)  ){
+      if( (tokens[p].type==TK_NUM) ||(tokens[p].type==TK_REG) || (tokens[p].type==TK_HEX)){
         sscanf(tokens[p].str,"%ld",&RES) ;
         return  RES; 
       }    
