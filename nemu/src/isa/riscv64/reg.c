@@ -73,7 +73,7 @@ word_t isa_reg_str2val(const char *s, bool *success) {
    
    else if(REG==32)
    {
-
+      printf("PC IS %ld",cpu.pc);
       return  cpu.pc;
    }
    else 
