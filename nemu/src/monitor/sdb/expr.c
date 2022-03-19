@@ -66,7 +66,7 @@ static regex_t re[NR_REGEX] = {};
 
 
  //数字转字符串
- char* itoa(int num,char* str,int radix)
+ char* itoa(long int num,char* str,int radix)
 {
     char index[]="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";//索引表
     unsigned unum;//存放要转换的整数的绝对值,转换的整数可能是负数
