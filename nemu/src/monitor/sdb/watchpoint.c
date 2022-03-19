@@ -3,16 +3,7 @@
 #define NR_WP 32
 //查看点 
 
-typedef struct watchpoint {
-  int NO;
-  struct watchpoint *next;
 
-  /* TODO: Add more members if necessary */
-  uint64_t result ;  //表达结果
-  char   expr[64] ;   //表达式
-  bool   isused;  //被用了麻 
-
-} WP;
  //最大32个点
 static WP wp_pool[NR_WP] = {};
 static WP *head = NULL, *free_ = NULL;
@@ -35,7 +26,7 @@ void init_wp_pool() {
 
 /* TODO: Implement the functionality of watchpoint */
 //需要存入表达式和结果。
-WP *new_wp(char *str , int value){
+WP *new_wp(char *str , uint64_t value){
    if(su == true){       //判断是否完成初始化  没有就初始化
        init_wp_pool();
   

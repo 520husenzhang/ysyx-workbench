@@ -107,18 +107,30 @@ static int cmd_p(char *args){
 
 return 0 ;
 
-
-
-
 }
 
 
 //设置监视点
 static int  cmd_w(char *args){
+   bool  init =false  ;
+  bool *success  ;
+  success=&init  ;
 
+  uint64_t  res ;
+  res=expr(args,success);
+   if( (*success)== false)
+ {
+   //解析失败
+   printf("expr is invalid ");
+  return 0 ;
+ }
+ //设置新监视点
+new_wp(args,res);
 
 return 0 ;
 }
+
+
 static struct {
   const char *name;
   const char *description;

@@ -345,7 +345,7 @@ uint64_t  regex_eval(int p, int q){
 }
 
 
-word_t expr(char *e, bool *success) {
+uint64_t  expr(char *e, bool *success) {
   if (!make_token(e)) {
     *success = false;
   printf("expr conv is not success!!");
@@ -365,5 +365,5 @@ for (i = 0; i < nr_token; i ++) {
   /* TODO: Insert codes to evaluate the expression. */
    printf("\n \n res is %ld \n",regex_eval(0,nr_token-1) )   ;
 
-  return 0;
+  return regex_eval(0,nr_token-1);
 }
