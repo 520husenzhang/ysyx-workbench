@@ -206,7 +206,7 @@ int dominant_operator(int p , int q){
 
         else if(tokens[i].type == TK_NUM) continue;  //数字跳过    2.数字
 
-        else if(pir(tokens[i].type ) > pr){            //运算符 
+        else if(pir(tokens[i].type ) >= pr){            //运算符 
             pr = pir(tokens[i].type);
             dom = i;  //定位主操作符
             printf("1 PR is %d\n",pr);     
