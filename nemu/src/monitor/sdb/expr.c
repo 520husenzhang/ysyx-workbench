@@ -336,6 +336,7 @@ uint64_t  regex_eval(int p, int q){
                    assert(0);}
                 else 
                   {return val1 / val2; break;}
+      case TK_EQ:return  (val1 ==val2);break ; 
       default: return 0;assert(0);
        }
     
