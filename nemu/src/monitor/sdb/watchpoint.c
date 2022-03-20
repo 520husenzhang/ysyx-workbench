@@ -7,7 +7,8 @@
  //最大32个点
 static WP wp_pool[NR_WP] = {};
 
-
+ //head用于组织使用中的监视点结构, free_用于组织空闲的监视点结构,
+WP *head = NULL, *free_ = NULL;//  全局变量
 bool su=true;
 void init_wp_pool() {
   printf("init_wp_pool!!\n");

@@ -14,8 +14,7 @@ typedef struct watchpoint {
   bool   isused;  //被用了麻 
 
 } WP;
- //head用于组织使用中的监视点结构, free_用于组织空闲的监视点结构,
-WP *head = NULL, *free_ = NULL;//  全局变量
+
 
 uint64_t expr(char *e, bool *success);
 
@@ -25,12 +24,3 @@ void print_wp();
 
 
 #endif
-
-// /usr/bin/ld: /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/monitor/sdb/sdb.o:
-// /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: multiple definition of `free_'; 
-// /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/cpu/cpu-exec.o:
-// /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: first defined here
-// /usr/bin/ld: /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/monitor/sdb/sdb.o:
-// /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: multiple definition of `head'; 
-// /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/cpu/cpu-exec.o:
-// /home/tiger/ysyx-workbench/nemu/src/cpu/../monitor/sdb/sdb.h:18: first defined here
