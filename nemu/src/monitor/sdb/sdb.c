@@ -138,11 +138,11 @@ return 0 ;
 }
 //删除监视点   输入编号即可
 static int cmd_d(char *args){
- //int num ;
-  //sscanf (args,"%d",&num) ;
+ int num ;
+  sscanf (args,"%d",&num) ;
 
    //printf("fuck num is  %d",num);
-  free_wp(0); 
+  free_wp(num); 
 
   return 0  ;
 
