@@ -346,6 +346,7 @@ uint64_t  regex_eval(int p, int q){
 
 
 uint64_t  expr(char *e, bool *success) {
+   uint64_t  ress;
   if (!make_token(e)) {
     *success = false;
   printf("expr conv is not success!!");
@@ -361,9 +362,9 @@ for (i = 0; i < nr_token; i ++) {
     tokens[i].type = TK_DEREF;     //乘法替换为 指针索引！！
   }
 }
-
+   ress= regex_eval(0,nr_token-1);  
   /* TODO: Insert codes to evaluate the expression. */
-   printf("\n \n res is %ld \n",regex_eval(0,nr_token-1) )   ;
+   printf("\n \n res is %ld \n",ress )   ;
 
-  return regex_eval(0,nr_token-1);
+  return ress;
 }
