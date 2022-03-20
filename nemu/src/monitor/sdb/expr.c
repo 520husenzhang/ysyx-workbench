@@ -312,7 +312,7 @@ uint64_t  regex_eval(int p, int q){
   }
   else {
 
-    if( (tokens[p].type==TK_DEREF)&&(p==q-1) )  //判定是不是 指针解开索引  
+    if( (tokens[p].type==TK_DEREF) )  //判定是不是 指针解开索引  
     { 
 
 
