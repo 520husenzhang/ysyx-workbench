@@ -59,14 +59,13 @@ WP *new_wp(char *str , uint64_t value){
    return new;
 } 
 //释放号码为监视点
-void free_wp(WP *wp ){
+void free_wp(int no  ){
    if(su == true){       //判断是否完成初始化  没有就初始化
        init_wp_pool();
   
    }
-  int  no;
-  no=wp->NO; 
-   WP *p = head;
+ 
+   WP *p = head;  //!!!!!!!!!
    if(head == NULL){                                                                                                                                          
        printf("监视点列表为空。 \n");
        assert(0);
