@@ -21,10 +21,7 @@ static bool g_print_step = false;
 void device_update();
 
 static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
-   bool  succ=false; 
-  bool *suc=&succ;
-    uint64_t temp;  
-  WP *P=head  ;   
+
 
 #ifdef CONFIG_ITRACE_COND
   if (ITRACE_COND) { log_write("%s\n", _this->logbuf); }
@@ -34,7 +31,10 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
   if(CONFIG_WATCHPOINT){  //检查监视点
  
   //遍历使用的链表  
-
+   bool  succ=false; 
+  bool *suc=&succ;
+    uint64_t temp;  
+  WP *P=head  ;   
 
  while(P!=NULL){
          temp= expr(P->expr,suc);  
