@@ -136,7 +136,18 @@ new_wp(args,res);
 
 return 0 ;
 }
+//删除监视点   输入编号即可
+static int cmd_d(char *args){
+ int num ;
+  sscanf (args,"%d",&num) ;
 
+
+  free_wp(num); 
+
+  return 0  ;
+
+
+}
 
 static struct {
   const char *name;
@@ -151,6 +162,7 @@ static struct {
   { "x", "scan ram", cmd_x },    //  扫描内存
   {"p","expr conv to value",cmd_p  } ,  //表达式求职   
   {"w","watch point",cmd_w  } ,  //监视点
+  {"d","delete the watch point ",cmd_d},   //删除监视点 
   /* TODO: Add more commands */
 
 };

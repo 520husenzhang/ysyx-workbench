@@ -18,18 +18,6 @@ uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
 static bool g_print_step = false;
 
-//
-// extern  typedef struct watchpoint {
-//   int NO;
-//   struct watchpoint *next;
-
-//   /* TODO: Add more members if necessary */
-//   uint64_t result ;  //表达结果
-//   char   expr[64] ;   //表达式
-//   bool   isused;  //被用了麻 
-
-// } WP;
-
 
 extern  WP *head ;
 extern   WP  *free_ ;//  全局变量
