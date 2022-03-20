@@ -6,10 +6,11 @@
 
  //最大32个点
 static WP wp_pool[NR_WP] = {};
-static WP *head = NULL, *free_ = NULL;
- //head用于组织使用中的监视点结构, free_用于组织空闲的监视点结构,
+
+
 bool su=true;
 void init_wp_pool() {
+  printf("init_wp_pool!!\n");
   int i;
   for (i = 0; i < NR_WP; i ++) {
     wp_pool[i].NO = i;
@@ -58,6 +59,10 @@ WP *new_wp(char *str , uint64_t value){
 } 
 //释放号码为监视点
 void free_wp(WP *wp ){
+   if(su == true){       //判断是否完成初始化  没有就初始化
+       init_wp_pool();
+  
+   }
   int  no;
   no=wp->NO; 
    WP *p = head;
@@ -102,6 +107,12 @@ void free_wp(WP *wp ){
 }
  //打印全部监视点
 void print_wp(){
+     if(su == true){       //判断是否完成初始化  没有就初始化
+       init_wp_pool();
+  
+   }
+
+
     WP *p = head;
     if(p ==NULL){
         printf("监视点为空！\n");
