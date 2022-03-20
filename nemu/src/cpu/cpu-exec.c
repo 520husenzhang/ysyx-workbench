@@ -45,38 +45,35 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 #endif
   if (g_print_step) { IFDEF(CONFIG_ITRACE, puts(_this->logbuf)); }
   IFDEF(CONFIG_DIFFTEST, difftest_step(_this->pc, dnpc));
-  if(CONFIG_WATCHPOINT){  //检查监视点
+//   if(CONFIG_WATCHPOINT){  //检查监视点
  
-  //遍历使用的链表  
-   bool  succ=false; 
-  bool *suc=&succ;
-    uint64_t temp;  
-  WP *P=head  ;   
+//   //遍历使用的链表  
+//    bool  succ=false; 
+//   bool *suc=&succ;
+//     uint64_t temp;  
+//   WP *P=head  ;   
 
- while(P!=NULL){
-         temp= expr(P->expr,suc);  
-  if( (*suc)== false)
-  {
-   //解析失败
-   printf("expr is invalid ");
-    assert (0) ;
-  }
-    //如果表达式发生了改变
-    if(temp!=P->result  )    
-    {    
-     nemu_state.state= NEMU_STOP; 
-     printf("watch point %d changed\n",P->NO );
-     printf("old value =%lx \n",P->result  );
-     printf("new value =%lx \n",temp);
-     P->result=temp;
+//  while(P!=NULL){
+//          temp= expr(P->expr,suc);  
+//   if( (*suc)== false)
+//   {
+//    //解析失败
+//    printf("expr is invalid ");
+//     assert (0) ;
+//   }
+//     //如果表达式发生了改变
+//     if(temp!=P->result  )    
+//     {    
+//      nemu_state.state= NEMU_STOP; 
+//      printf("watch point %d changed\n",P->NO );
+//      printf("old value =%lx \n",P->result  );
+//      printf("new value =%lx \n",temp);
+//      P->result=temp;
 
-     }                    
-       
-    
-    P=P->next;
-  }
-
- }
+//      }                    
+//     P=P->next;
+//   }
+//  }
   
 }
 
