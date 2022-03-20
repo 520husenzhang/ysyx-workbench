@@ -2,8 +2,9 @@
 #include <cpu/decode.h>
 #include <cpu/difftest.h>
 #include <locale.h>
-#include "/home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h"
-
+// #include "sdb.h"
+//#include "/home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h"
+#include "../monitor/sdb/sdb.h"
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
  * This is useful when you use the `si' command.
@@ -18,7 +19,23 @@ uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
 static bool g_print_step = false;
 
-void device_update();
+//
+// extern  typedef struct watchpoint {
+//   int NO;
+//   struct watchpoint *next;
+
+//   /* TODO: Add more members if necessary */
+//   uint64_t result ;  //表达结果
+//   char   expr[64] ;   //表达式
+//   bool   isused;  //被用了麻 
+
+// } WP;
+// extern  WP *head ;
+// extern   *free_ ;//  全局变量
+
+
+
+void  device_update();
 
 static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 
