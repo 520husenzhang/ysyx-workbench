@@ -30,3 +30,7 @@ void print_wp();
 // /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: multiple definition of `free_'; 
 // /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/cpu/cpu-exec.o:
 // /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: first defined here
+// /usr/bin/ld: /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/monitor/sdb/sdb.o:
+// /home/tiger/ysyx-workbench/nemu/src/monitor/sdb/sdb.h:18: multiple definition of `head'; 
+// /home/tiger/ysyx-workbench/nemu/build/obj-riscv64-nemu-interpreter/src/cpu/cpu-exec.o:
+// /home/tiger/ysyx-workbench/nemu/src/cpu/../monitor/sdb/sdb.h:18: first defined here
