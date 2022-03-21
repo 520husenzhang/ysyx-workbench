@@ -70,6 +70,11 @@ static int cmd_info(char *args){
    print_wp();
 
    }
+   else 
+     {
+     printf("enter correct word!!");
+
+     }
 
 
 return 0;
