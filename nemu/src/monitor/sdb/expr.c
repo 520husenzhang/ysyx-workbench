@@ -15,6 +15,7 @@ enum {
   TK_DEREF,  //指针索引
   TK_REG ,// reg
   TK_HEX,  //HEX
+  TK_NEG,  //负号
   /* TODO: Add more token types */
 };
   //匹配规则 
@@ -55,6 +56,7 @@ static  int pir (int type){
     case TK_BRA_L: Priority=1;        break;
     case TK_BRA_R:  Priority=1;      break;
     case TK_DEREF:  Priority=2;       break  ;  //指针运算符
+    case TK_NEG:    Priority=2;       break  ;  // 负号
     default:    Priority=1;   break;
     }
 
@@ -320,6 +322,14 @@ uint64_t  regex_eval(int p, int q){
            
     
     }
+       if( (tokens[p].type==TK_NEG) )  //判定是不是 指针解开索引  
+    { 
+
+
+        return (-regex_eval(p+1,q) );
+           
+    
+    }
     
     OP = dominant_operator( p , q) ;      //返回主操作符位置
     val1 = regex_eval(p, OP - 1);
@@ -362,6 +372,18 @@ for (i = 0; i < nr_token; i ++) {
   {
     tokens[i].type = TK_DEREF;     //乘法替换为 指针索引！！
   }
+}
+
+  //找到负号
+for (i = 0; i < nr_token; i ++) {
+  if(tokens[i].type == '-'&&((i == 0)||  (tokens[i - 1].type == TK_BRA_L)    ) )
+  {
+
+   tokens[i].type = TK_NEG  ; 
+
+  }
+
+
 }
    ress= regex_eval(0,nr_token-1);  
   /* TODO: Insert codes to evaluate the expression. */
