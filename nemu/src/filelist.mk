@@ -1,4 +1,4 @@
-SRCS-y += src/nemu-main.c
+SRCS-y += src/nemu-main.c # 根据menuconfig的配置 来维护哪些文件 参与编译
 DIRS-y += src/cpu src/monitor src/utils
 DIRS-$(CONFIG_MODE_SYSTEM) += src/memory
 DIRS-BLACKLIST-$(CONFIG_TARGET_AM) += src/monitor/sdb

@@ -3,6 +3,7 @@
 #include <cpu/difftest.h>
 #include <locale.h>
 
+#include "../monitor/sdb/sdb.h"
 /* The assembly code of instructions executed is only output to the screen
  * when the number of instructions executed is less than this value.
  * This is useful when you use the `si' command.
@@ -10,20 +11,65 @@
  */
 #define MAX_INST_TO_PRINT 10
 
+#define  CONFIG_WATCHPOINT  1
+
 CPU_state cpu = {};
 uint64_t g_nr_guest_inst = 0;
 static uint64_t g_timer = 0; // unit: us
 static bool g_print_step = false;
 
-void device_update();
+
+extern  WP *head ;
+extern   WP  *free_ ;//  全局变量
+
+
+
+void  device_update();
 
 static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
+
+
 #ifdef CONFIG_ITRACE_COND
   if (ITRACE_COND) { log_write("%s\n", _this->logbuf); }
 #endif
   if (g_print_step) { IFDEF(CONFIG_ITRACE, puts(_this->logbuf)); }
   IFDEF(CONFIG_DIFFTEST, difftest_step(_this->pc, dnpc));
+  if(CONFIG_WATCHPOINT){  //检查监视点
+ 
+  //遍历使用的链表  
+   bool  succ=false; 
+  bool *suc=&succ;
+    uint64_t temp;  
+  WP *P=head  ;   
+
+ while(P!=NULL){
+         temp= expr(P->expr,suc);  
+  if( (*suc)== false)
+  {
+   //解析失败
+   printf("expr is invalid ");
+    assert (0) ;
+  }
+    //如果表达式发生了改变
+    if(temp!=P->result  )    
+    {    
+     nemu_state.state= NEMU_STOP; 
+     printf("watch point %d changed\n",P->NO );
+     printf("old value =%lx \n",P->result  );
+     printf("new value =%lx \n",temp);
+     P->result=temp;
+
+     }                    
+    P=P->next;
+  }
+ }
+  
 }
+
+
+
+
+
 
 static void exec_once(Decode *s, vaddr_t pc) {
   s->pc = pc;
@@ -57,7 +103,7 @@ static void execute(uint64_t n) {
   for (;n > 0; n --) {
     exec_once(&s, cpu.pc);
     g_nr_guest_inst ++;
-    trace_and_difftest(&s, cpu.pc);
+    trace_and_difftest(&s, cpu.pc);   //调用 
     if (nemu_state.state != NEMU_RUNNING) break;
     IFDEF(CONFIG_DEVICE, device_update());
   }
