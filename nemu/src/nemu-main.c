@@ -13,9 +13,8 @@ int main(int argc, char *argv[]) {
   init_monitor(argc, argv);
 #endif
 
-  /* Start engine.    不断轮寻 调用sdb */
+  /* Start engine. */
   engine_start();
-
 
   return is_exit_status_bad();
 }
