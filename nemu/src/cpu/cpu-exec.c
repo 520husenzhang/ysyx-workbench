@@ -70,7 +70,7 @@ static void trace_and_difftest(Decode *_this, vaddr_t dnpc) {
 
 
 
-
+//cpu 执行一个指令
 static void exec_once(Decode *s, vaddr_t pc) {
   s->pc = pc;
   s->snpc = pc;
