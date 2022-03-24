@@ -38,7 +38,7 @@ static void decode_operand(Decode *s, word_t *dest, word_t *src1, word_t *src2, 
     case TYPE_U: src1I(immU(i)); break;
     case TYPE_S: destI(immS(i)); src1R(rs1); src2R(rs2); break;
 
-    case TYPE_J: src1I(immJ(i)) ; break;  //mm[20|10:1|11|19:12]  rd  opcode 
+    case TYPE_J: src1I(immJ(i)) ;  printf("src1 is %ld",(*src1)); break;  //mm[20|10:1|11|19:12]  rd  opcode 
     case TYPE_R: src1R(rs1); src2R(rs2);  break;
     case TYPE_B: src1R(rs1); src2R(rs2);  destI(immB(i));     break;                      //有条件跳转
 
