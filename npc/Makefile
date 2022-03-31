@@ -24,8 +24,12 @@ VERILATOR_FLAGS += --trace
 # Add this trace to get a backtrace in gdb
 #VERILATOR_FLAGS += --gdbbt
 VERILATOR_FLAGS += --build
-# Input files for Verilator
-VERILATOR_INPUT =     ./vsrc/top.v    ./csrc/sim.cpp
+
+# Input files for Verilator    包括 c 与  v
+VERILATOR_INPUT +=     ./vsrc/ALU.v   ./vsrc/ALU_MEM.v   ./vsrc/defines.v   ./vsrc/ID.v    ./vsrc/ID_ALU.v    ./vsrc/IF.v    
+VERILATOR_INPUT +=     ./vsrc/IF_ID.v    ./vsrc/MEM.v    ./vsrc/MEM_WB.v   ./vsrc/REG_files.v    ./vsrc/risc_v.v  ./vsrc/ROM.v  
+
+VERILATOR_INPUT +=  ./csrc/sim.cpp
 #VERILATOR_INPUT =     top.v    sim.cpp
 all:
 	@echo "Write this Makefile by your self."
