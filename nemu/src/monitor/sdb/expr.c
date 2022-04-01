@@ -152,6 +152,7 @@ static bool make_token(char *e) {
   int position = 0;
   int i;
   int cnt; 
+  long int  RES ;
     bool suc=true;
   bool *success=  &suc;
   long int hex2int;
@@ -216,11 +217,12 @@ static bool make_token(char *e) {
 
 
   }
-  
+   //sscanf(tokens[p].str,"%ld",&RES) ;
   
   for(cnt=0;cnt<nr_token;cnt++)
   {
-  printf("rule %d  is  type=%d ,  str=%s  \n ",cnt ,tokens[cnt].type,tokens[cnt].str); 
+    sscanf(tokens[cnt].str,"%ld",&RES) ;
+  printf("rule %d  is  type=%d ,  str=%lx  \n ",cnt ,tokens[cnt].type, RES); 
   }
   printf("\n \n");
   return true;
