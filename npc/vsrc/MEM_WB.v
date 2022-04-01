@@ -4,7 +4,7 @@
 //
 `include "defines.v"
 
-module mem_wb(
+module MEM_WB(
 
 	input	wire										clk,
 	input wire										rst_n,

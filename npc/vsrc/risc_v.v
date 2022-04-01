@@ -167,7 +167,7 @@ ALU inst_ALU(
 
   //流水线
 
-alu_mem inst_alu_mem(
+ALU_MEM inst_ALU_MEM(
     .clk       ( clk       ),
     .rst_n     ( rst_n     ),
 
@@ -183,7 +183,7 @@ alu_mem inst_alu_mem(
 
 
 //访存阶段   
- mem inst_mem(
+ MEM inst_MEM(
     .rst_n   ( rst_n   ),
 
     .wd_i    ( wd_alu_mem_o    ),
@@ -199,7 +199,7 @@ alu_mem inst_alu_mem(
  
 
 //访存回写
-mem_wb  inst_mem_wb(
+MEM_WB  inst_MEM_WB(
 	.clk(clk),
 	.rst_n(rst_n),
 

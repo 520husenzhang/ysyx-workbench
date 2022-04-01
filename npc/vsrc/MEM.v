@@ -5,7 +5,7 @@
 
 `include "defines.v"
 
-module mem(
+module MEM(
 
 	input wire										rst_n,
 	

@@ -4,7 +4,7 @@
 
 `include "defines.v"
 
-module alu_mem (
+module ALU_MEM (
     input wire										clk,
 	input wire										rst_n,
 	
