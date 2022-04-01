@@ -72,15 +72,15 @@ module ID(
   			       reg_we_o = `WriteEnable;
                reg_waddr_o = rd;
                reg1_raddr_o=rs1;
-               reg2_raddr_o =`ZeroReg;
+               reg2_raddr_o =`NOPRegAddr;
                reg1_o_op=reg1_rdata_i   ;  
                reg2_o_op={{52{inst_i[31]}}, inst_i[31:20]}   ;  
                end 
   		     default:begin    
              reg_we_o = `WriteDisable;
-             reg_waddr_o = `ZeroReg;
-             reg1_raddr_o = `ZeroReg;
-             reg2_raddr_o = `ZeroReg;
+             reg_waddr_o = `NOPRegAddr;
+             reg1_raddr_o = `NOPRegAddr;
+             reg2_raddr_o = `NOPRegAddr;
   		     end
   			endcase
   
@@ -88,9 +88,9 @@ module ID(
   		 end
   		default:			begin  
          reg_we_o = `WriteDisable;
-         reg_waddr_o = `ZeroReg;
-         reg1_raddr_o = `ZeroReg;
-         reg2_raddr_o = `ZeroReg;
+         reg_waddr_o = `NOPRegAddr;
+         reg1_raddr_o = `NOPRegAddr;
+         reg2_raddr_o = `NOPRegAddr;
 
 
   		  end
@@ -102,11 +102,6 @@ module ID(
   	end
 
   end
-
-
-
-
-
 
 
 endmodule 

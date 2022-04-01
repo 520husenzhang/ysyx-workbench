@@ -18,7 +18,7 @@ module IF_ID(
 always @( posedge clk) begin
      if(rst_n==`RstDisable)     begin
         id_pc <= `ZeroWord;
-        id_inst <= `ZeroWord;   //
+        id_inst <= `NO_Inst;   //
      end else begin
       id_pc <= if_pc;
       id_inst <= if_inst;

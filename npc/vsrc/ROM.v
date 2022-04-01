@@ -8,7 +8,7 @@
 
 module 	 ROM(
 	input wire                    ce,
-	input wire[5:0]			addr,
+	input wire[`InstAddrBus]			addr,
 	output reg[31:0]					inst
 	);
   //64 inst

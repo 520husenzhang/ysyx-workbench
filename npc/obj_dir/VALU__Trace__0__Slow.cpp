@@ -68,6 +68,16 @@ VL_ATTR_COLD void VALU___024root__trace_init_sub__TOP__0(VALU___024root* vlSelf,
     tracep->declBus(c+44,"rd", false,-1, 4,0);
     tracep->declQuad(c+45,"op1_add_op2_res", false,-1, 63,0);
     tracep->popNamePrefix(1);
+    tracep->pushNamePrefix("inst_ALU_MEM ");
+    tracep->declBit(c+119,"clk", false,-1);
+    tracep->declBit(c+120,"rst_n", false,-1);
+    tracep->declBus(c+11,"alu_wd", false,-1, 4,0);
+    tracep->declBit(c+31,"alu_wreg", false,-1);
+    tracep->declQuad(c+12,"alu_wdata", false,-1, 63,0);
+    tracep->declBus(c+33,"mem_wd", false,-1, 4,0);
+    tracep->declBit(c+34,"mem_wreg", false,-1);
+    tracep->declQuad(c+35,"mem_wdata", false,-1, 63,0);
+    tracep->popNamePrefix(1);
     tracep->pushNamePrefix("inst_ID ");
     tracep->declBit(c+120,"rst_n", false,-1);
     tracep->declBus(c+23,"inst_i", false,-1, 31,0);
@@ -127,6 +137,25 @@ VL_ATTR_COLD void VALU___024root__trace_init_sub__TOP__0(VALU___024root* vlSelf,
     tracep->declQuad(c+21,"id_pc", false,-1, 63,0);
     tracep->declBus(c+23,"id_inst", false,-1, 31,0);
     tracep->popNamePrefix(1);
+    tracep->pushNamePrefix("inst_MEM ");
+    tracep->declBit(c+120,"rst_n", false,-1);
+    tracep->declBus(c+33,"wd_i", false,-1, 4,0);
+    tracep->declBit(c+34,"wreg_i", false,-1);
+    tracep->declQuad(c+35,"wdata_i", false,-1, 63,0);
+    tracep->declBus(c+14,"wd_o", false,-1, 4,0);
+    tracep->declBit(c+15,"wreg_o", false,-1);
+    tracep->declQuad(c+16,"wdata_o", false,-1, 63,0);
+    tracep->popNamePrefix(1);
+    tracep->pushNamePrefix("inst_MEM_WB ");
+    tracep->declBit(c+119,"clk", false,-1);
+    tracep->declBit(c+120,"rst_n", false,-1);
+    tracep->declBus(c+14,"mem_wd", false,-1, 4,0);
+    tracep->declBit(c+15,"mem_wreg", false,-1);
+    tracep->declQuad(c+16,"mem_wdata", false,-1, 63,0);
+    tracep->declBus(c+37,"wb_wd", false,-1, 4,0);
+    tracep->declBit(c+38,"wb_wreg", false,-1);
+    tracep->declQuad(c+39,"wb_wdata", false,-1, 63,0);
+    tracep->popNamePrefix(1);
     tracep->pushNamePrefix("inst_REG_files ");
     tracep->declBit(c+119,"clk", false,-1);
     tracep->declBit(c+120,"rst_n", false,-1);
@@ -142,35 +171,6 @@ VL_ATTR_COLD void VALU___024root__trace_init_sub__TOP__0(VALU___024root* vlSelf,
     for (int i = 0; i < 32; ++i) {
         tracep->declQuad(c+55+i*2,"regs", true,(i+0), 63,0);
     }
-    tracep->popNamePrefix(1);
-    tracep->pushNamePrefix("inst_alu_mem ");
-    tracep->declBit(c+119,"clk", false,-1);
-    tracep->declBit(c+120,"rst_n", false,-1);
-    tracep->declBus(c+11,"alu_wd", false,-1, 4,0);
-    tracep->declBit(c+31,"alu_wreg", false,-1);
-    tracep->declQuad(c+12,"alu_wdata", false,-1, 63,0);
-    tracep->declBus(c+33,"mem_wd", false,-1, 4,0);
-    tracep->declBit(c+34,"mem_wreg", false,-1);
-    tracep->declQuad(c+35,"mem_wdata", false,-1, 63,0);
-    tracep->popNamePrefix(1);
-    tracep->pushNamePrefix("inst_mem ");
-    tracep->declBit(c+120,"rst_n", false,-1);
-    tracep->declBus(c+33,"wd_i", false,-1, 4,0);
-    tracep->declBit(c+34,"wreg_i", false,-1);
-    tracep->declQuad(c+35,"wdata_i", false,-1, 63,0);
-    tracep->declBus(c+14,"wd_o", false,-1, 4,0);
-    tracep->declBit(c+15,"wreg_o", false,-1);
-    tracep->declQuad(c+16,"wdata_o", false,-1, 63,0);
-    tracep->popNamePrefix(1);
-    tracep->pushNamePrefix("inst_mem_wb ");
-    tracep->declBit(c+119,"clk", false,-1);
-    tracep->declBit(c+120,"rst_n", false,-1);
-    tracep->declBus(c+14,"mem_wd", false,-1, 4,0);
-    tracep->declBit(c+15,"mem_wreg", false,-1);
-    tracep->declQuad(c+16,"mem_wdata", false,-1, 63,0);
-    tracep->declBus(c+37,"wb_wd", false,-1, 4,0);
-    tracep->declBit(c+38,"wb_wreg", false,-1);
-    tracep->declQuad(c+39,"wb_wdata", false,-1, 63,0);
     tracep->popNamePrefix(2);
 }
 

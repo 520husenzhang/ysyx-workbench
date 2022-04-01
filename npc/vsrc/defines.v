@@ -159,7 +159,7 @@
 //指令存储器相关
 //rom
 `define RomNum  'd64  // rom depth(how many words)
-`define NO_InstAddr  6'd0 
+`define NO_InstAddr  64'd0 
 //ram
 `define MemNum 'd4096  //ram  memory depth(how many words)
 `define MemBus 31:0
@@ -168,6 +168,7 @@
 //指令长度
 `define InstBus 31:0
 `define InstAddrBus 63:0
+//`define  ZeroAddr   64'd0 
 //空指令
 `define NO_Inst   32'd0 
 //alu_op
@@ -189,6 +190,7 @@
 `define RegNumLog2 5
 `define NOPRegAddr 5'd0
 `define ZeroReg    64'd0
+
 //除法div
 
 //总线
