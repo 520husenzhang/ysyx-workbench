@@ -40,7 +40,7 @@ static void decode_operand(Decode *s, word_t *dest, word_t *src1, word_t *src2, 
 
     case TYPE_J: src1I(immJ(i)) ;break;  //mm[20|10:1|11|19:12]  rd  opcode 
     case TYPE_R: src1R(rs1); src2R(rs2);  break;
-    case TYPE_B: src1R(rs1); src2R(rs2);  destI(immB(i));    printf("imm is %ld", (*dest)  );   break;                      //有条件跳转
+    case TYPE_B: src1R(rs1); src2R(rs2);  destI(immB(i));    printf("imm is %ld\n", (*dest)  );   break;                      //有条件跳转
 
   }
 }
