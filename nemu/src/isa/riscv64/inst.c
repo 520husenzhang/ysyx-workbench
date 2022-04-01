@@ -24,7 +24,7 @@ static word_t immI(uint32_t i) { return SEXT(BITS(i, 31, 20), 12); }
 static word_t immU(uint32_t i) { return SEXT(BITS(i, 31, 12), 20) << 12; }
 static word_t immS(uint32_t i) { return (SEXT(BITS(i, 31, 25), 7) << 5) | BITS(i, 11, 7); }
 static word_t immJ(uint32_t i) { return  ( (SEXT(BITS(i,31,31),1)<<20)|(BITS(i,30,21)<<1)|(BITS(i,20,20)<<11)|(BITS(i,19,12)<<12) )&(-1); }  //mm[20|10:1|11|19:12]  rd  opcode
-static word_t immB(uint32_t i) { return  ((SEXT(BITS(i,31,31),1)<<12)|(BITS(i,30,25)<<5)|(BITS(i,11,7)<<1)|(BITS(i,7,7)<<11)); } //imm[12|10:5]  rs2  rs1  funct3  imm[4:1|11]  opcode
+static word_t immB(uint32_t i) { return  ((SEXT(BITS(i,31,31),1)<<12)|(BITS(i,30,25)<<5)|(BITS(i,11,8)<<1)|(BITS(i,7,7)<<11)); } //imm[12|10:5]  rs2  rs1  funct3  imm[4:1|11]  opcode
 
 
 static void decode_operand(Decode *s, word_t *dest, word_t *src1, word_t *src2, int type) {
@@ -64,13 +64,13 @@ static int decode_exec(Decode *s) {
   INSTPAT("??????? ????? ????? 000 ????? 01110 11", addw   ,I, (SEXT(BITS((BITS(src1,31,0)+ BITS(src2,31,0)),31,0),32)) );  //addw  64 位专享 
   INSTPAT("0100000 ????? ????? 000 ????? 01100 11", sub    ,R, R(dest) = src1-src2);  ///与立即数相加  src2 是立即数
   INSTPAT("??????? ????? ????? 011 ????? 00100 11", sltiu  ,I,  R(dest) = ( (word_t)src1<(word_t)src2 ) );  ///与立即数相加  src2 是立即数
+  INSTPAT("??????? ????? ????? 000 ????? 11000 11", beq ,  B, s->dnpc= (src1==src2)? (s->pc+((dest )<<1)):s->pc);  ///与立即数相加  src2 是立即数                            
+                                                         
                               
-
-
   INSTPAT("??????? ????? ????? ??? ????? 11011 11", jal    ,J, R(dest)=s->pc +4,  s->dnpc=s->pc+src1);  ///有条件跳转    src2 是立即数 jal  ！！！！
   INSTPAT("??????? ????? ????? 000 ????? 11001 11", jalr   ,I, R(dest)=s->pc +4;s->dnpc=((src2+src1)&(-1)) );       ///有条件跳转    src2 是立即数 jal  ！！！！     
   INSTPAT("??????? ????? ????? 010 ????? 00000 11", lw   ,I, R(dest) = Mr(src1 + src2, 8) ); //lw
-                                                          
+                                                               
      
   INSTPAT("0000000 00001 00000 000 00000 11100 11", ebreak , N, NEMUTRAP(s->pc, R(10))); // R(10) is $a0
   INSTPAT("??????? ????? ????? ??? ????? ????? ??", inv    , N, INV(s->pc));
