@@ -11,7 +11,7 @@ module risc_v (
   
 	);
 
-wire [`InstBus] inst_wire;  
+
 wire [`RegAddrBus]   reg1_rdata_addr;
 wire [`RegAddrBus]  reg2_rdata_addr  ;
 
@@ -65,17 +65,17 @@ wire    [`RegBus] wb_wdata_i;
   //取指
 IF inst_IF (.clk(clk),
             .rst_n(rst_n), 
-            .inst_o(inst_wire),
+            .inst_o(if_inst),
 			.if_pc( if_pc  )
             );
 //流水线
 IF_ID inst_IF_ID(
 	.clk     (clk     ),
 	.rst_n   (rst_n   ),
-
+     //from if
 	.if_pc   (if_pc   ),
-	.if_inst (inst_wire ),
-
+	.if_inst (if_inst ),
+    // to id
 	.id_pc   (id_pc   ),
 	.id_inst (id_inst )
 );
