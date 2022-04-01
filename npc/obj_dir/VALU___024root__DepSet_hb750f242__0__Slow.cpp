@@ -140,7 +140,6 @@ VL_ATTR_COLD void VALU___024root___ctor_var_reset(VALU___024root* vlSelf) {
     vlSelf->risc_v__DOT__reg1_rdata_addr = VL_RAND_RESET_I(5);
     vlSelf->risc_v__DOT__re1 = VL_RAND_RESET_I(1);
     vlSelf->risc_v__DOT__re2 = VL_RAND_RESET_I(1);
-    vlSelf->risc_v__DOT__if_inst = VL_RAND_RESET_I(32);
     vlSelf->risc_v__DOT__id_pc = VL_RAND_RESET_Q(64);
     vlSelf->risc_v__DOT__id_inst = VL_RAND_RESET_I(32);
     vlSelf->risc_v__DOT__inst_id = VL_RAND_RESET_I(32);

@@ -38,11 +38,11 @@ void VALU___024root__trace_chg_sub_0(VALU___024root* vlSelf, VerilatedVcd* trace
         tracep->chgQData(oldp+15,(vlSelf->risc_v__DOT__wdata_mem_wb_i),64);
     }
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[2U])) {
-        tracep->chgIData(oldp+17,(((IData)(vlSelf->risc_v__DOT__inst_IF__DOT__rom_ce)
+        tracep->chgQData(oldp+17,(vlSelf->risc_v__DOT__inst_IF__DOT__PC),64);
+        tracep->chgIData(oldp+19,(((IData)(vlSelf->risc_v__DOT__inst_IF__DOT__rom_ce)
                                     ? vlSelf->risc_v__DOT__inst_IF__DOT__inst_ROM__DOT__rom
                                    [(0x3fU & (IData)(vlSelf->risc_v__DOT__inst_IF__DOT__PC))]
                                     : 0U)),32);
-        tracep->chgQData(oldp+18,(vlSelf->risc_v__DOT__inst_IF__DOT__PC),64);
         tracep->chgQData(oldp+20,(vlSelf->risc_v__DOT__id_pc),64);
         tracep->chgIData(oldp+22,(vlSelf->risc_v__DOT__id_inst),32);
         tracep->chgIData(oldp+23,(vlSelf->risc_v__DOT__inst_alu),32);

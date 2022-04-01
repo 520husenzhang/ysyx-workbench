@@ -28,7 +28,6 @@ VL_MODULE(VALU___024root) {
     CData/*0:0*/ risc_v__DOT__wb_wreg_i;
     CData/*0:0*/ risc_v__DOT__inst_IF__DOT__rom_ce;
     CData/*0:0*/ __Vclklast__TOP__clk;
-    IData/*31:0*/ risc_v__DOT__if_inst;
     IData/*31:0*/ risc_v__DOT__id_inst;
     IData/*31:0*/ risc_v__DOT__inst_id;
     IData/*31:0*/ risc_v__DOT__inst_alu;
