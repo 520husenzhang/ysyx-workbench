@@ -29,20 +29,19 @@ module   ALU(
 
 
     );
+
     
-wire[6:0] opcode;
-wire[2:0] funct3;
-wire[6:0] funct7;
-wire [4:0]rd  ;
+    wire[6:0] opcode = inst_i[6:0];
+    wire[2:0] funct3 = inst_i[14:12];
+    wire[6:0] funct7 = inst_i[31:25];
+    wire[4:0] rd = inst_i[11:7];
+    wire[4:0] rs1 = inst_i[19:15];
+    wire[4:0] rs2 = inst_i[24:20];
+
 wire[`RegBus] op1_add_op2_res;
-
-
 assign op1_add_op2_res = reg1_i_op + reg2_i_op;
-assign opcode = inst_i[6:0];
-assign funct3 = inst_i[14:12];
-assign funct7 = inst_i[31:25];
 
-assign rd = inst_i[11:7];
+
 
 
 

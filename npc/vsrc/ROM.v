@@ -20,9 +20,9 @@ module 	 ROM(
 	
 	always @ (*) begin
 		if (ce == 1'b0) begin
-			inst <= 32'h0;
+			inst = 32'h0;
 	  end else begin
-		  inst <= rom[addr[5:0]];
+		  inst = rom[addr[5:0]];
 		end
 	end
 
