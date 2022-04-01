@@ -24,6 +24,8 @@ VERILATOR_FLAGS += --trace
 # Add this trace to get a backtrace in gdb
 #VERILATOR_FLAGS += --gdbbt
 VERILATOR_FLAGS += --build
+# 关闭 警告 unused  
+VERILATOR_FLAGS += -Wno-{warning-UNUSED}
 #包含的头文件
 VERILATOR_FLAGS += -I./vsrc
 # Input files for Verilator    包括 c 与  v
