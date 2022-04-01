@@ -1,0 +1,156 @@
+// Verilated -*- C++ -*-
+// DESCRIPTION: Verilator output: Tracing implementation internals
+#include "verilated_vcd_c.h"
+#include "VALU__Syms.h"
+
+
+void VALU___024root__trace_chg_sub_0(VALU___024root* vlSelf, VerilatedVcd* tracep);
+
+void VALU___024root__trace_chg_top_0(void* voidSelf, VerilatedVcd* tracep) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VALU___024root__trace_chg_top_0\n"); );
+    // Init
+    VALU___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<VALU___024root*>(voidSelf);
+    VALU__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    if (VL_UNLIKELY(!vlSymsp->__Vm_activity)) return;
+    // Body
+    VALU___024root__trace_chg_sub_0((&vlSymsp->TOP), tracep);
+}
+
+void VALU___024root__trace_chg_sub_0(VALU___024root* vlSelf, VerilatedVcd* tracep) {
+    if (false && vlSelf) {}  // Prevent unused
+    VALU__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VALU___024root__trace_chg_sub_0\n"); );
+    // Init
+    vluint32_t* const oldp VL_ATTR_UNUSED = tracep->oldp(vlSymsp->__Vm_baseCode + 1);
+    // Body
+    if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[1U])) {
+        tracep->chgCData(oldp+0,(vlSelf->risc_v__DOT__reg1_rdata_addr),5);
+        tracep->chgBit(oldp+1,(vlSelf->risc_v__DOT__re1));
+        tracep->chgBit(oldp+2,(vlSelf->risc_v__DOT__re2));
+        tracep->chgIData(oldp+3,(vlSelf->risc_v__DOT__inst_id),32);
+        tracep->chgQData(oldp+4,(vlSelf->risc_v__DOT__inst_addr_id),64);
+        tracep->chgQData(oldp+6,(vlSelf->risc_v__DOT__reg1_op_id),64);
+        tracep->chgQData(oldp+8,(vlSelf->risc_v__DOT__reg2_op_id),64);
+        tracep->chgCData(oldp+10,(vlSelf->risc_v__DOT__wd_alu_mem_i),5);
+        tracep->chgQData(oldp+11,(vlSelf->risc_v__DOT__wdata_alu_mem_i),64);
+        tracep->chgCData(oldp+13,(vlSelf->risc_v__DOT__wd_mem_wb_i),5);
+        tracep->chgBit(oldp+14,(vlSelf->risc_v__DOT__wreg_mem_wb_i));
+        tracep->chgQData(oldp+15,(vlSelf->risc_v__DOT__wdata_mem_wb_i),64);
+    }
+    if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[2U])) {
+        tracep->chgIData(oldp+17,(((IData)(vlSelf->risc_v__DOT__inst_IF__DOT__rom_ce)
+                                    ? vlSelf->risc_v__DOT__inst_IF__DOT__inst_ROM__DOT__rom
+                                   [(0x3fU & (IData)(vlSelf->risc_v__DOT__inst_IF__DOT__PC))]
+                                    : 0U)),32);
+        tracep->chgQData(oldp+18,(vlSelf->risc_v__DOT__inst_IF__DOT__PC),64);
+        tracep->chgQData(oldp+20,(vlSelf->risc_v__DOT__id_pc),64);
+        tracep->chgIData(oldp+22,(vlSelf->risc_v__DOT__id_inst),32);
+        tracep->chgIData(oldp+23,(vlSelf->risc_v__DOT__inst_alu),32);
+        tracep->chgQData(oldp+24,(vlSelf->risc_v__DOT__inst_addr_alu),64);
+        tracep->chgQData(oldp+26,(vlSelf->risc_v__DOT__reg1_op_alu),64);
+        tracep->chgQData(oldp+28,(vlSelf->risc_v__DOT__reg2_op_alu),64);
+        tracep->chgBit(oldp+30,(vlSelf->risc_v__DOT__reg_we_alu));
+        tracep->chgCData(oldp+31,(vlSelf->risc_v__DOT__reg_waddr_alu),5);
+        tracep->chgCData(oldp+32,(vlSelf->risc_v__DOT__wd_alu_mem_o),5);
+        tracep->chgBit(oldp+33,(vlSelf->risc_v__DOT__wreg_alu_mem_o));
+        tracep->chgQData(oldp+34,(vlSelf->risc_v__DOT__wdata_alu_mem_o),64);
+        tracep->chgCData(oldp+36,(vlSelf->risc_v__DOT__wb_wd_i),5);
+        tracep->chgBit(oldp+37,(vlSelf->risc_v__DOT__wb_wreg_i));
+        tracep->chgQData(oldp+38,(vlSelf->risc_v__DOT__wb_wdata_i),64);
+        tracep->chgCData(oldp+40,((0x7fU & vlSelf->risc_v__DOT__inst_alu)),7);
+        tracep->chgCData(oldp+41,((7U & (vlSelf->risc_v__DOT__inst_alu 
+                                         >> 0xcU))),3);
+        tracep->chgCData(oldp+42,((vlSelf->risc_v__DOT__inst_alu 
+                                   >> 0x19U)),7);
+        tracep->chgCData(oldp+43,((0x1fU & (vlSelf->risc_v__DOT__inst_alu 
+                                            >> 7U))),5);
+        tracep->chgQData(oldp+44,((vlSelf->risc_v__DOT__reg1_op_alu 
+                                   + vlSelf->risc_v__DOT__reg2_op_alu)),64);
+        tracep->chgCData(oldp+46,((0x7fU & vlSelf->risc_v__DOT__id_inst)),7);
+        tracep->chgCData(oldp+47,((7U & (vlSelf->risc_v__DOT__id_inst 
+                                         >> 0xcU))),3);
+        tracep->chgCData(oldp+48,((vlSelf->risc_v__DOT__id_inst 
+                                   >> 0x19U)),7);
+        tracep->chgCData(oldp+49,((0x1fU & (vlSelf->risc_v__DOT__id_inst 
+                                            >> 7U))),5);
+        tracep->chgCData(oldp+50,((0x1fU & (vlSelf->risc_v__DOT__id_inst 
+                                            >> 0xfU))),5);
+        tracep->chgCData(oldp+51,((0x1fU & (vlSelf->risc_v__DOT__id_inst 
+                                            >> 0x14U))),5);
+        tracep->chgBit(oldp+52,(vlSelf->risc_v__DOT__inst_IF__DOT__rom_ce));
+        tracep->chgCData(oldp+53,((0x3fU & (IData)(vlSelf->risc_v__DOT__inst_IF__DOT__PC))),6);
+        tracep->chgQData(oldp+54,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[0]),64);
+        tracep->chgQData(oldp+56,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[1]),64);
+        tracep->chgQData(oldp+58,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[2]),64);
+        tracep->chgQData(oldp+60,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[3]),64);
+        tracep->chgQData(oldp+62,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[4]),64);
+        tracep->chgQData(oldp+64,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[5]),64);
+        tracep->chgQData(oldp+66,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[6]),64);
+        tracep->chgQData(oldp+68,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[7]),64);
+        tracep->chgQData(oldp+70,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[8]),64);
+        tracep->chgQData(oldp+72,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[9]),64);
+        tracep->chgQData(oldp+74,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[10]),64);
+        tracep->chgQData(oldp+76,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[11]),64);
+        tracep->chgQData(oldp+78,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[12]),64);
+        tracep->chgQData(oldp+80,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[13]),64);
+        tracep->chgQData(oldp+82,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[14]),64);
+        tracep->chgQData(oldp+84,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[15]),64);
+        tracep->chgQData(oldp+86,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[16]),64);
+        tracep->chgQData(oldp+88,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[17]),64);
+        tracep->chgQData(oldp+90,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[18]),64);
+        tracep->chgQData(oldp+92,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[19]),64);
+        tracep->chgQData(oldp+94,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[20]),64);
+        tracep->chgQData(oldp+96,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[21]),64);
+        tracep->chgQData(oldp+98,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[22]),64);
+        tracep->chgQData(oldp+100,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[23]),64);
+        tracep->chgQData(oldp+102,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[24]),64);
+        tracep->chgQData(oldp+104,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[25]),64);
+        tracep->chgQData(oldp+106,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[26]),64);
+        tracep->chgQData(oldp+108,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[27]),64);
+        tracep->chgQData(oldp+110,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[28]),64);
+        tracep->chgQData(oldp+112,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[29]),64);
+        tracep->chgQData(oldp+114,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[30]),64);
+        tracep->chgQData(oldp+116,(vlSelf->risc_v__DOT__inst_REG_files__DOT__regs[31]),64);
+    }
+    tracep->chgBit(oldp+118,(vlSelf->clk));
+    tracep->chgBit(oldp+119,(vlSelf->rst_n));
+    tracep->chgQData(oldp+120,(((IData)(vlSelf->rst_n)
+                                 ? ((0U == (IData)(vlSelf->risc_v__DOT__reg1_rdata_addr))
+                                     ? 0ULL : (((((IData)(vlSelf->risc_v__DOT__reg1_rdata_addr) 
+                                                  == (IData)(vlSelf->risc_v__DOT__wb_wd_i)) 
+                                                 & (IData)(vlSelf->risc_v__DOT__wb_wreg_i)) 
+                                                & (IData)(vlSelf->risc_v__DOT__re1))
+                                                ? vlSelf->risc_v__DOT__wb_wdata_i
+                                                : ((IData)(vlSelf->risc_v__DOT__re1)
+                                                    ? 
+                                                   vlSelf->risc_v__DOT__inst_REG_files__DOT__regs
+                                                   [vlSelf->risc_v__DOT__reg1_rdata_addr]
+                                                    : 0ULL)))
+                                 : 0ULL)),64);
+    tracep->chgBit(oldp+122,(((IData)(vlSelf->rst_n) 
+                              & (IData)((0x13U == (0x707fU 
+                                                   & vlSelf->risc_v__DOT__id_inst))))));
+    tracep->chgCData(oldp+123,(((IData)(vlSelf->rst_n)
+                                 ? ((0x13U == (0x7fU 
+                                               & vlSelf->risc_v__DOT__id_inst))
+                                     ? ((0U == (7U 
+                                                & (vlSelf->risc_v__DOT__id_inst 
+                                                   >> 0xcU)))
+                                         ? (0x1fU & 
+                                            (vlSelf->risc_v__DOT__id_inst 
+                                             >> 7U))
+                                         : 0U) : 0U)
+                                 : 0U)),5);
+}
+
+void VALU___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VALU___024root__trace_cleanup\n"); );
+    // Init
+    VALU___024root* const __restrict vlSelf VL_ATTR_UNUSED = static_cast<VALU___024root*>(voidSelf);
+    VALU__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    // Body
+    vlSymsp->__Vm_activity = false;
+    vlSymsp->TOP.__Vm_traceActivity[0U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[1U] = 0U;
+    vlSymsp->TOP.__Vm_traceActivity[2U] = 0U;
+}
