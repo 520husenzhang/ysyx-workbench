@@ -28,7 +28,7 @@ static word_t immU(uint32_t i) { return   SEXT(BITS(i, 31, 12), 20) << 12; }
 static word_t immS(uint32_t i) { return   SEXT  ( (BITS(i, 31, 25) << 5) | BITS(i, 11, 7) , 12); }
 
    //uj  立即数  I 输入
-static word_t immJ(uint32_t i) { return  SEXT( (BITS(i,31,31)<<20)|(BITS(i,30,21)<<1)|(BITS(i,20,20)<<11)|(BITS(i,19,12)<<12) ,20); }  //mm[20|10:1|11|19:12]  rd  opcode
+static word_t immJ(uint32_t i) { return  SEXT( (BITS(i,31,31)<<20)|(BITS(i,30,21)<<1)|(BITS(i,20,20)<<11)|(BITS(i,19,12)<<12) ,21); }  //mm[20|10:1|11|19:12]  rd  opcode
 
    //sb  立即数
 static word_t immB (uint32_t i) { return  SEXT  ( ( BITS(i,31,31)<<12)|(BITS(i,30,25)<<5)|(BITS(i,11,8)<<1)|(BITS(i,7,7)<<11),13); } //imm[12|10:5]  rs2  rs1  funct3  imm[4:1|11]  opcode
