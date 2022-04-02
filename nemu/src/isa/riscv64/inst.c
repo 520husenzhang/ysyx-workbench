@@ -22,16 +22,16 @@ enum {
 
 
 //完善不同type下取立即数的方式  SEXT  符号位扩展      BITS   位抽取    没有R
-static int64_t immI(uint32_t i) { return   SEXT(BITS(i, 31, 20), 12); }
-static int64_t immU(uint32_t i) { return   SEXT(BITS(i, 31, 12), 20) << 12; }
+static word_t immI(uint32_t i) { return   SEXT(BITS(i, 31, 20), 12); }
+static word_t immU(uint32_t i) { return   SEXT(BITS(i, 31, 12), 20) << 12; }
 //!!!!
-static int64_t immS(uint32_t i) { return   SEXT  ( (BITS(i, 31, 25) << 5) | BITS(i, 11, 7) , 12); }
+static word_t immS(uint32_t i) { return   SEXT  ( (BITS(i, 31, 25) << 5) | BITS(i, 11, 7) , 12); }
 
    //uj  立即数  I 输入
-static int64_t immJ(uint32_t i) { return  SEXT( (BITS(i,31,31)<<20)|(BITS(i,30,21)<<1)|(BITS(i,20,20)<<11)|(BITS(i,19,12)<<12) ,21); }  //mm[20|10:1|11|19:12]  rd  opcode
+static word_t immJ(uint32_t i) { return  SEXT( (BITS(i,31,31)<<20)|(BITS(i,30,21)<<1)|(BITS(i,20,20)<<11)|(BITS(i,19,12)<<12) ,21); }  //mm[20|10:1|11|19:12]  rd  opcode
 
    //sb  立即数
-static int64_t immB (uint32_t i) { return  SEXT  ( ( BITS(i,31,31)<<12)|(BITS(i,30,25)<<5)|(BITS(i,11,8)<<1)|(BITS(i,7,7)<<11),13); } //imm[12|10:5]  rs2  rs1  funct3  imm[4:1|11]  opcode
+static word_t immB (uint32_t i) { return  SEXT  ( ( BITS(i,31,31)<<12)|(BITS(i,30,25)<<5)|(BITS(i,11,8)<<1)|(BITS(i,7,7)<<11),13); } //imm[12|10:5]  rs2  rs1  funct3  imm[4:1|11]  opcode
       
 
 static void decode_operand(Decode *s, word_t *dest, word_t *src1, word_t *src2, int type) {
@@ -69,6 +69,7 @@ static int decode_exec(Decode *s) {
   
   INSTPAT("??????? ????? ????? 000 ????? 00100 11", addi   ,I, R(dest) = src1 + src2);  ///与立即数相加  src2 是立即数
   INSTPAT("??????? ????? ????? 000 ????? 00110 11", addiw   ,I, R(dest) = SEXT(BITS(src1 + src2, 31, 0),32));  ///与立即数相加  src2 是立即数  64 位专享 addw
+
   INSTPAT("??????? ????? ????? 000 ????? 01100 11", add   ,R, R(dest) = src1+src2 );  ///add
 
   INSTPAT("0000000 ????? ????? 000 ????? 01110 11", addw   ,R,  R(dest) = SEXT(BITS(src1 + src2, 31, 0),32));  //addw  64 位专享 
