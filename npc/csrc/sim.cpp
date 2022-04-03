@@ -95,7 +95,7 @@ int main() {
        {break;      printf("3.1\n");
        }
        else { 
-          printf("pc is %ld\n",top->pc);
+          printf("pc is %ld \n",top->pc);
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
       // Evaluate model
@@ -103,7 +103,6 @@ int main() {
        top->eval();
  
   }
-   printf("4\n");
     //退出仿真
     sim_exit();
 
