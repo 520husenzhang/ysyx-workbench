@@ -80,7 +80,7 @@ int main() {
        top->clk = !top->clk; 
         //复位
         if (!top->clk) {
-            if (contextp->time() > 3 && contextp->time() < 8) {
+            if (contextp->time() > 4 && contextp->time() < 8) {
                 top->rst_n = 0;  // Assert reset
             } else {
                 top->rst_n = 1;  // Deassert reset
