@@ -103,7 +103,7 @@ int main() {
           printf("pc is %ld \n",top->pc);
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
-      Evaluate model
+       //Evaluate model
      
        top->eval();
  
