@@ -28,6 +28,8 @@ VERILATOR_FLAGS += --build
 VERILATOR_FLAGS += -Wno-UNUSED
 #包含的头文件
 VERILATOR_FLAGS += -I./vsrc
+VERILATOR_FLAGS += --top-module risc_v
+
 # Input files for Verilator    包括 c 与  v
 VERILATOR_INPUT +=     ./vsrc/ALU.v   ./vsrc/ALU_MEM.v     ./vsrc/ID.v    ./vsrc/ID_ALU.v    ./vsrc/IF.v    
 VERILATOR_INPUT +=     ./vsrc/IF_ID.v    ./vsrc/MEM.v    ./vsrc/MEM_WB.v   ./vsrc/REG_files.v    ./vsrc/risc_v.v  
