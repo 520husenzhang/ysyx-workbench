@@ -82,6 +82,7 @@ int main() {
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
                 top->rst_n = 0;  // Assert reset
+                      printf("fuck\n");  
             } else {
                 top->rst_n = 1;  // Deassert reset
                   printf("3.0\n");
