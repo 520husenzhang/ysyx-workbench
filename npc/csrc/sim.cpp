@@ -84,18 +84,19 @@ int main() {
                 top->rst_n = 0;  // Assert reset
             } else {
                 top->rst_n = 1;  // Deassert reset
+                  printf("3.0\n");
             }
         }
        //获取指令
        if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
-       {break;  
+       {break;      printf("3.0\n");
        }
-       else {
-
+       else { 
+          printf("3.2\n");
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
       // Evaluate model
-       printf("3\n");
+     
        top->eval();
  
   }
