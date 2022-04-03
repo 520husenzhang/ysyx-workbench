@@ -59,7 +59,7 @@ void sim_exit(){
 
 //主函数 
 int main() {
-  
+  11
    //仿真环境  初始化  
   sim_init();
   //对DUT的连接
