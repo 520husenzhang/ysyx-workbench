@@ -95,10 +95,11 @@ int main() {
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
       // Evaluate model
+       printf("3\n");
        top->eval();
  
   }
-   printf("3\n");
+   printf("4\n");
     //退出仿真
     sim_exit();
 
