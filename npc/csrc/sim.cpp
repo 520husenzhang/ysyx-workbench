@@ -80,6 +80,7 @@ int main() {
      printf("now time is %ld \n", contextp->time());
        //时钟翻转
        top->clk = !top->clk; 
+       printf("now clk is %d \n", top->clk;);
         //复位
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
