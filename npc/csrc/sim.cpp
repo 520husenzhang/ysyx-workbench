@@ -73,9 +73,11 @@ int main() {
   printf("2\n");
     //loop 
   while (!contextp->gotFinish()) {
-
+    
 
      step_and_dump_wave();
+    
+     printf("now time is %d \n", contextp->time());
        //时钟翻转
        top->clk = !top->clk; 
         //复位
