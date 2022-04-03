@@ -30,7 +30,8 @@ VERILATOR_FLAGS += -Wno-UNUSED
 VERILATOR_FLAGS += -I./vsrc
 # Input files for Verilator    包括 c 与  v
 VERILATOR_INPUT +=     ./vsrc/ALU.v   ./vsrc/ALU_MEM.v     ./vsrc/ID.v    ./vsrc/ID_ALU.v    ./vsrc/IF.v    
-VERILATOR_INPUT +=     ./vsrc/IF_ID.v    ./vsrc/MEM.v    ./vsrc/MEM_WB.v   ./vsrc/REG_files.v    ./vsrc/risc_v.v  ./vsrc/ROM.v  
+VERILATOR_INPUT +=     ./vsrc/IF_ID.v    ./vsrc/MEM.v    ./vsrc/MEM_WB.v   ./vsrc/REG_files.v    ./vsrc/risc_v.v  
+
 
 VERILATOR_INPUT +=  ./csrc/sim.cpp
 #VERILATOR_INPUT =     top.v    sim.cpp
