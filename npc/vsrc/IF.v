@@ -18,7 +18,7 @@ module IF(
 	); 
 reg [`InstAddrBus] PC;
 
-reg  rom_ce;
+
 assign if_pc=PC;
 assign   pc_rom=PC ;
 assign   inst_o= inst_i;
