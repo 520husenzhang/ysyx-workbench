@@ -95,15 +95,15 @@ int main() {
       printf("middle \n");
 
 
-      //  //获取指令
-      //  if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
-      //  {break;      printf("3.1\n");
-      //  }
-      //  else { 
-      //     printf("pc is %ld \n",top->pc);
-      //    top->inst = pmem_read(top->pc,top->rom_ce);
-      //  }
-      // Evaluate model
+       //获取指令
+       if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
+       {break;      printf("3.1\n");
+       }
+       else { 
+          printf("pc is %ld \n",top->pc);
+         top->inst = pmem_read(top->pc,top->rom_ce);
+       }
+      Evaluate model
      
        top->eval();
  
