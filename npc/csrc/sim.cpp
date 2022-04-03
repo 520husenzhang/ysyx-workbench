@@ -7,7 +7,7 @@
 VerilatedContext* contextp = NULL;  //仿真环境 
 VerilatedVcdC* tfp = NULL;  //  波形
 
-static Vrisc_v* top;   //risc_v DUT  !!
+static Vrisc_v*  top;   //risc_v DUT  !!
 #define  inst_ebreak     0x00100073
 //存储器  指令  rom
 uint32_t  ROM[4096]={0x00000013,
@@ -59,7 +59,7 @@ void sim_exit(){
 
 //主函数 
 int main() {
-  /*
+  
    //仿真环境  初始化  
   sim_init();
   //对DUT的连接
@@ -96,7 +96,7 @@ int main() {
   }
     //退出仿真
     sim_exit();
-*/
-  printf("fuck\n");
+
+
 
 }
