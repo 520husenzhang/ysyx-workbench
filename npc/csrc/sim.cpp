@@ -18,7 +18,9 @@ uint32_t  ROM[4096]={0x00000013,
 0x00508113,
 0x00608113,
 0x00708113,
-0x00808113
+0x00808113,
+inst_ebreak
+
 };    
 //获取指令  
 uint32_t  pmem_read(uint64_t pc,bool  ce )
