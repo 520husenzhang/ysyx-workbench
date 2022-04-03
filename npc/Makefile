@@ -54,7 +54,7 @@ sim:
 	@echo "-- RUN ---------------------"
 	@rm -rf logs
 	@mkdir -p logs
-	@obj_dir/Vtop
+	@obj_dir/Vrisc_v
 
 	@echo
 	@echo "-- COVERAGE ----------------"
