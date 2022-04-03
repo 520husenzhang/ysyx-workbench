@@ -16,7 +16,7 @@ module IF(
      input  wire   [`InstBus]inst_i  ,
 	 output reg  rom_ce
 	); 
-reg [`InstAddrBus] PC;
+reg [`InstAddrBus] PC=64'h8000_0000;
 
 
 assign if_pc=PC;
