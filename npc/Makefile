@@ -20,9 +20,9 @@ VERILATOR_FLAGS += --trace
 #VERILATOR_FLAGS += --assert
 # Generate coverage analysis
 # Run Verilator in debug mode
-#VERILATOR_FLAGS += --debug
+VERILATOR_FLAGS += --debug
 # Add this trace to get a backtrace in gdb
-#VERILATOR_FLAGS += --gdb
+VERILATOR_FLAGS += --gdb
 VERILATOR_FLAGS += --build
 # 关闭 警告 unused  
 VERILATOR_FLAGS += -Wno-UNUSED
