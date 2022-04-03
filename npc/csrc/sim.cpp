@@ -1,6 +1,8 @@
 #include "Vrisc_v.h"
 #include <verilated.h>
 #include "verilated_vcd_c.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 VerilatedContext* contextp = NULL;  //仿真环境 
 VerilatedVcdC* tfp = NULL;  //  波形
@@ -57,6 +59,7 @@ void sim_exit(){
 
 //主函数 
 int main() {
+  /*
    //仿真环境  初始化  
   sim_init();
   //对DUT的连接
@@ -93,6 +96,7 @@ int main() {
   }
     //退出仿真
     sim_exit();
-
+*/
+  printf("fuck\n");
 
 }
