@@ -95,7 +95,7 @@ int main() {
        {break;      printf("3.1\n");
        }
        else { 
-          printf("3.2\n");
+          printf("pc is %ld\n",top->pc);
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
       // Evaluate model
