@@ -28,7 +28,7 @@ uint32_t  pmem_read(uint64_t pc,bool  ce )
     uint32_t ins_temp =0 ;  
    if(ce== true)
    {
-    ins_temp= ROM[pc-0x80000000]/4   ;
+    ins_temp= ROM[(pc-0x80000000)/4]   ;
   
 
    }
