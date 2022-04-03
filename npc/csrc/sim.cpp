@@ -82,7 +82,7 @@ int main() {
        //时钟翻转
        top->clk = !top->clk; 
        printf("now clk is %d \n", top->clk);
-        //复位
+        //下降沿复位
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
                 top->rst_n = 0;  // Assert reset
@@ -92,10 +92,12 @@ int main() {
                   printf("3.0\n");
             }
         }
+      printf("middle \n");
        //获取指令
        if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
        {break;      printf("3.1\n");
        }
+
        else { 
           printf("pc is %ld \n",top->pc);
          top->inst = pmem_read(top->pc,top->rom_ce);
