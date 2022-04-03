@@ -10,7 +10,12 @@ VerilatedVcdC* tfp = NULL;  //  波形
 static Vrisc_v*  top;   //risc_v DUT  !!
 #define  inst_ebreak     0x00100073
 //存储器  指令  rom
-uint32_t  ROM[4096]={0x00000013,
+uint32_t  ROM[4096]={
+0x00000000,
+0x00000000,
+0x00000000,
+0x00000000,
+0x00000013,
 0x00108113,
 0x00208113,
 0x00308113,
@@ -85,25 +90,23 @@ int main() {
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
                 top->rst_n = 0;  // Assert reset
-                      printf("fuck\n");  
+                     
             } else {
                 top->rst_n = 1;  // Deassert reset
-                  printf("3.0\n");
+                  
             }
         }
 
-     if(top->clk==1){
+
        //获取指令
-       if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
-       {break;      printf("3.1\n");
+       if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)  {
+           break;      
        }
-       else { 
-       
-         top->inst = pmem_read(top->pc,top->rom_ce);
-       }
+
        //Evaluate model
-     }
-     
+    
+      top->inst = pmem_read(top->pc,top->rom_ce);
+       
        top->eval();
      
  
