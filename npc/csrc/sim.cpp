@@ -59,8 +59,9 @@ void sim_exit(){
 
 //主函数 
 int main() {
-  11
+  
    //仿真环境  初始化  
+   printf("fuck\n");
   sim_init();
   //对DUT的连接
     top->clk=0;
