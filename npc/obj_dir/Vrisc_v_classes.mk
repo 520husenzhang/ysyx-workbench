@@ -2,7 +2,7 @@
 # DESCRIPTION: Verilator output: Make include file with class lists
 #
 # This file lists generated Verilated files, for including in higher level makefiles.
-# See Vtop.mk for the caller.
+# See Vrisc_v.mk for the caller.
 
 ### Switches...
 # C11 constructs required?  0/1 (always on now)
@@ -14,7 +14,7 @@ VM_PARALLEL_BUILDS = 0
 # Threaded output mode?  0/1/N threads (from --threads)
 VM_THREADS = 0
 # Tracing output mode?  0/1 (from --trace/--trace-fst)
-VM_TRACE = 0
+VM_TRACE = 1
 # Tracing output mode in FST format?  0/1 (from --trace-fst)
 VM_TRACE_FST = 0
 # Tracing threaded output mode?  0/1/N threads (from --trace-thread)
@@ -25,24 +25,27 @@ VM_TRACE_FST_WRITER_THREAD = 0
 ### Object file lists...
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
-	Vtop \
-	Vtop___024root__DepSet_heccd7ead__0 \
+	Vrisc_v \
+	Vrisc_v___024root__DepSet_h1dd2243c__0 \
 
 # Generated module classes, non-fast-path, compile with low/medium optimization
 VM_CLASSES_SLOW += \
-	Vtop___024root__Slow \
-	Vtop___024root__DepSet_heccd7ead__0__Slow \
+	Vrisc_v___024root__Slow \
+	Vrisc_v___024root__DepSet_h1dd2243c__0__Slow \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
+	Vrisc_v__Trace__0 \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
 VM_SUPPORT_SLOW += \
-	Vtop__Syms \
+	Vrisc_v__Syms \
+	Vrisc_v__Trace__0__Slow \
 
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \
 	verilated \
+	verilated_vcd_c \
 
 # Global classes, need linked once per executable, non-fast-path, compile with low/medium optimization
 VM_GLOBAL_SLOW += \
