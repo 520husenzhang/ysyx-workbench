@@ -89,7 +89,7 @@ int main() {
         }
        //获取指令
        if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
-       {break;      printf("3.0\n");
+       {break;      printf("3.1\n");
        }
        else { 
           printf("3.2\n");
