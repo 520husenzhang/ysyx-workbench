@@ -15,7 +15,6 @@ VL_ATTR_COLD void Vrisc_v___024root___settle__TOP__0(Vrisc_v___024root* vlSelf) 
         vlSelf->risc_v__DOT__re2 = 0U;
         vlSelf->risc_v__DOT__re1 = 0U;
     }
-    vlSelf->pc = vlSelf->risc_v__DOT__inst_IF__DOT__PC;
     if (vlSelf->rst_n) {
         vlSelf->risc_v__DOT__inst_addr_id = vlSelf->risc_v__DOT__id_pc;
         vlSelf->risc_v__DOT__wd_alu_mem_i = vlSelf->risc_v__DOT__reg_waddr_alu;
@@ -92,12 +91,32 @@ VL_ATTR_COLD void Vrisc_v___024root___settle__TOP__0(Vrisc_v___024root* vlSelf) 
     }
 }
 
+VL_ATTR_COLD void Vrisc_v___024root___initial__TOP__0(Vrisc_v___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vrisc_v__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vrisc_v___024root___initial__TOP__0\n"); );
+    // Body
+    vlSelf->risc_v__DOT__inst_IF__DOT__PC = 0x80000000ULL;
+}
+
+VL_ATTR_COLD void Vrisc_v___024root___settle__TOP__1(Vrisc_v___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vrisc_v__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vrisc_v___024root___settle__TOP__1\n"); );
+    // Body
+    vlSelf->pc = vlSelf->risc_v__DOT__inst_IF__DOT__PC;
+}
+
 VL_ATTR_COLD void Vrisc_v___024root___eval_initial(Vrisc_v___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vrisc_v__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vrisc_v___024root___eval_initial\n"); );
     // Body
     vlSelf->__Vclklast__TOP__clk = vlSelf->clk;
+    Vrisc_v___024root___initial__TOP__0(vlSelf);
+    vlSelf->__Vm_traceActivity[2U] = 1U;
+    vlSelf->__Vm_traceActivity[1U] = 1U;
+    vlSelf->__Vm_traceActivity[0U] = 1U;
 }
 
 VL_ATTR_COLD void Vrisc_v___024root___eval_settle(Vrisc_v___024root* vlSelf) {
@@ -109,6 +128,7 @@ VL_ATTR_COLD void Vrisc_v___024root___eval_settle(Vrisc_v___024root* vlSelf) {
     vlSelf->__Vm_traceActivity[2U] = 1U;
     vlSelf->__Vm_traceActivity[1U] = 1U;
     vlSelf->__Vm_traceActivity[0U] = 1U;
+    Vrisc_v___024root___settle__TOP__1(vlSelf);
 }
 
 VL_ATTR_COLD void Vrisc_v___024root___final(Vrisc_v___024root* vlSelf) {

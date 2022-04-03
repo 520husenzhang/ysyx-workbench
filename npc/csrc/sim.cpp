@@ -91,9 +91,8 @@ int main() {
                   printf("3.0\n");
             }
         }
-      printf("middle \n");
-         printf("pc is %ld \n",top->pc);
 
+     if(top->clk==1){
        //获取指令
        if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)
        {break;      printf("3.1\n");
@@ -103,8 +102,10 @@ int main() {
          top->inst = pmem_read(top->pc,top->rom_ce);
        }
        //Evaluate model
+     }
      
        top->eval();
+     
  
   }
     //退出仿真

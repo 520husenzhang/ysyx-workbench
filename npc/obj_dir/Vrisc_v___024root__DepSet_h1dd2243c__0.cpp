@@ -66,13 +66,13 @@ VL_INLINE_OPT void Vrisc_v___024root___sequent__TOP__0(Vrisc_v___024root* vlSelf
     if (vlSelf->rst_n) {
         vlSelf->rom_ce = 1U;
         vlSelf->risc_v__DOT__inst_addr_alu = vlSelf->risc_v__DOT__inst_addr_id;
-        __Vdly__risc_v__DOT__inst_IF__DOT__PC = (4ULL 
-                                                 + vlSelf->risc_v__DOT__inst_IF__DOT__PC);
         vlSelf->risc_v__DOT__wd_alu_mem_o = vlSelf->risc_v__DOT__wd_alu_mem_i;
         vlSelf->risc_v__DOT__wdata_alu_mem_o = vlSelf->risc_v__DOT__wdata_alu_mem_i;
-        vlSelf->risc_v__DOT__id_pc = vlSelf->risc_v__DOT__inst_IF__DOT__PC;
         vlSelf->risc_v__DOT__reg2_op_alu = vlSelf->risc_v__DOT__reg2_op_id;
         vlSelf->risc_v__DOT__inst_alu = vlSelf->risc_v__DOT__inst_id;
+        __Vdly__risc_v__DOT__inst_IF__DOT__PC = (4ULL 
+                                                 + vlSelf->risc_v__DOT__inst_IF__DOT__PC);
+        vlSelf->risc_v__DOT__id_pc = vlSelf->risc_v__DOT__inst_IF__DOT__PC;
         vlSelf->risc_v__DOT__reg1_op_alu = vlSelf->risc_v__DOT__reg1_op_id;
         vlSelf->risc_v__DOT__reg_waddr_alu = ((IData)(vlSelf->rst_n)
                                                ? ((0x13U 
@@ -104,12 +104,12 @@ VL_INLINE_OPT void Vrisc_v___024root___sequent__TOP__0(Vrisc_v___024root* vlSelf
     } else {
         vlSelf->rom_ce = 0U;
         vlSelf->risc_v__DOT__inst_addr_alu = 0ULL;
-        __Vdly__risc_v__DOT__inst_IF__DOT__PC = 0x80000000ULL;
         vlSelf->risc_v__DOT__wd_alu_mem_o = 0U;
         vlSelf->risc_v__DOT__wdata_alu_mem_o = 0ULL;
-        vlSelf->risc_v__DOT__id_pc = 0ULL;
         vlSelf->risc_v__DOT__reg2_op_alu = 0ULL;
         vlSelf->risc_v__DOT__inst_alu = 0U;
+        __Vdly__risc_v__DOT__inst_IF__DOT__PC = 0x80000000ULL;
+        vlSelf->risc_v__DOT__id_pc = 0ULL;
         vlSelf->risc_v__DOT__reg1_op_alu = 0ULL;
         vlSelf->risc_v__DOT__reg_waddr_alu = 0U;
         vlSelf->risc_v__DOT__wreg_alu_mem_o = 0U;
