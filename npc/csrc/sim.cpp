@@ -77,7 +77,7 @@ int main() {
 
      step_and_dump_wave();
     
-     printf("now time is %d \n", contextp->time());
+     printf("now time is %ld \n", contextp->time());
        //时钟翻转
        top->clk = !top->clk; 
         //复位
