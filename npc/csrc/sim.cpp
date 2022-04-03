@@ -78,10 +78,9 @@ int main() {
 
      step_and_dump_wave();
     
-     printf("now time is %ld \n", contextp->time());
        //时钟翻转
        top->clk = !top->clk; 
-       printf("now clk is %d \n", top->clk);
+       printf("now time is  %ld |||clk is %d \n", contextp->time(), top->clk);
         //下降沿复位
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
