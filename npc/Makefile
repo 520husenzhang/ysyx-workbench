@@ -22,7 +22,7 @@ VERILATOR_FLAGS += --trace
 # Run Verilator in debug mode
 #VERILATOR_FLAGS += --debug
 # Add this trace to get a backtrace in gdb
-#VERILATOR_FLAGS += --gdbbt
+VERILATOR_FLAGS += --gdbbt
 VERILATOR_FLAGS += --build
 # 关闭 警告 unused  
 VERILATOR_FLAGS += -Wno-UNUSED
