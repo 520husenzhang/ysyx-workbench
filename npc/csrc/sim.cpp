@@ -71,6 +71,7 @@ int main() {
     top->rst_n=1;
     top->inst=0;
   printf("2\n");
+       top->eval();
     //loop 
   while (!contextp->gotFinish()) {
     
