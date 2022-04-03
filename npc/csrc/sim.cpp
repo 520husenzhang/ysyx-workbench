@@ -97,7 +97,7 @@ int main() {
             }
         }
 
-
+ 
        //获取指令
        if(pmem_read(top->pc,top->rom_ce)== inst_ebreak)  {
            break;      
@@ -105,10 +105,10 @@ int main() {
 
        //Evaluate model
     
-      top->inst = pmem_read(top->pc,top->rom_ce);
+     
        
        top->eval();
-     
+        top->inst = pmem_read(top->pc,top->rom_ce);
  
   }
     //退出仿真
