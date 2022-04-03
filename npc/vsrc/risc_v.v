@@ -6,10 +6,14 @@
 
 module risc_v (
     input wire   clk,
-    input wire   rst_n
- 
-  
-	);
+    input wire   rst_n,
+    //rom
+	input   wire [`InstBus] inst,
+	output  wire [`RegBus]    pc , 
+	output  wire  rom_ce
+	); 
+
+
 
 
 wire [`RegAddrBus]   reg1_rdata_addr;
@@ -66,7 +70,12 @@ wire    [`RegBus] wb_wdata_i;
 IF inst_IF (.clk(clk),
             .rst_n(rst_n), 
             .inst_o(if_inst),
-			.if_pc( if_pc  )
+			.if_pc( if_pc  ),
+    //访问外部存储器
+			.pc_rom(pc),   
+		    .inst_i(inst) ,
+			.rom_ce(rom_ce)  			
+
             );
 //流水线
 IF_ID inst_IF_ID(
