@@ -61,13 +61,14 @@ void sim_exit(){
 int main() {
   
    //仿真环境  初始化  
-   printf("fuck\n");
+  
   sim_init();
+   printf("1\n");
   //对DUT的连接
     top->clk=0;
     top->rst_n=1;
     top->inst=0;
-
+  printf("2\n");
     //loop 
   while (!contextp->gotFinish()) {
 
@@ -95,6 +96,7 @@ int main() {
        top->eval();
  
   }
+   printf("3\n");
     //退出仿真
     sim_exit();
 
