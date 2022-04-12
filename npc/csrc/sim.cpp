@@ -159,12 +159,12 @@ int main() {
     //loop 
   while (!contextp->gotFinish()) {
     
-
+         printf("now time is  %ld |||clk is %d \n", contextp->time(), top->clk);
      step_and_dump_wave();
     
        //时钟翻转
        top->clk = !top->clk; 
-       printf("now time is  %ld |||clk is %d \n", contextp->time(), top->clk);
+
                 printf(" jb \n");
         //下降沿复位
         if (!top->clk) {
