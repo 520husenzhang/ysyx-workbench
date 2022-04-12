@@ -66,7 +66,7 @@ inst_ebreak
 
 };    
 //ram 数据存储
-uint64_t  RAM[4096]=[];
+uint64_t  RAM[4096]={0,0,0};
 
 //获取指令  
 uint32_t  inst_read(uint64_t pc,bool  ce )
