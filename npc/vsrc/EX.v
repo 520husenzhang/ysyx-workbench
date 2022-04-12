@@ -37,8 +37,8 @@ module   EX(
 
              // to mem  cache
              output reg         [`MemBus]        mem_wdata_o                ,// 写内存数据
-             output reg         [`CSR_Zeroaddr]    mem_raddr_o                ,// 读内存地址
-             output reg         [`CSR_Zeroaddr]    mem_waddr_o                ,// 写内存地址
+             output reg         [`CSR_Addr_bus]    mem_raddr_o                ,// 读内存地址
+             output reg         [`CSR_Addr_bus]    mem_waddr_o                ,// 写内存地址
              output reg                         mem_we_o                   ,// 是否要写内存
              output reg                         mem_ce_o                   ,// 是否要进行 mem 操作
 
