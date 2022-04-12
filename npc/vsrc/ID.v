@@ -73,8 +73,8 @@ always @(*)
       inst_addr_o= inst_addr_i;
 
       //csr
-      csr_raddr_o = 'd0;
-      csr_waddr_o = 'd0;
+      csr_raddr_o = 12'd0;
+      csr_waddr_o = 12'd0;
       csr_we_o = `WriteDisable;
       //操作数
       reg1_o_op= `ZeroWord   ;
