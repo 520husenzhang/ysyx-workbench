@@ -93,6 +93,7 @@ uint64_t  ram_read_write(uint64_t mem_wdata , uint64_t mem_waddr ,uint64_t mem_r
       if(mem_we==1)  //write
       {     
           RAM[mem_waddr]= mem_wdata;  
+            return  0;
 
       }   
       else  //read
