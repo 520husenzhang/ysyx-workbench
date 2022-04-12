@@ -14,7 +14,7 @@ extern "C" {
 // string.h
 
 
-void *memset(void *dst, int val, size_t count) ;
+void *memset(void *dst, char val, size_t count)  ;
 void  *memcpy    (void *dest, const void *src, size_t count);
 //void  *memmove   (void *dst, const void *src, size_t n);
 void    *memmove  (void *dest, const void *src, int n)  ;

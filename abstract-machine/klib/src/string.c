@@ -152,7 +152,7 @@ int strncmp ( const char* str1, const char* str2, size_t num )
     return *str1 - *str2;
 }
 
-void *memset(void *dst, int val, size_t count)
+void *memset(void *dst, char val, size_t count)
 {
         //把val传给*dst时两个变量类型要相同，需要用到强制类型转换
         
@@ -160,9 +160,10 @@ void *memset(void *dst, int val, size_t count)
 	char* ret = (char*)dst;         
 	while (count--)                
 	{
-		*(ret) = (char)val;
-		 ret=ret+1; 
+		*(ret++) = (char)val;
+		 
 	}
+	ret = (char*)dst;      
 	return dst;
 }
 
