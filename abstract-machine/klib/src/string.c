@@ -160,7 +160,8 @@ void *memset(void *dst, int val, size_t count)
 	char* ret = (char*)dst;         
 	while (count--)                
 	{
-		*(ret++) = (char)val;
+		*(ret) = (char)val;
+		 ret=ret+1; 
 	}
 	return dst;
 }
