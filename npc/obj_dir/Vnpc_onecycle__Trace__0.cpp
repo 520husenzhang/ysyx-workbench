@@ -48,41 +48,38 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
         tracep->chgCData(oldp+26,(vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX),5);
         tracep->chgBit(oldp+27,(vlSelf->npc_onecycle__DOT__csr_we_ID_EX));
         tracep->chgQData(oldp+28,(vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX),64);
-        tracep->chgQData(oldp+30,(vlSelf->npc_onecycle__DOT__wdata_EX_MEM),64);
-        tracep->chgBit(oldp+32,((1U & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_wdata_o))));
-        tracep->chgBit(oldp+33,((1U & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_raddr_o))));
-        tracep->chgBit(oldp+34,((1U & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_waddr_o))));
-        tracep->chgBit(oldp+35,(vlSelf->npc_onecycle__DOT__mem_we_EX_MEM));
-        tracep->chgBit(oldp+36,(vlSelf->npc_onecycle__DOT__mem_ce_EX_MEM));
-        tracep->chgQData(oldp+37,(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_wdata_o),64);
-        tracep->chgQData(oldp+39,(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_raddr_o),64);
-        tracep->chgQData(oldp+41,(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_waddr_o),64);
-        tracep->chgSData(oldp+43,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_s),12);
-        tracep->chgSData(oldp+44,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb),12);
-        tracep->chgQData(oldp+45,(vlSelf->npc_onecycle__DOT__u_EX__DOT__mem_waddr_s),64);
-        tracep->chgQData(oldp+47,(vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr),64);
-        tracep->chgQData(oldp+49,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_add_op2_res),64);
-        tracep->chgQData(oldp+51,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_sub_op2_res),64);
-        tracep->chgBit(oldp+53,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_eq_op2));
-        tracep->chgBit(oldp+54,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_compare_op2_signed));
-        tracep->chgBit(oldp+55,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_compare_op2_unsigned));
-        tracep->chgQData(oldp+56,((0xffffffffffffffffULL 
+        tracep->chgQData(oldp+30,(vlSelf->npc_onecycle__DOT__mem_wdata_EX_MEM),64);
+        tracep->chgQData(oldp+32,(vlSelf->npc_onecycle__DOT__mem_raddr_EX_MEM),64);
+        tracep->chgQData(oldp+34,(vlSelf->npc_onecycle__DOT__mem_waddr_EX_MEM),64);
+        tracep->chgBit(oldp+36,(vlSelf->npc_onecycle__DOT__mem_we_EX_MEM));
+        tracep->chgBit(oldp+37,(vlSelf->npc_onecycle__DOT__mem_ce_EX_MEM));
+        tracep->chgQData(oldp+38,(vlSelf->npc_onecycle__DOT__wdata_EX_MEM),64);
+        tracep->chgSData(oldp+40,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_s),12);
+        tracep->chgSData(oldp+41,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb),12);
+        tracep->chgQData(oldp+42,(vlSelf->npc_onecycle__DOT__u_EX__DOT__mem_waddr_s),64);
+        tracep->chgQData(oldp+44,(vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr),64);
+        tracep->chgQData(oldp+46,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_add_op2_res),64);
+        tracep->chgQData(oldp+48,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_sub_op2_res),64);
+        tracep->chgBit(oldp+50,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_eq_op2));
+        tracep->chgBit(oldp+51,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_compare_op2_signed));
+        tracep->chgBit(oldp+52,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_compare_op2_unsigned));
+        tracep->chgQData(oldp+53,((0xffffffffffffffffULL 
                                    >> (0x3fU & (IData)(vlSelf->npc_onecycle__DOT__reg2_op_ID_EX)))),64);
-        tracep->chgQData(oldp+58,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sr_shift),64);
-        tracep->chgQData(oldp+60,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sli_shift),64);
-        tracep->chgIData(oldp+62,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_rlshift),32);
-        tracep->chgIData(oldp+63,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_rashift),32);
-        tracep->chgIData(oldp+64,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sllw_temp),32);
-        tracep->chgQData(oldp+65,((((QData)((IData)(
+        tracep->chgQData(oldp+55,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sr_shift),64);
+        tracep->chgQData(oldp+57,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sli_shift),64);
+        tracep->chgIData(oldp+59,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_rlshift),32);
+        tracep->chgIData(oldp+60,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_rashift),32);
+        tracep->chgIData(oldp+61,(vlSelf->npc_onecycle__DOT__u_EX__DOT__sllw_temp),32);
+        tracep->chgQData(oldp+62,((((QData)((IData)(
                                                     (- (IData)(
                                                                (vlSelf->npc_onecycle__DOT__u_EX__DOT__sllw_temp 
                                                                 >> 0x1fU))))) 
                                     << 0x20U) | (QData)((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__sllw_temp)))),64);
-        tracep->chgIData(oldp+67,((~ (0xffffffffU >> 
+        tracep->chgIData(oldp+64,((~ (0xffffffffU >> 
                                       (0x1fU & (IData)(vlSelf->npc_onecycle__DOT__reg2_op_ID_EX))))),32);
-        tracep->chgIData(oldp+68,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_srlwshift),32);
-        tracep->chgIData(oldp+69,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_srawshift),32);
-        tracep->chgWData(oldp+70,(vlSelf->npc_onecycle__DOT__u_EX__DOT__mul_temp),128);
+        tracep->chgIData(oldp+65,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_srlwshift),32);
+        tracep->chgIData(oldp+66,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_lower32bit_srawshift),32);
+        tracep->chgWData(oldp+67,(vlSelf->npc_onecycle__DOT__u_EX__DOT__mul_temp),128);
         __Vtemp_hc961b8db__0[0U] = 1U;
         __Vtemp_hc961b8db__0[1U] = 0U;
         __Vtemp_hc961b8db__0[2U] = 0U;
@@ -92,126 +89,116 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
         __Vtemp_h0c4231f9__0[2U] = (~ vlSelf->npc_onecycle__DOT__u_EX__DOT__mul_temp[2U]);
         __Vtemp_h0c4231f9__0[3U] = (~ vlSelf->npc_onecycle__DOT__u_EX__DOT__mul_temp[3U]);
         VL_ADD_W(4, __Vtemp_h3780105a__0, __Vtemp_hc961b8db__0, __Vtemp_h0c4231f9__0);
-        tracep->chgWData(oldp+74,(__Vtemp_h3780105a__0),128);
-        tracep->chgQData(oldp+78,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_div_op2_res),64);
-        tracep->chgQData(oldp+80,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_rem_op2_res),64);
-        tracep->chgIData(oldp+82,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_div_op2_res_w),32);
-        tracep->chgIData(oldp+83,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_rem_op2_res_w),32);
-        tracep->chgQData(oldp+84,((1ULL + (~ vlSelf->npc_onecycle__DOT__reg1_op_ID_EX))),64);
-        tracep->chgQData(oldp+86,((1ULL + (~ vlSelf->npc_onecycle__DOT__reg2_op_ID_EX))),64);
-        tracep->chgBit(oldp+88,(vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold));
-        tracep->chgQData(oldp+89,((QData)((IData)((1U 
-                                                   & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_wdata_o))))),64);
-        tracep->chgQData(oldp+91,((QData)((IData)((1U 
-                                                   & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_raddr_o))))),64);
-        tracep->chgQData(oldp+93,((QData)((IData)((1U 
-                                                   & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_waddr_o))))),64);
-        tracep->chgCData(oldp+95,((7U & (IData)((QData)((IData)(
-                                                                (1U 
-                                                                 & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_raddr_o))))))),3);
-        tracep->chgCData(oldp+96,((7U & (IData)((QData)((IData)(
-                                                                (1U 
-                                                                 & (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__mem_waddr_o))))))),3);
+        tracep->chgWData(oldp+71,(__Vtemp_h3780105a__0),128);
+        tracep->chgQData(oldp+75,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_div_op2_res),64);
+        tracep->chgQData(oldp+77,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_rem_op2_res),64);
+        tracep->chgIData(oldp+79,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_div_op2_res_w),32);
+        tracep->chgIData(oldp+80,(vlSelf->npc_onecycle__DOT__u_EX__DOT__op1_rem_op2_res_w),32);
+        tracep->chgQData(oldp+81,((1ULL + (~ vlSelf->npc_onecycle__DOT__reg1_op_ID_EX))),64);
+        tracep->chgQData(oldp+83,((1ULL + (~ vlSelf->npc_onecycle__DOT__reg2_op_ID_EX))),64);
+        tracep->chgBit(oldp+85,(vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold));
+        tracep->chgCData(oldp+86,((7U & (IData)(vlSelf->npc_onecycle__DOT__mem_raddr_EX_MEM))),3);
+        tracep->chgCData(oldp+87,((7U & (IData)(vlSelf->npc_onecycle__DOT__mem_waddr_EX_MEM))),3);
     }
     if (VL_UNLIKELY(vlSelf->__Vm_traceActivity[2U])) {
-        tracep->chgBit(oldp+97,((1U & (IData)((vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus 
+        tracep->chgBit(oldp+88,((1U & (IData)((vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus 
                                                >> 3U)))));
-        tracep->chgQData(oldp+98,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec),64);
-        tracep->chgQData(oldp+100,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc),64);
-        tracep->chgQData(oldp+102,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus),64);
-        tracep->chgQData(oldp+104,(((((0xfffU & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_waddr_i)) 
-                                      == (0xfffU & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i))) 
-                                     & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_we_i))
-                                     ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_wdata_i
-                                     : ((0xc00U == 
-                                         (0xfffU & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                         ? (QData)((IData)(
-                                                           vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[0U]))
-                                         : ((0x305U 
-                                             == (0xfffU 
-                                                 & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                             ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec
-                                             : ((0x342U 
-                                                 == 
-                                                 (0xfffU 
-                                                  & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                                 ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause
-                                                 : 
-                                                ((0x341U 
-                                                  == 
-                                                  (0xfffU 
+        tracep->chgQData(oldp+89,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec),64);
+        tracep->chgQData(oldp+91,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc),64);
+        tracep->chgQData(oldp+93,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus),64);
+        tracep->chgQData(oldp+95,(((((0xfffU & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_waddr_i)) 
+                                     == (0xfffU & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i))) 
+                                    & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_we_i))
+                                    ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_wdata_i
+                                    : ((0xc00U == (0xfffU 
                                                    & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                                  ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc
-                                                  : 
-                                                 ((0x304U 
-                                                   == 
-                                                   (0xfffU 
-                                                    & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                                   ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie
-                                                   : 
-                                                  ((0x300U 
+                                        ? (QData)((IData)(
+                                                          vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[0U]))
+                                        : ((0x305U 
+                                            == (0xfffU 
+                                                & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
+                                            ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec
+                                            : ((0x342U 
+                                                == 
+                                                (0xfffU 
+                                                 & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
+                                                ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause
+                                                : (
+                                                   (0x341U 
                                                     == 
                                                     (0xfffU 
                                                      & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                                    ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus
+                                                    ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc
                                                     : 
-                                                   ((0x340U 
+                                                   ((0x304U 
                                                      == 
                                                      (0xfffU 
                                                       & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
-                                                     ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch
-                                                     : 0ULL))))))))),64);
-        tracep->chgWData(oldp+106,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle),128);
-        tracep->chgQData(oldp+110,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause),64);
-        tracep->chgQData(oldp+112,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie),64);
-        tracep->chgQData(oldp+114,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch),64);
-        tracep->chgQData(oldp+116,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[0]),64);
-        tracep->chgQData(oldp+118,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[1]),64);
-        tracep->chgQData(oldp+120,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[2]),64);
-        tracep->chgQData(oldp+122,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[3]),64);
-        tracep->chgQData(oldp+124,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[4]),64);
-        tracep->chgQData(oldp+126,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[5]),64);
-        tracep->chgQData(oldp+128,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[6]),64);
-        tracep->chgQData(oldp+130,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[7]),64);
-        tracep->chgQData(oldp+132,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[8]),64);
-        tracep->chgQData(oldp+134,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[9]),64);
-        tracep->chgQData(oldp+136,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[10]),64);
-        tracep->chgQData(oldp+138,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[11]),64);
-        tracep->chgQData(oldp+140,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[12]),64);
-        tracep->chgQData(oldp+142,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[13]),64);
-        tracep->chgQData(oldp+144,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[14]),64);
-        tracep->chgQData(oldp+146,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[15]),64);
-        tracep->chgQData(oldp+148,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[16]),64);
-        tracep->chgQData(oldp+150,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[17]),64);
-        tracep->chgQData(oldp+152,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[18]),64);
-        tracep->chgQData(oldp+154,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[19]),64);
-        tracep->chgQData(oldp+156,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[20]),64);
-        tracep->chgQData(oldp+158,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[21]),64);
-        tracep->chgQData(oldp+160,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[22]),64);
-        tracep->chgQData(oldp+162,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[23]),64);
-        tracep->chgQData(oldp+164,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[24]),64);
-        tracep->chgQData(oldp+166,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[25]),64);
-        tracep->chgQData(oldp+168,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[26]),64);
-        tracep->chgQData(oldp+170,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[27]),64);
-        tracep->chgQData(oldp+172,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[28]),64);
-        tracep->chgQData(oldp+174,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[29]),64);
-        tracep->chgQData(oldp+176,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[30]),64);
-        tracep->chgQData(oldp+178,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[31]),64);
-        tracep->chgBit(oldp+180,(vlSelf->npc_onecycle__DOT____Vcellout__u_IF__rom_ce));
-        tracep->chgQData(oldp+181,(vlSelf->npc_onecycle__DOT__u_IF__DOT__PC),64);
+                                                     ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie
+                                                     : 
+                                                    ((0x300U 
+                                                      == 
+                                                      (0xfffU 
+                                                       & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
+                                                      ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus
+                                                      : 
+                                                     ((0x340U 
+                                                       == 
+                                                       (0xfffU 
+                                                        & (IData)(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__clint_raddr_i)))
+                                                       ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch
+                                                       : 0ULL))))))))),64);
+        tracep->chgWData(oldp+97,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle),128);
+        tracep->chgQData(oldp+101,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause),64);
+        tracep->chgQData(oldp+103,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie),64);
+        tracep->chgQData(oldp+105,(vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch),64);
+        tracep->chgQData(oldp+107,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[0]),64);
+        tracep->chgQData(oldp+109,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[1]),64);
+        tracep->chgQData(oldp+111,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[2]),64);
+        tracep->chgQData(oldp+113,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[3]),64);
+        tracep->chgQData(oldp+115,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[4]),64);
+        tracep->chgQData(oldp+117,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[5]),64);
+        tracep->chgQData(oldp+119,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[6]),64);
+        tracep->chgQData(oldp+121,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[7]),64);
+        tracep->chgQData(oldp+123,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[8]),64);
+        tracep->chgQData(oldp+125,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[9]),64);
+        tracep->chgQData(oldp+127,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[10]),64);
+        tracep->chgQData(oldp+129,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[11]),64);
+        tracep->chgQData(oldp+131,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[12]),64);
+        tracep->chgQData(oldp+133,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[13]),64);
+        tracep->chgQData(oldp+135,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[14]),64);
+        tracep->chgQData(oldp+137,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[15]),64);
+        tracep->chgQData(oldp+139,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[16]),64);
+        tracep->chgQData(oldp+141,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[17]),64);
+        tracep->chgQData(oldp+143,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[18]),64);
+        tracep->chgQData(oldp+145,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[19]),64);
+        tracep->chgQData(oldp+147,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[20]),64);
+        tracep->chgQData(oldp+149,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[21]),64);
+        tracep->chgQData(oldp+151,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[22]),64);
+        tracep->chgQData(oldp+153,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[23]),64);
+        tracep->chgQData(oldp+155,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[24]),64);
+        tracep->chgQData(oldp+157,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[25]),64);
+        tracep->chgQData(oldp+159,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[26]),64);
+        tracep->chgQData(oldp+161,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[27]),64);
+        tracep->chgQData(oldp+163,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[28]),64);
+        tracep->chgQData(oldp+165,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[29]),64);
+        tracep->chgQData(oldp+167,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[30]),64);
+        tracep->chgQData(oldp+169,(vlSelf->npc_onecycle__DOT__u_GEN_REGS__DOT__regs[31]),64);
+        tracep->chgBit(oldp+171,(vlSelf->npc_onecycle__DOT____Vcellout__u_IF__rom_ce));
+        tracep->chgQData(oldp+172,(vlSelf->npc_onecycle__DOT__u_IF__DOT__PC),64);
     }
-    tracep->chgBit(oldp+183,(vlSelf->clk));
-    tracep->chgBit(oldp+184,(vlSelf->rst_n));
-    tracep->chgIData(oldp+185,(vlSelf->inst),32);
-    tracep->chgQData(oldp+186,(vlSelf->mem_rdata),64);
-    tracep->chgQData(oldp+188,(vlSelf->pc),64);
-    tracep->chgQData(oldp+190,(vlSelf->rom_ce),64);
-    tracep->chgQData(oldp+192,(vlSelf->mem_wdata),64);
-    tracep->chgQData(oldp+194,(vlSelf->mem_raddr),64);
-    tracep->chgQData(oldp+196,(vlSelf->mem_waddr),64);
-    tracep->chgBit(oldp+198,(vlSelf->mem_we));
-    tracep->chgBit(oldp+199,(vlSelf->mem_ce));
-    tracep->chgQData(oldp+200,(((((0xfffU & (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM)) 
+    tracep->chgBit(oldp+174,(vlSelf->clk));
+    tracep->chgBit(oldp+175,(vlSelf->rst_n));
+    tracep->chgIData(oldp+176,(vlSelf->inst),32);
+    tracep->chgQData(oldp+177,(vlSelf->mem_rdata),64);
+    tracep->chgQData(oldp+179,(vlSelf->pc),64);
+    tracep->chgQData(oldp+181,(vlSelf->rom_ce),64);
+    tracep->chgQData(oldp+183,(vlSelf->mem_wdata),64);
+    tracep->chgQData(oldp+185,(vlSelf->mem_raddr),64);
+    tracep->chgQData(oldp+187,(vlSelf->mem_waddr),64);
+    tracep->chgBit(oldp+189,(vlSelf->mem_we));
+    tracep->chgBit(oldp+190,(vlSelf->mem_ce));
+    tracep->chgQData(oldp+191,(((((0xfffU & (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM)) 
                                   == (IData)(vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS)) 
                                  & (IData)(vlSelf->npc_onecycle__DOT__csr_we_EX_MEM))
                                  ? vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM
@@ -239,21 +226,21 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
                                                     == (IData)(vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS))
                                                     ? vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch
                                                     : 0ULL))))))))),64);
-    tracep->chgCData(oldp+202,((0x7fU & vlSelf->inst)),7);
-    tracep->chgCData(oldp+203,((7U & (vlSelf->inst 
+    tracep->chgCData(oldp+193,((0x7fU & vlSelf->inst)),7);
+    tracep->chgCData(oldp+194,((7U & (vlSelf->inst 
                                       >> 0xcU))),3);
-    tracep->chgCData(oldp+204,((vlSelf->inst >> 0x19U)),7);
-    tracep->chgCData(oldp+205,((0x1fU & (vlSelf->inst 
+    tracep->chgCData(oldp+195,((vlSelf->inst >> 0x19U)),7);
+    tracep->chgCData(oldp+196,((0x1fU & (vlSelf->inst 
                                          >> 7U))),5);
-    tracep->chgCData(oldp+206,((0x1fU & (vlSelf->inst 
+    tracep->chgCData(oldp+197,((0x1fU & (vlSelf->inst 
                                          >> 0xfU))),5);
-    tracep->chgCData(oldp+207,((0x1fU & (vlSelf->inst 
+    tracep->chgCData(oldp+198,((0x1fU & (vlSelf->inst 
                                          >> 0x14U))),5);
-    tracep->chgCData(oldp+208,((0x3fU & (vlSelf->inst 
+    tracep->chgCData(oldp+199,((0x3fU & (vlSelf->inst 
                                          >> 0x14U))),6);
-    tracep->chgSData(oldp+209,((vlSelf->inst >> 0x14U)),12);
-    tracep->chgIData(oldp+210,((vlSelf->inst >> 0xcU)),20);
-    tracep->chgIData(oldp+211,(((0x80000U & (vlSelf->inst 
+    tracep->chgSData(oldp+200,((vlSelf->inst >> 0x14U)),12);
+    tracep->chgIData(oldp+201,((vlSelf->inst >> 0xcU)),20);
+    tracep->chgIData(oldp+202,(((0x80000U & (vlSelf->inst 
                                              >> 0xcU)) 
                                 | ((0x7f800U & (vlSelf->inst 
                                                 >> 1U)) 
@@ -261,13 +248,13 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
                                                  >> 0xaU)) 
                                       | (0x3ffU & (vlSelf->inst 
                                                    >> 0x15U)))))),20);
-    tracep->chgQData(oldp+212,((0xffffffffffffffffULL 
+    tracep->chgQData(oldp+203,((0xffffffffffffffffULL 
                                 >> (0x3fU & (vlSelf->inst 
                                              >> 0x14U)))),64);
-    tracep->chgQData(oldp+214,((vlSelf->npc_onecycle__DOT__reg1_op_ID_EX 
+    tracep->chgQData(oldp+205,((vlSelf->npc_onecycle__DOT__reg1_op_ID_EX 
                                 >> (0x3fU & (vlSelf->inst 
                                              >> 0x14U)))),64);
-    tracep->chgIData(oldp+216,((~ ((0x1fU >= (0x3fU 
+    tracep->chgIData(oldp+207,((~ ((0x1fU >= (0x3fU 
                                               & (vlSelf->inst 
                                                  >> 0x14U)))
                                     ? (0xffffffffU 
@@ -275,7 +262,7 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
                                            (vlSelf->inst 
                                             >> 0x14U)))
                                     : 0U))),32);
-    tracep->chgQData(oldp+217,(((IData)((0x2000033U 
+    tracep->chgQData(oldp+208,(((IData)((0x2000033U 
                                          == (0xfe00007fU 
                                              & vlSelf->inst)))
                                  ? ((0x4000U & vlSelf->inst)
@@ -306,7 +293,7 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
                                                  : vlSelf->npc_onecycle__DOT__reg1_op_ID_EX)
                                              : vlSelf->npc_onecycle__DOT__reg1_op_ID_EX)))
                                  : vlSelf->npc_onecycle__DOT__reg1_op_ID_EX)),64);
-    tracep->chgQData(oldp+219,(((IData)((0x2000033U 
+    tracep->chgQData(oldp+210,(((IData)((0x2000033U 
                                          == (0xfe00007fU 
                                              & vlSelf->inst)))
                                  ? ((0x4000U & vlSelf->inst)

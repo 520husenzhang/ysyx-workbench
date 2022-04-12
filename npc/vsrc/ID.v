@@ -344,8 +344,8 @@ always @(*)
           reg2_raddr_o = `NOPRegAddr;
           reg1_read_o= `ReadDisable  ;
           reg2_read_o=`ReadDisable     ;  //csr  11:0  标准 RISC-V ISA 设置了一个 12 位的编码空间（
-          csr_raddr_o = { inst_i[31:20]};
-          csr_waddr_o = { inst_i[31:20]};
+          csr_raddr_o = inst_i[31:20];
+          csr_waddr_o = inst_i[31:20];
           case (funct3)
             `INST_CSRRW, `INST_CSRRS, `INST_CSRRC:
               begin
