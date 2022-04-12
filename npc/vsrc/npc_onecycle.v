@@ -80,11 +80,11 @@ wire         [`RegBus]        csr_rdata_ID_EX                ;//读到的CSR寄�
 wire      [`RegBus]        csr_waddr_ID_EX                ; // 写CSR寄存器地址
 //mem
 
-wire      [`MemBus]        mem_wdata                ;// 写内存数据
-wire      [`MemAddrBus]    mem_raddr                ;// 读内存地址
-wire      [`MemAddrBus]    mem_waddr               ;// 写内存地址
-wire                      mem_we                  ;// 是否要写内存
-wire                      mem_ce                  ;// 是否要进行 mem 操作
+// wire      [`MemBus]        mem_wdata                ;// 写内存数据
+// wire      [`MemAddrBus]    mem_raddr                ;// 读内存地址
+// wire      [`MemAddrBus]    mem_waddr               ;// 写内存地址
+// wire                      mem_we                  ;// 是否要写内存
+// wire                      mem_ce                  ;// 是否要进行 mem 操作
 
 wire       [`RegAddrBus]    wd_EX_MEM                      ; // 写通用寄存器地址
 wire                        wreg_EX_MEM                    ; // 是否要写通用寄存器
