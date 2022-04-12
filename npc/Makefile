@@ -29,7 +29,7 @@ VERILATOR_FLAGS += -Wno-UNUSED
 VERILATOR_FLAGS += -Wno-PINCONNECTEMPTY
 #包含的头文件
 VERILATOR_FLAGS += -I./vsrc  -y ./vsrc 
-VERILATOR_FLAGS += --top-module risc_v
+VERILATOR_FLAGS += --top-module npc_onecycle
 
 # Input files for Verilator    包括 c 与  v
 VERILATOR_INPUT +=     ./vsrc/CSR_REGS.v   ./vsrc/EX.v     ./vsrc/ID.v    ./vsrc/GEN_REGS.v    ./vsrc/IF.v    
