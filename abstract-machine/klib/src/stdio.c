@@ -14,7 +14,7 @@ int vsprintf(char *out, const char *fmt, va_list ap) {
   panic("Not implemented");
 }
 
-int mysprintf(char * str, const char * format, ...)
+int sprintf(char * str, const char * format, ...)
 {
     va_list ap;
     int ret = -1;
