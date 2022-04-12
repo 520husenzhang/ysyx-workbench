@@ -133,7 +133,7 @@ ID u_ID(
     .rst_n            ( rst_n            ),
 
     .inst_i           ( inst_IF_ID           ),
-    .inst_addr_i      ( pc_IF_ID      ),
+    .inst_addr_i      ( pc      ),
 
     .reg1_rdata_i     ( rdata1_ID_GEN_REGS     ),
     .reg2_rdata_i     ( rdata2_ID_GEN_REGS     ),
