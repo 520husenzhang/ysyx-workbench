@@ -12,15 +12,17 @@ extern "C" {
 //#define __NATIVE_USE_KLIB__
 
 // string.h
-void  *memset    (void *s, int c, size_t n);
-void  *memcpy    (void *dst, const void *src, size_t n);
-void  *memmove   (void *dst, const void *src, size_t n);
-int    memcmp    (const void *s1, const void *s2, size_t n);
+
+void *memset(void *dest, int set, unsigned len)  ;
+void  *memcpy    (void *dest, const void *src, size_t count);
+//void  *memmove   (void *dst, const void *src, size_t n);
+void *memmove    (void *dest, const void *src, int n)  ;
+int     memcmp    (char *str1,char *str2,int len) ;
 size_t strlen    (const char *s);
 char  *strcat    (char *dst, const char *src);
 char  *strcpy    (char *dst, const char *src);
-char  *strncpy   (char *dst, const char *src, size_t n);
-int    strcmp    (const char *s1, const char *s2);
+int    trncmp   ( const char* str1, const char* str2, size_t num )  ;
+int    strcmp      (char *str1,char *str2)  ;
 int    strncmp   (const char *s1, const char *s2, size_t n);
 
 // stdlib.h
