@@ -156,7 +156,7 @@ void* memset(void *ptr, int value, size_t num)
     {
         *temp++ =   value;
     }
- 
+    *temp='\0'  ;
     return ptr;
 }
 
