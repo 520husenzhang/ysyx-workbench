@@ -12,20 +12,28 @@ module IF(
 
     input  wire                         jump_flag_i                ,// 跳转标志
     input  wire        [`InstAddrBus]   jump_addr_i                ,// 跳转地址
+
+    input  wire        [`InstBus]       inst_i                     ,//输出指令
      
      //S
-    output wire        [  31:0]         inst_o                     ,//输出指令
+    output wire        [`InstBus]       inst_o                     ,//输出指令
     output wire        [`InstAddrBus]   if_pc                      ,// 对外PC指针
-    output wire                         hold_flag_o  //请求暂停流水线
+
+    output reg                          rom_ce                     ;
+
+    output wire                         hold_flag_o                 //请求暂停流水线
     );
+
+
 reg [`InstAddrBus] PC;
-reg  rom_ce;
+
 assign if_pc=PC;
+assign   inst_o =   inst_i ;
 
    always @(posedge clk ) begin
    	if (rst_n==`RstDisable) begin// 复位
    		// reset
-   		PC<=32'h80000000;
+   		PC<=64'h00000000_80000000;
    	end
    else if(jump_flag_i == `Jump_Enable)  // 跳转
 	    PC <= jump_addr_i;  
@@ -45,10 +53,10 @@ assign if_pc=PC;
 
 
 
-ROM inst_ROM (.ce(rom_ce), 
-              .addr(PC), 
-              .inst(inst_o)
-              );
+// ROM inst_ROM (.ce(rom_ce), 
+//               .addr(PC), 
+//               .inst(inst_o)
+//               );
 
 
 

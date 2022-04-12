@@ -7,8 +7,27 @@
 
 
 module   npc_onecycle(
-    input   wire                         clk                        ,
-    input   wire                         rst_n                       
+    input  wire                         clk                        ,
+    input  wire                         rst_n                      ,
+    
+    //inst
+    input  wire        [`InstBus]       inst                       ,//指令 
+   
+    //from  mem
+    input  wire        [`MemBus]        mem_rdata                  ;// 内存输入数据
+    
+
+
+    output wire        [`Regbus]        pc                         ;//pc 指针 
+    output wire        [`Regbus]        rom_ce                         ;//pc 指针 
+
+ //to mem
+    output wire        [`MemBus]        mem_wdata         ;// 写内存数据
+    output wire        [`MemAddrBus]    mem_raddr          ;// 读内存地址
+    output wire        [`MemAddrBus]    mem_waddr         ;// 写内存地址
+    output wire                         mem_we           ;// 是否要写内存
+    output wire                         mem_ce            ;// 请求访问内存标志
+
  
 );
 
@@ -75,15 +94,11 @@ wire        [`RegBus]        csr_wdata_EX_MEM                ;
 wire                        csr_we_EX_MEM                  ;
 wire       [`MemAddrBus]    csr_waddr_EX_MEM              ;
 
-wire  [`MemBus]        mem_rdata_RAM_MEM              ;// 内存输入数据
+
 
 wire        [`InstBus]        inst_EX                     ;//解决 load相关
 // to mem  cache
-wire                   [`MemBus]        mem_wdata_MEM_RAM          ;// 写内存数据
-wire                   [`MemAddrBus]    mem_raddr_MEM_RAM          ;// 读内存地址
-wire                   [`MemAddrBus]    mem_waddr_MEM_RAM          ;// 写内存地址
-wire                                    mem_we_MEM_RAM             ;// 是否要写内存
-wire                                    mem_ce_MEM_RAM             ;// 请求访问内存标志
+
 
 
 IF u_IF(
@@ -92,10 +107,16 @@ IF u_IF(
     .hold_flag_i  (         ),
     .jump_flag_i  ( jump_flag_EX_IF  ),
     .jump_addr_i  ( jump_addr_EX_IF  ),
+    .inst_i       ( inst   ),
+
     .inst_o       ( inst_IF_ID       ),
-    .if_pc        ( pc_IF_ID        ),
+    .if_pc        ( pc        ),
+    .rom_ce       (  rom_ce   ),
     .hold_flag_o  (             )
 );
+
+
+
 
 
 
@@ -252,7 +273,7 @@ MEM u_MEM(
     .csr_wdata_i  ( csr_wdata_EX_MEM  ),
 
 
-    .mem_rdata_i  ( mem_rdata_RAM_MEM  ),
+    .mem_rdata_i  ( mem_rdata  ),
 
     .wd_o         ( wd_MEM_GEN_REGS         ),
     .wreg_o       ( wreg_MEM_GEN_REGS       ),
@@ -264,11 +285,11 @@ MEM u_MEM(
 
     .hold_flag_o  (   ),
      //to mem
-    .mem_wdata_o  ( mem_wdata_MEM_RAM  ),
-    .mem_raddr_o  ( mem_raddr_MEM_RAM  ),
-    .mem_waddr_o  ( mem_waddr_MEM_RAM  ),
-    .mem_we_o     ( mem_we_MEM_RAM     ),
-    .mem_ce_o     ( mem_ce_MEM_RAM     )
+    .mem_wdata_o  ( mem_wdata  ),
+    .mem_raddr_o  ( mem_raddr  ),
+    .mem_waddr_o  ( mem_waddr  ),
+    .mem_we_o     ( mem_we     ),
+    .mem_ce_o     ( mem_ce     )
 );
 
 
@@ -276,18 +297,18 @@ MEM u_MEM(
 
 
 
-RAM u_RAM(
-    .clk     ( clk     ),
+// RAM u_RAM(
+//     .clk     ( clk     ),
 
-    .ce      ( mem_ce_MEM_RAM      ),
-    .we      ( mem_we_MEM_RAM      ),
+//     .ce      ( mem_ce_MEM_RAM      ),
+//     .we      ( mem_we_MEM_RAM      ),
 
-    .waddr   ( mem_waddr_MEM_RAM   ),
-    .raddr   ( mem_raddr_MEM_RAM   ),
+//     .waddr   ( mem_waddr_MEM_RAM   ),
+//     .raddr   ( mem_raddr_MEM_RAM   ),
 
-    .data_i  ( mem_wdata_MEM_RAM  ),
-    .data_o  ( mem_rdata_RAM_MEM  )
-);
+//     .data_i  ( mem_wdata_MEM_RAM  ),
+//     .data_o  ( mem_rdata_RAM_MEM  )
+// );
 
 
 endmodule
