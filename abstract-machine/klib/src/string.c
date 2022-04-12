@@ -25,29 +25,33 @@ return dest;
 
 int memcmp(char *str1,char *str2,int len)
 {
+	assert(str1);
+	assert(str2);
+	while(len--)
+	{
+	while(*str1==*str2)
+	{
+		if(*str1=='\0')
+			{return 0;
+			}	
+			str1++;
+			str2++;
+	
+	}
 
-assert(str1 );
- assert(str2 );
 
-    if (!len )
 
-   {
+	}
 
-    return 0;
 
-    }  
-
-          while (--len &&*(char*) str1 == *(char *)str2)
-
-         {
-
-          str1 = (char *)str1 + 1;
-
-          str2 = (char *)str2 + 1;
-      }
-
-    return ((unsigned char*) str1 - (unsigned char*)str2 );
+	if(*str1>*str2)
+		{return 1;}
+	 else {
+		return -1;
+	 }
 }
+
+
 
 
 
