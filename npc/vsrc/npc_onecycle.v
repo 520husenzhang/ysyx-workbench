@@ -19,7 +19,7 @@ module   npc_onecycle(
 
 
     output wire        [`RegBus]        pc                         ,//pc 指针 
-    output wire        [`RegBus]        rom_ce                         ,//pc 指针 
+    output wire                      rom_ce                         ,// 使能 
 
  //to mem
     output wire        [`MemBus]        mem_wdata         ,// 写内存数据
@@ -66,7 +66,7 @@ wire                          csr_read_ID_CSR_REGS                 ;// 读CSR寄
 //  mem to csr reg
 wire       [`RegBus]        csr_wdata_MEM_CSR_REGS               ;// 写CSR寄存器数据
 wire                       csr_we_MEM_CSR_REGS                  ;// 是否要写CSR寄存器
-wire      [`MemAddrBus]    csr_waddr_MEM_CSR_REGS               ;// 写CSR寄存器地址
+wire      [`CSR_Addr_bus]    csr_waddr_MEM_CSR_REGS               ;// 写CSR寄存器地址
       // to ex
 wire         [`InstBus]       inst_ID_EX                     ;// 指令内容
 wire          [`InstAddrBus]   inst_addr_ID_EX                ;// 指令地址  ???需要一直传递下去吗
@@ -77,7 +77,7 @@ wire         [`RegAddrBus]    reg_waddr_ID_EX                ;// 写通用寄存
 
 wire                          csr_we_ID_EX                   ;// 写CSR寄存器标志
 wire         [`RegBus]        csr_rdata_ID_EX                ;//读到的CSR寄存器数据
-wire      [`RegBus]        csr_waddr_ID_EX                ; // 写CSR寄存器地址
+wire      [`CSR_Addr_bus]        csr_waddr_ID_EX                ; // 写CSR寄存器地址
 //mem
 
 // wire      [`MemBus]        mem_wdata                ;// 写内存数据
