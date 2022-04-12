@@ -178,7 +178,7 @@ int main() {
         //上升沿写入数据
         if (top->clk){
           
-
+              printf("fuck  ");
             ram_read_write( top->mem_wdata ,  top->mem_waddr , top->mem_raddr,  top->mem_we,   top->mem_ce ) ; 
 
 
