@@ -25,14 +25,14 @@ VERILATOR_FLAGS += --trace
 #VERILATOR_FLAGS += --gdb
 VERILATOR_FLAGS += --build
 # 关闭 警告 unused  
-VERILATOR_FLAGS += -Wno-UNUSED
+#VERILATOR_FLAGS += -Wno-UNUSED
 #包含的头文件
 VERILATOR_FLAGS += -I./vsrc  -y ./vsrc 
 VERILATOR_FLAGS += --top-module risc_v
 
 # Input files for Verilator    包括 c 与  v
-VERILATOR_INPUT +=     ./vsrc/ALU.v   ./vsrc/ALU_MEM.v     ./vsrc/ID.v    ./vsrc/ID_ALU.v    ./vsrc/IF.v    
-VERILATOR_INPUT +=     ./vsrc/IF_ID.v    ./vsrc/MEM.v    ./vsrc/MEM_WB.v   ./vsrc/REG_files.v    ./vsrc/risc_v.v  
+VERILATOR_INPUT +=     ./vsrc/CSR_REGS.v   ./vsrc/EX.v     ./vsrc/ID.v    ./vsrc/GEN_REGS.v    ./vsrc/IF.v    
+VERILATOR_INPUT +=     ./vsrc/MEM.v    ./vsrc/npc_onecycle.v    
 
 
 VERILATOR_INPUT +=  ./csrc/sim.cpp

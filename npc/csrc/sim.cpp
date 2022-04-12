@@ -1,13 +1,14 @@
-#include "Vrisc_v.h"
-#include <verilated.h>
-#include "verilated_vcd_c.h"
+#include "Vnpc_onecycle.h"
+
+#include <verilated.h>     
+#include "verilated_vcd_c.h"  
 #include "stdio.h"
 #include "stdlib.h"
 
 VerilatedContext* contextp = NULL;  //仿真环境 
 VerilatedVcdC* tfp = NULL;  //  波形
 
-static Vrisc_v*  top;   //risc_v DUT  !!
+static Vnpc_onecycle *top;   //单周期  DUT  !!
 #define  inst_ebreak     0x00100073
 //存储器  指令  rom
 uint32_t  ROM[4096]={
@@ -65,7 +66,7 @@ void step_and_dump_wave(){
 void sim_init(){
   contextp = new VerilatedContext;
   tfp = new VerilatedVcdC;
-  top = new Vrisc_v;
+  top = new Vnpc_onecycle;
   contextp->traceEverOn(true);  //打开 波形  
   top->trace(tfp, 99);
   tfp->open("dump.vcd");
@@ -82,13 +83,16 @@ int main() {
    //仿真环境  初始化  
   
   sim_init();
-   printf("1\n");
-  //对DUT的连接
+
+
+
+    //对DUT的连接
     top->clk=0;
     top->rst_n=1;
     top->inst=0;
-  printf("2\n");
-       top->eval();
+
+
+    top->eval();
     //loop 
   while (!contextp->gotFinish()) {
     

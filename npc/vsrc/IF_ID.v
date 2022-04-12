@@ -5,6 +5,10 @@
 module IF_ID(
     input wire clk,  
     input wire rst_n, 
+    
+    input  wire        [`Hold_Flag_Bus] hold_flag_i                ,// 流水线暂停标志
+    input  wire               pip_flush,   // 流水线 杀掉
+    
 
 	input wire[`InstAddrBus]			if_pc,
 	input wire[`InstBus]          if_inst,

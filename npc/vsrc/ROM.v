@@ -11,6 +11,8 @@ module 	 ROM(
 	input wire[`InstAddrBus]			addr,
 	output reg[31:0]					inst
 	);
+
+wire [63:0]   in_addr=(addr -32'h80000000)/4 ;
   //64 inst
 	reg[`InstBus]  rom[`RomNum-1:0];
 
@@ -22,10 +24,9 @@ module 	 ROM(
 		if (ce == 1'b0) begin
 			inst = 32'h0;
 	  end else begin
-		  inst = rom[addr[5:0]];
+		  inst = rom[in_addr[5:0]];
 		end
 	end
 
 
 endmodule
-
