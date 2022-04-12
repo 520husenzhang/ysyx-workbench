@@ -267,11 +267,11 @@ always @ ( * ) begin
                 end
                 // 有符号数比较
                 `INST_SLTI:  begin
-                    wdata_o=op1_compare_op2_signed   ;
+                    wdata_o=    {63'd0,  op1_compare_op2_signed }  ;
                 end
                 //无符号比较
                 `INST_SLTIU:  begin
-                    wdata_o=op1_compare_op2_unsigned  ;
+                    wdata_o=  {63'd0,   op1_compare_op2_unsigned  };
                 end
                 //按位异或
                 `INST_XORI:  begin
@@ -320,10 +320,10 @@ always @ ( * ) begin
                         wdata_o = reg1_i_op << reg2_i_op[5:0];
                     end
                     `INST_SLT: begin
-                        wdata_o = op1_compare_op2_signed   ;
+                        wdata_o = { 63'd0 ,op1_compare_op2_signed  } ;
                     end
                     `INST_SLTU: begin
-                        wdata_o = op1_compare_op2_unsigned   ;
+                        wdata_o = {63'd0,  op1_compare_op2_unsigned  } ;
                     end
                     `INST_XOR:  begin
                         wdata_o = reg1_i_op ^ reg2_i_op ;
