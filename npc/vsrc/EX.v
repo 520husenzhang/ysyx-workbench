@@ -7,50 +7,50 @@
 `include "defines.v"
 
 module   EX(
-             input  wire                         rst_n                      ,
+    input  wire                         rst_n                      ,
 
              // from id
-             input  wire        [`InstBus]       inst_i                     ,// 指令内容
-             input  wire        [`InstAddrBus]   inst_addr_i                ,// 指令地址  ???需要一直传递下去吗
+    input  wire        [`InstBus]       inst_i                     ,// 指令内容
+    input  wire        [`InstAddrBus]   inst_addr_i                ,// 指令地址  ???需要一直传递下去吗
 
 
-             input  wire        [`RegBus]        reg1_i_op                  ,// 操作数1
-             input  wire        [`RegBus]        reg2_i_op                  ,// 操作数2
+    input  wire        [`RegBus]        reg1_i_op                  ,// 操作数1
+    input  wire        [`RegBus]        reg2_i_op                  ,// 操作数2
 
-             input  wire                         reg_we_i                   ,// 是否写通用寄存器
-             input  wire        [`RegAddrBus]    reg_waddr_i                ,// 写通用寄存器地址
+    input  wire                         reg_we_i                   ,// 是否写通用寄存器
+    input  wire        [`RegAddrBus]    reg_waddr_i                ,// 写通用寄存器地址
 
-             input  wire                         csr_we_i                   ,// 是否回写CSR寄存器
-             input  wire        [`MemAddrBus]    csr_waddr_i                ,// 写CSR寄存器地址
+    input  wire                         csr_we_i                   ,// 是否回写CSR寄存器
+    input  wire        [`CSR_Addr_bus]    csr_waddr_i                ,// 写CSR寄存器地址
 
-             input  wire        [`RegBus]        csr_rdata_i                ,// CSR寄存器读到的输入数据
+    input  wire        [`RegBus]        csr_rdata_i                ,// CSR寄存器读到的输入数据
 
              // to ex
-             input  wire        [`InstAddrBus]   int_addr_i                 ,// 中断入口地址
-             input  wire                         int_assert_i               ,// 中断标志
+    input  wire        [`InstAddrBus]   int_addr_i                 ,// 中断入口地址
+    input  wire                         int_assert_i               ,// 中断标志
              // t回写阶段是否要回写 csr——reg
-             output reg         [`RegBus]        csr_wdata_o                ,// 写CSR寄存器数据
-             output reg                         csr_we_o                   ,// 是否要写CSR寄存器
-             output reg        [`MemAddrBus]    csr_waddr_o                ,// 写CSR寄存器地址
+    output reg         [`RegBus]        csr_wdata_o                ,// 写CSR寄存器数据
+    output reg                          csr_we_o                   ,// 是否要写CSR寄存器
+    output reg         [`CSR_Addr_bus]    csr_waddr_o                ,// 写CSR寄存器地址
              //送到id   解决load 相关
-             output reg        [`InstBus]        inst_o                     ,//解决 load相关
+    output reg         [`InstBus]       inst_o                     ,//解决 load相关
 
              // to mem  cache
-             output reg         [`MemBus]        mem_wdata_o                ,// 写内存数据
-             output reg         [`CSR_Addr_bus]    mem_raddr_o                ,// 读内存地址
-             output reg         [`CSR_Addr_bus]    mem_waddr_o                ,// 写内存地址
-             output reg                         mem_we_o                   ,// 是否要写内存
-             output reg                         mem_ce_o                   ,// 是否要进行 mem 操作
+    output reg         [`MemBus]        mem_wdata_o                ,// 写内存数据
+    output reg         [`MemBus]        mem_raddr_o                ,// 读内存地址
+    output reg         [`MemBus]        mem_waddr_o                ,// 写内存地址
+    output reg                          mem_we_o                   ,// 是否要写内存
+    output reg                          mem_ce_o                   ,// 是否要进行 mem 操作
 
              //回写 to regs
-             output reg         [`RegAddrBus]    wd_o                       ,// 写通用寄存器地址
-             output reg                          wreg_o                     ,// 是否要写通用寄存器
-             output reg         [`RegBus]        wdata_o                    ,// 写寄存器数据
+    output reg         [`RegAddrBus]    wd_o                       ,// 写通用寄存器地址
+    output reg                          wreg_o                     ,// 是否要写通用寄存器
+    output reg         [`RegBus]        wdata_o                    ,// 写寄存器数据
 
              //  控制模块  ctrl   inst_hold~~
-             output reg                         hold_flag_o                ,// 是否暂停标志
-             output wire                         jump_flag_o                ,// 是否跳转标志
-             output wire        [`InstAddrBus]   jump_addr_o                 // 跳转目的地址
+    output reg                          hold_flag_o                ,// 是否暂停标志
+    output wire                         jump_flag_o                ,// 是否跳转标志
+    output wire        [`InstAddrBus]   jump_addr_o                 // 跳转目的地址
 
 
          );
