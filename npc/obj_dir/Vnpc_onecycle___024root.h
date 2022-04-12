@@ -34,7 +34,6 @@ VL_MODULE(Vnpc_onecycle___024root) {
         CData/*4:0*/ npc_onecycle__DOT__wd_EX_MEM;
         CData/*0:0*/ npc_onecycle__DOT__wreg_EX_MEM;
         CData/*0:0*/ npc_onecycle__DOT__csr_we_EX_MEM;
-        CData/*0:0*/ npc_onecycle__DOT__pc_IF_ID;
         CData/*5:0*/ npc_onecycle__DOT__u_IF__DOT__hold_flag_i;
         CData/*0:0*/ npc_onecycle__DOT__u_IF__DOT__hold_flag_o;
         CData/*4:0*/ npc_onecycle__DOT__u_ID__DOT__ex_wd_i;
@@ -78,9 +77,9 @@ VL_MODULE(Vnpc_onecycle___024root) {
         VL_OUT64(mem_waddr,63,0);
         QData/*63:0*/ npc_onecycle__DOT__rdata1_ID_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__rdata2_ID_GEN_REGS;
+        QData/*63:0*/ npc_onecycle__DOT__wdata_EX_GEN_REGS;
     };
     struct {
-        QData/*63:0*/ npc_onecycle__DOT__wdata_EX_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__wdata_MEM_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__reg1_op_ID_EX;
         QData/*63:0*/ npc_onecycle__DOT__reg2_op_ID_EX;

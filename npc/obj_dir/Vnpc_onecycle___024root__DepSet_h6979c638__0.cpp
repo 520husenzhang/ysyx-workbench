@@ -971,12 +971,6 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__0(Vnpc_onecycle___024ro
     }
     vlSelf->mem_ce = vlSelf->npc_onecycle__DOT__mem_ce_EX_MEM;
     vlSelf->mem_we = vlSelf->npc_onecycle__DOT__mem_we_EX_MEM;
-    vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr 
-        = ((((- (QData)((IData)((1U & ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
-                                       >> 0xbU))))) 
-             << 0xdU) | (QData)((IData)(((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
-                                         << 1U)))) 
-           + (QData)((IData)(vlSelf->npc_onecycle__DOT__pc_IF_ID)));
 }
 
 VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024root* vlSelf) {
@@ -1040,10 +1034,6 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024
             = __Vtemp_hfc20d666__0[2U];
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[3U] 
             = __Vtemp_hfc20d666__0[3U];
-        vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = 
-            ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_jump)
-              ? vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_jump_addr
-              : (4ULL + vlSelf->npc_onecycle__DOT__u_IF__DOT__PC));
         if (vlSelf->npc_onecycle__DOT__csr_we_EX_MEM) {
             if ((0x305U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                 if ((0x342U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
@@ -1134,6 +1124,10 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024
                 }
             }
         }
+        vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = 
+            ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_jump)
+              ? vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_jump_addr
+              : (4ULL + vlSelf->npc_onecycle__DOT__u_IF__DOT__PC));
         if (((IData)(vlSelf->npc_onecycle__DOT__wreg_EX_MEM) 
              & (0U != (IData)(vlSelf->npc_onecycle__DOT__wd_EX_MEM)))) {
             __Vdlyvval__npc_onecycle__DOT__u_GEN_REGS__DOT__regs__v0 
@@ -1147,13 +1141,13 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[1U] = 0U;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[2U] = 0U;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__cycle[3U] = 0U;
-        vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = 0x80000000ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch = 0ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc = 0ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec = 0ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie = 0ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus = 0ULL;
         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause = 0ULL;
+        vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = 0x80000000ULL;
         __Vdlyvval__npc_onecycle__DOT__u_GEN_REGS__DOT__regs__v2 
             = vlSelf->npc_onecycle__DOT__wdata_MEM_GEN_REGS;
         __Vdlyvset__npc_onecycle__DOT__u_GEN_REGS__DOT__regs__v2 = 1U;
@@ -1716,6 +1710,12 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
         vlSelf->npc_onecycle__DOT__rdata1_ID_GEN_REGS = 0ULL;
         vlSelf->npc_onecycle__DOT__rdata2_ID_GEN_REGS = 0ULL;
     }
+    vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr 
+        = ((((- (QData)((IData)((1U & ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
+                                       >> 0xbU))))) 
+             << 0xdU) | (QData)((IData)(((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
+                                         << 1U)))) 
+           + vlSelf->pc);
     vlSelf->npc_onecycle__DOT__reg2_op_ID_EX = 0ULL;
     if ((0x40U & vlSelf->inst)) {
         if ((0x20U & vlSelf->inst)) {

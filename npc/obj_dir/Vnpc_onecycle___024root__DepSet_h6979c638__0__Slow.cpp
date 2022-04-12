@@ -1465,12 +1465,6 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
         vlSelf->npc_onecycle__DOT__wd_EX_MEM = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
         vlSelf->npc_onecycle__DOT__wd_EX_MEM = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
     }
-    vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr 
-        = ((((- (QData)((IData)((1U & ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
-                                       >> 0xbU))))) 
-             << 0xdU) | (QData)((IData)(((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
-                                         << 1U)))) 
-           + (QData)((IData)(vlSelf->npc_onecycle__DOT__pc_IF_ID)));
     if (vlSelf->rst_n) {
         vlSelf->npc_onecycle__DOT__rdata1_ID_GEN_REGS 
             = ((0U == (IData)(vlSelf->npc_onecycle__DOT__reg1_raddr_ID_GEN_REGS))
@@ -1488,6 +1482,12 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
         vlSelf->npc_onecycle__DOT__rdata1_ID_GEN_REGS = 0ULL;
         vlSelf->npc_onecycle__DOT__rdata2_ID_GEN_REGS = 0ULL;
     }
+    vlSelf->npc_onecycle__DOT__u_EX__DOT__B_jump_addr 
+        = ((((- (QData)((IData)((1U & ((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
+                                       >> 0xbU))))) 
+             << 0xdU) | (QData)((IData)(((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
+                                         << 1U)))) 
+           + vlSelf->pc);
     vlSelf->npc_onecycle__DOT__reg2_op_ID_EX = 0ULL;
     if ((0x40U & vlSelf->inst)) {
         if ((0x20U & vlSelf->inst)) {
@@ -3549,7 +3549,6 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___ctor_var_reset(Vnpc_onecycle___024ro
     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = VL_RAND_RESET_Q(64);
     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = VL_RAND_RESET_I(12);
-    vlSelf->npc_onecycle__DOT__pc_IF_ID = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__hold_flag_i = VL_RAND_RESET_I(6);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__hold_flag_o = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = VL_RAND_RESET_Q(64);
