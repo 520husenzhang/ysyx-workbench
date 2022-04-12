@@ -165,6 +165,7 @@ int main() {
        //时钟翻转
        top->clk = !top->clk; 
        printf("now time is  %ld |||clk is %d \n", contextp->time(), top->clk);
+                printf(" jb");
         //下降沿复位
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
