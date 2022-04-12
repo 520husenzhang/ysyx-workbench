@@ -169,28 +169,28 @@ int main() {
         if (!top->clk) {
             if (contextp->time() > 4 && contextp->time() < 8) {
                 top->rst_n = 0;  // Assert reset
-                  printf("1  ");
+                  printf("1  \n");
                      
             } else {
                 top->rst_n = 1;  // Deassert reset
-                  printf("2  ");
+                  printf("2  \n");
                   
             }
         }
         //上升沿写入数据
         if (top->clk){
           
-              printf("fuck  ");
+              printf("fuck  \n");
             ram_read_write( top->mem_wdata ,  top->mem_waddr , top->mem_raddr,  top->mem_we,   top->mem_ce ) ; 
 
 
 
           
         }
-      printf("before  ");
+      printf("before \n ");
        //Evaluate model
        top->eval();  //  上升沿  过后 都更新 一下  
-      printf("after ");
+      printf("after \n");
        //获取指令
        if(inst_read(top->pc,top->rom_ce)== inst_ebreak)  {
            break;      
