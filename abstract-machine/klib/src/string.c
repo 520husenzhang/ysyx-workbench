@@ -1,11 +1,22 @@
 #include <klib.h>
 #include <klib-macros.h>
 #include <stdint.h>
-
+ //需要全部完善
 #if !defined(__ISA_NATIVE__) || defined(__NATIVE_USE_KLIB__)
 
 size_t strlen(const char *s) {
-  panic("Not implemented");
+ //防止串入空指针，此处使用断言
+    assert(s != NULL);
+    unsigned int count = 0;
+    //如果没有遇到'\0'就一直循环
+    while (*s != '\0')
+    {
+        //指针后移
+        s++;
+        //计数器自增
+        count++;
+    }
+   return count;
 }
 
 char *strcpy(char *dst, const char *src) {
