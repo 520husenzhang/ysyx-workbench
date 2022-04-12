@@ -66,10 +66,7 @@ inst_ebreak
 
 };    
 //ram 数据存储
-uint64_t  RAM[4096]={
-0x0000000000000000, 
-
-}
+uint64_t  RAM[4096]=[];
 
 //获取指令  
 uint32_t  inst_read(uint64_t pc,bool  ce )
@@ -105,7 +102,7 @@ uint64_t  ram_read_write(uint64_t mem_wdata , uint64_t mem_waddr ,uint64_t mem_r
       }
     }
     else 
-           return 0
+           return 0  ;
 
 }  
 
