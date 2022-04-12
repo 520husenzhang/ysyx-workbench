@@ -135,7 +135,7 @@ module CSR_REGS (
         end else begin
             case (raddr_i[11:0])
                 `CSR_CYCLE: begin
-                    csr_data_o  = cycle[31:0];
+                    csr_data_o  = {32'd0,cycle[31:0]};
                 end
             
                 `CSR_MTVEC: begin
@@ -171,7 +171,7 @@ module CSR_REGS (
         end else begin
             case (clint_raddr_i[11:0])
                 `CSR_CYCLE: begin
-                    clint_data_o  = cycle[31:0];
+                    clint_data_o  = {32'd0,cycle[31:0] };
                 end
 
                 `CSR_MTVEC: begin
