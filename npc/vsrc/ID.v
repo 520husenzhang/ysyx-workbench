@@ -50,7 +50,7 @@ module   ID(
 
            output reg                          csr_we_o                   ,// 写CSR寄存器标志
            output reg         [`RegBus]        csr_rdata_o                ,//读到的CSR寄存器数据
-           output reg         [`RegBus]        csr_waddr_o                , // 写CSR寄存器地址
+           output reg         [`CSR_Addr_bus]        csr_waddr_o                , // 写CSR寄存器地址
            // 解决 load 相关  
            output reg                          hold_flag_o
 
