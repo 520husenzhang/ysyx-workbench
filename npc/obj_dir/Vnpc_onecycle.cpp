@@ -12,12 +12,12 @@ Vnpc_onecycle::Vnpc_onecycle(VerilatedContext* _vcontextp__, const char* _vcname
     : vlSymsp{new Vnpc_onecycle__Syms(_vcontextp__, _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , rst_n{vlSymsp->TOP.rst_n}
+    , rom_ce{vlSymsp->TOP.rom_ce}
     , mem_we{vlSymsp->TOP.mem_we}
     , mem_ce{vlSymsp->TOP.mem_ce}
     , inst{vlSymsp->TOP.inst}
     , mem_rdata{vlSymsp->TOP.mem_rdata}
     , pc{vlSymsp->TOP.pc}
-    , rom_ce{vlSymsp->TOP.rom_ce}
     , mem_wdata{vlSymsp->TOP.mem_wdata}
     , mem_raddr{vlSymsp->TOP.mem_raddr}
     , mem_waddr{vlSymsp->TOP.mem_waddr}

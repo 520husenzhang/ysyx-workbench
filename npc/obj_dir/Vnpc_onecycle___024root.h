@@ -16,6 +16,7 @@ VL_MODULE(Vnpc_onecycle___024root) {
     struct {
         VL_IN8(clk,0,0);
         VL_IN8(rst_n,0,0);
+        VL_OUT8(rom_ce,0,0);
         VL_OUT8(mem_we,0,0);
         VL_OUT8(mem_ce,0,0);
         CData/*4:0*/ npc_onecycle__DOT__reg1_raddr_ID_GEN_REGS;
@@ -33,7 +34,6 @@ VL_MODULE(Vnpc_onecycle___024root) {
         CData/*4:0*/ npc_onecycle__DOT__wd_EX_MEM;
         CData/*0:0*/ npc_onecycle__DOT__wreg_EX_MEM;
         CData/*0:0*/ npc_onecycle__DOT__csr_we_EX_MEM;
-        CData/*0:0*/ npc_onecycle__DOT____Vcellout__u_IF__rom_ce;
         CData/*5:0*/ npc_onecycle__DOT__u_IF__DOT__hold_flag_i;
         CData/*0:0*/ npc_onecycle__DOT__u_IF__DOT__hold_flag_o;
         CData/*4:0*/ npc_onecycle__DOT__u_ID__DOT__ex_wd_i;
@@ -54,7 +54,7 @@ VL_MODULE(Vnpc_onecycle___024root) {
         CData/*0:0*/ npc_onecycle__DOT__u_MEM__DOT__hold_flag_o;
         CData/*0:0*/ __Vclklast__TOP__clk;
         SData/*11:0*/ npc_onecycle__DOT__csr_raddr_ID_CSR_REGS;
-        SData/*11:0*/ npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o;
+        SData/*11:0*/ npc_onecycle__DOT__csr_waddr_ID_EX;
         SData/*11:0*/ npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o;
         SData/*11:0*/ npc_onecycle__DOT__u_EX__DOT__imm_type_s;
         SData/*11:0*/ npc_onecycle__DOT__u_EX__DOT__imm_type_sb;
@@ -72,15 +72,14 @@ VL_MODULE(Vnpc_onecycle___024root) {
         VlWide<4>/*127:0*/ npc_onecycle__DOT__u_CSR_REGS__DOT__cycle;
         VL_IN64(mem_rdata,63,0);
         VL_OUT64(pc,63,0);
-        VL_OUT64(rom_ce,63,0);
         VL_OUT64(mem_wdata,63,0);
         VL_OUT64(mem_raddr,63,0);
         VL_OUT64(mem_waddr,63,0);
         QData/*63:0*/ npc_onecycle__DOT__pc_IF_ID;
         QData/*63:0*/ npc_onecycle__DOT__rdata1_ID_GEN_REGS;
+        QData/*63:0*/ npc_onecycle__DOT__rdata2_ID_GEN_REGS;
     };
     struct {
-        QData/*63:0*/ npc_onecycle__DOT__rdata2_ID_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__wdata_EX_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__wdata_MEM_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__reg1_op_ID_EX;

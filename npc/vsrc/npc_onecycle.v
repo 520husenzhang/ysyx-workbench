@@ -41,7 +41,7 @@ wire     [`InstAddrBus]   jump_addr_EX_IF             ;   // 跳转目的地址
  
  //S
 wire        [  31:0]         inst_IF_ID                    ;//输出指令
-wire        [`InstAddrBus]    pc_IF_ID                        ;// 对外PC指针
+
 
           //送到regfile的信息
 wire                   [`RegAddrBus]    reg1_raddr_ID_GEN_REGS     ;// 读通用寄存器1地址
@@ -101,7 +101,7 @@ wire       [`RegBus]        wdata_EX_MEM                   ; // 写寄存器数�
 
 wire        [`RegBus]        csr_wdata_EX_MEM                ;
 wire                        csr_we_EX_MEM                  ;
-wire       [`MemAddrBus]    csr_waddr_EX_MEM              ;
+wire       [`CSR_Addr_bus]    csr_waddr_EX_MEM              ;
 
 
 

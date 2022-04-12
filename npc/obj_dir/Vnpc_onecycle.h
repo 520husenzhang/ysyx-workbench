@@ -27,12 +27,12 @@ class Vnpc_onecycle VL_NOT_FINAL {
     // propagate new values into/out from the Verilated model.
     VL_IN8(&clk,0,0);
     VL_IN8(&rst_n,0,0);
+    VL_OUT8(&rom_ce,0,0);
     VL_OUT8(&mem_we,0,0);
     VL_OUT8(&mem_ce,0,0);
     VL_IN(&inst,31,0);
     VL_IN64(&mem_rdata,63,0);
     VL_OUT64(&pc,63,0);
-    VL_OUT64(&rom_ce,63,0);
     VL_OUT64(&mem_wdata,63,0);
     VL_OUT64(&mem_raddr,63,0);
     VL_OUT64(&mem_waddr,63,0);
