@@ -49,26 +49,25 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
                                 vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS 
                                     = (vlSelf->inst 
                                        >> 0x14U);
-                                vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
-                                vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX 
-                                    = (QData)((IData)(
-                                                      (vlSelf->inst 
-                                                       >> 0x14U)));
+                                vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
+                                vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o 
+                                    = (vlSelf->inst 
+                                       >> 0x14U);
                             } else {
                                 vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-                                vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+                                vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
                             }
                         } else {
                             vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-                            vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+                            vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
                         }
                     } else {
                         vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-                        vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+                        vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
                     }
                 } else {
                     vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-                    vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+                    vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
                 }
                 vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
                 vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
@@ -78,7 +77,7 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
                 vlSelf->npc_onecycle__DOT__mem_we_EX_MEM = 0U;
             } else {
                 vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-                vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+                vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
                 vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
                 if ((8U & vlSelf->inst)) {
                     vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
@@ -134,7 +133,7 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
             }
         } else {
             vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-            vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+            vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
             vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
             vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
             vlSelf->npc_onecycle__DOT__mem_ce_EX_MEM = 0U;
@@ -263,7 +262,7 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___settle__TOP__0(Vnpc_onecycle___024ro
                 : 0U);
     } else {
         vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS = 0U;
-        vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = 0ULL;
+        vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = 0U;
         vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_hold = 0U;
         if ((0x20U & vlSelf->inst)) {
             if ((0x10U & vlSelf->inst)) {
@@ -3443,7 +3442,6 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___ctor_var_reset(Vnpc_onecycle___024ro
     vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX = VL_RAND_RESET_I(5);
     vlSelf->npc_onecycle__DOT__csr_we_ID_EX = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__csr_rdata_ID_EX = VL_RAND_RESET_Q(64);
-    vlSelf->npc_onecycle__DOT__csr_waddr_ID_EX = VL_RAND_RESET_Q(64);
     vlSelf->npc_onecycle__DOT__mem_wdata_EX_MEM = VL_RAND_RESET_Q(64);
     vlSelf->npc_onecycle__DOT__mem_raddr_EX_MEM = VL_RAND_RESET_Q(64);
     vlSelf->npc_onecycle__DOT__mem_waddr_EX_MEM = VL_RAND_RESET_Q(64);
@@ -3456,6 +3454,7 @@ VL_ATTR_COLD void Vnpc_onecycle___024root___ctor_var_reset(Vnpc_onecycle___024ro
     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = VL_RAND_RESET_Q(64);
     vlSelf->npc_onecycle__DOT____Vcellout__u_IF__rom_ce = VL_RAND_RESET_I(1);
+    vlSelf->npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o = VL_RAND_RESET_I(12);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__hold_flag_i = VL_RAND_RESET_I(6);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__hold_flag_o = VL_RAND_RESET_I(1);
     vlSelf->npc_onecycle__DOT__u_IF__DOT__PC = VL_RAND_RESET_Q(64);

@@ -168,7 +168,7 @@
 `define MemNum 'd4096  //ram  memory depth(how many words)
 `define MemBus 63:0
 `define MemAddrBus 63:0
-`define Mem_ZeroAddr 12'd0  
+`define Mem_ZeroAddr 64'd0  
 //`define MemAddrBus  63:0
 //指令长度
 `define InstBus 31:0

@@ -54,6 +54,7 @@ VL_MODULE(Vnpc_onecycle___024root) {
         CData/*0:0*/ npc_onecycle__DOT__u_MEM__DOT__hold_flag_o;
         CData/*0:0*/ __Vclklast__TOP__clk;
         SData/*11:0*/ npc_onecycle__DOT__csr_raddr_ID_CSR_REGS;
+        SData/*11:0*/ npc_onecycle__DOT____Vcellout__u_ID__csr_waddr_o;
         SData/*11:0*/ npc_onecycle__DOT__u_EX__DOT__imm_type_s;
         SData/*11:0*/ npc_onecycle__DOT__u_EX__DOT__imm_type_sb;
         VL_IN(inst,31,0);
@@ -77,14 +78,13 @@ VL_MODULE(Vnpc_onecycle___024root) {
         QData/*63:0*/ npc_onecycle__DOT__pc_IF_ID;
         QData/*63:0*/ npc_onecycle__DOT__rdata1_ID_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__rdata2_ID_GEN_REGS;
-        QData/*63:0*/ npc_onecycle__DOT__wdata_EX_GEN_REGS;
     };
     struct {
+        QData/*63:0*/ npc_onecycle__DOT__wdata_EX_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__wdata_MEM_GEN_REGS;
         QData/*63:0*/ npc_onecycle__DOT__reg1_op_ID_EX;
         QData/*63:0*/ npc_onecycle__DOT__reg2_op_ID_EX;
         QData/*63:0*/ npc_onecycle__DOT__csr_rdata_ID_EX;
-        QData/*63:0*/ npc_onecycle__DOT__csr_waddr_ID_EX;
         QData/*63:0*/ npc_onecycle__DOT__mem_wdata_EX_MEM;
         QData/*63:0*/ npc_onecycle__DOT__mem_raddr_EX_MEM;
         QData/*63:0*/ npc_onecycle__DOT__mem_waddr_EX_MEM;
