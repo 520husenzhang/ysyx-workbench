@@ -21,35 +21,55 @@ while (count--) *tmp_dest++ = *tmp_src++ ;
 return dest;
 }
 
+int  memcmp(const void *dest,const void *src,size_t n)
+    {
+        assert(dest!=NULL && src!=NULL && n>0);
+        const char *pdest=(char*)dest;
+        const char *psrc=(char*)src;
+        while(*pdest == *psrc && --n>0)
+        {
+            pdest++;
+            psrc++;
+        }
+        int a=*pdest-*psrc;
+        if(a>0){return 1;}
+        else if(a<0){return -1;}
+        else{return 0;}
+        return a;
+        
+    }
 
 
-int memcmp(char *str1,char *str2,int len)
-{
-	assert(str1);
-	assert(str2);
-	while(len--)
-	{
-	while(*str1==*str2)
-	{
-		if(*str1=='\0')
-			{return 0;
-			}	
-			str1++;
-			str2++;
+// int memcmp(char *str1,char *str2,int len)
+// {
+// 	assert(str1);
+// 	assert(str2);
+// 	while(len--)
+// 	{
+//         	if(*str1==*str2)
+// 	   {
+// 		if(*str1=='\0')
+// 			{return 0;
+// 			}	
+// 			str1++;
+// 			str2++;
 	
-	}
+//      	}
+
+// 	}
+
+
+// 	if(*str1>*str2)
+// 		{return 1;}
+// 	 else  if (*str1<*str2){
+// 		return -1;
+// 	 }
 
 
 
-	}
 
 
-	if(*str1>*str2)
-		{return 1;}
-	 else {
-		return -1;
-	 }
-}
+// }
 
 
 
@@ -152,7 +172,7 @@ int strncmp ( const char* str1, const char* str2, size_t num )
     return *str1 - *str2;
 }
 
-void *memset(void *dst, char val, size_t count)
+void *memset(void *dst, int  val, size_t count)
 {
         //把val传给*dst时两个变量类型要相同，需要用到强制类型转换
         
@@ -163,7 +183,7 @@ void *memset(void *dst, char val, size_t count)
 		*(ret++) = (char)val;
 		 
 	}
-	ret = (char*)dst;      
+ 
 	return dst;
 }
 

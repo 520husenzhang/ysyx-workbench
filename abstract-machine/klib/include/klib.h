@@ -14,11 +14,12 @@ extern "C" {
 // string.h
 
 
-void *memset(void *dst, char val, size_t count)  ;
+
+void *memset(void *dst, int  val, size_t count)  ;
 void  *memcpy    (void *dest, const void *src, size_t count);
 //void  *memmove   (void *dst, const void *src, size_t n);
 void    *memmove  (void *dest, const void *src, int n)  ;
-int    memcmp  (char *str1,char *str2,int len);
+int     memcmp(const void *dest,const void *src,size_t n)  ;
 size_t strlen    (const char *s);
 char  *strcat    (char *dst, const char *src);
 char  *strcpy    (char *dst, const char *src);
