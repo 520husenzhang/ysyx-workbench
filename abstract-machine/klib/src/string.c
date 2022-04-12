@@ -151,10 +151,10 @@ int strncmp ( const char* str1, const char* str2, size_t num )
 void* memset(void *ptr, int value, size_t num)
 {      
     assert(ptr);
-    char* temp= (char*)ptr;         
+    int* temp= (int*)ptr;         
     while (num--)                
     {
-        *temp++ = (char)value;
+        *temp++ =   value;
     }
  
     return ptr;
