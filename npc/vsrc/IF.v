@@ -25,7 +25,7 @@ module IF(
     );
 
 
-reg [`InstAddrBus] PC;
+reg [`InstAddrBus] PC=64'h00000000_80000000;
 
 assign if_pc=PC;
 assign   inst_o =   inst_i ;
