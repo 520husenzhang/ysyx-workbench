@@ -18,8 +18,8 @@ module   npc_onecycle(
     
 
 
-    output wire        [`Regbus]        pc                         ,//pc 指针 
-    output wire        [`Regbus]        rom_ce                         ,//pc 指针 
+    output wire        [`RegBus]        pc                         ,//pc 指针 
+    output wire        [`RegBus]        rom_ce                         ,//pc 指针 
 
  //to mem
     output wire        [`MemBus]        mem_wdata         ,// 写内存数据
@@ -78,13 +78,13 @@ wire         [`RegAddrBus]    reg_waddr_ID_EX                ;// 写通用寄存
 wire                          csr_we_ID_EX                   ;// 写CSR寄存器标志
 wire         [`RegBus]        csr_rdata_ID_EX                ;//读到的CSR寄存器数据
 wire      [`RegBus]        csr_waddr_ID_EX                ; // 写CSR寄存器地址
+//mem
 
-
-wire      [`MemBus]        mem_wdata_EX_MEM                ;// 写内存数据
-wire      [`MemAddrBus]    mem_raddr_EX_MEM                ;// 读内存地址
-wire      [`MemAddrBus]    mem_waddr_EX_MEM               ;// 写内存地址
-wire                      mem_we_EX_MEM                  ;// 是否要写内存
-wire                      mem_ce_EX_MEM                  ;// 是否要进行 mem 操作
+wire      [`MemBus]        mem_wdata                ;// 写内存数据
+wire      [`MemAddrBus]    mem_raddr                ;// 读内存地址
+wire      [`MemAddrBus]    mem_waddr               ;// 写内存地址
+wire                      mem_we                  ;// 是否要写内存
+wire                      mem_ce                  ;// 是否要进行 mem 操作
 
 wire       [`RegAddrBus]    wd_EX_MEM                      ; // 写通用寄存器地址
 wire                        wreg_EX_MEM                    ; // 是否要写通用寄存器
