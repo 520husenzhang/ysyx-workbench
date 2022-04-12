@@ -148,21 +148,17 @@ int strncmp ( const char* str1, const char* str2, size_t num )
     return *str1 - *str2;
 }
 
-
-void *memset(void *dest, int set, unsigned len)
-{
-	if (dest == NULL || len < 0)
-	{
-		return NULL;
-	}
-	char *pdest = (char *)dest;
-	while (len-->0)
-	{
-		*pdest++ = set;
-	}
-	return dest;
+void* memset(void *ptr, int value, size_t num)
+{      
+    assert(ptr);
+    char* temp= (char*)ptr;         
+    while (num--)                
+    {
+        *temp++ = (char)value;
+    }
+ 
+    return ptr;
 }
-
 
 
 
