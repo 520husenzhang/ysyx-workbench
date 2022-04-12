@@ -25,7 +25,8 @@ VERILATOR_FLAGS += --trace
 #VERILATOR_FLAGS += --gdb
 VERILATOR_FLAGS += --build
 # 关闭 警告 unused  
-#VERILATOR_FLAGS += -Wno-UNUSED
+VERILATOR_FLAGS += -Wno-UNUSED 
+VERILATOR_FLAGS += -Wno-PINCONNECTEMPTY
 #包含的头文件
 VERILATOR_FLAGS += -I./vsrc  -y ./vsrc 
 VERILATOR_FLAGS += --top-module risc_v
