@@ -14,19 +14,19 @@ module   npc_onecycle(
     input  wire        [`InstBus]       inst                       ,//指令 
    
     //from  mem
-    input  wire        [`MemBus]        mem_rdata                  ;// 内存输入数据
+    input  wire        [`MemBus]        mem_rdata                  ,// 内存输入数据
     
 
 
-    output wire        [`Regbus]        pc                         ;//pc 指针 
-    output wire        [`Regbus]        rom_ce                         ;//pc 指针 
+    output wire        [`Regbus]        pc                         ,//pc 指针 
+    output wire        [`Regbus]        rom_ce                         ,//pc 指针 
 
  //to mem
-    output wire        [`MemBus]        mem_wdata         ;// 写内存数据
-    output wire        [`MemAddrBus]    mem_raddr          ;// 读内存地址
-    output wire        [`MemAddrBus]    mem_waddr         ;// 写内存地址
-    output wire                         mem_we           ;// 是否要写内存
-    output wire                         mem_ce            ;// 请求访问内存标志
+    output wire        [`MemBus]        mem_wdata         ,// 写内存数据
+    output wire        [`MemAddrBus]    mem_raddr          ,// 读内存地址
+    output wire        [`MemAddrBus]    mem_waddr         ,// 写内存地址
+    output wire                         mem_we           ,// 是否要写内存
+    output wire                         mem_ce            // 请求访问内存标志
 
  
 );
