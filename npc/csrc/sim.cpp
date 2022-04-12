@@ -191,7 +191,7 @@ int main() {
       printf("before \n ");
        //Evaluate model
        top->eval();  //  上升沿  过后 都更新 一下  
-      printf("after \n");
+      printf("top->pc is %lx\n",top->pc);
        //获取指令
        if(inst_read(top->pc,top->rom_ce)== inst_ebreak)  {
            break;      
