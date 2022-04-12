@@ -404,7 +404,7 @@ always @(*)
       `INST_TYPE_R_M_64W:
         begin
           case (funct3)
-            `INST_ADD_SUB_MULW , `INST_SLLW , `INST_SRW_DIVUW  , `INST_DIVW , `INST_DIVUW  ,`INST_REMW,  `INST_REMUW:
+            `INST_ADD_SUB_MULW , `INST_SLLW , `INST_SRW_DIVUW  , `INST_DIVW   ,`INST_REMW,  `INST_REMUW:
               begin
                 reg_we_o = `WriteEnable;
                 reg_waddr_o = rd;
