@@ -19,7 +19,7 @@ module IF(
     output wire        [`InstBus]       inst_o                     ,//输出指令
     output wire        [`InstAddrBus]   if_pc                      ,// 对外PC指针
 
-    output reg                          rom_ce                     ;
+    output reg                          rom_ce                     ,
 
     output wire                         hold_flag_o                 //请求暂停流水线
     );
