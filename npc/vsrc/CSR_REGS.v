@@ -14,7 +14,7 @@ module CSR_REGS (
 
     // form  WB 
     input wire we_i,                        // ex模块写寄存器标志
-    input wire[`MemAddrBus] waddr_i,        // ex模块写寄存器地址
+    input wire[`CSR_Addr_bus] waddr_i,        // ex模块写寄存器地址
     input wire[`RegBus] wdata_i,             // ex模块写寄存器数据
     //FROM ID READ ONLY  ID--->EX 
     input wire[`CSR_Addr_bus] raddr_i,        // ex模块读寄存器地址

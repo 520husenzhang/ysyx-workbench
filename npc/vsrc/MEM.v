@@ -22,7 +22,7 @@ module MEM(
            input  wire                         mem_ce_i                   ,// 片选标志  选了就要读写
            // csr 回写
            input  wire                         csr_we_i                   ,// 是否写CSR寄存器
-           input  wire        [`MemAddrBus]    csr_waddr_i                ,// 写CSR寄存器地址
+           input  wire        [`CSR_Addr_bus]  csr_waddr_i                ,// 写CSR寄存器地址
            input  wire        [`RegBus]        csr_wdata_i                ,// CSR寄存器输入数据
 
            // from mem  cache
@@ -35,7 +35,7 @@ module MEM(
            // to csr reg
            output reg         [`RegBus]        csr_wdata_o                ,// 写CSR寄存器数据
            output reg                         csr_we_o                   ,// 是否要写CSR寄存器
-           output reg        [`MemAddrBus]    csr_waddr_o                ,// 写CSR寄存器地址
+           output reg        [`CSR_Addr_bus]    csr_waddr_o                ,// 写CSR寄存器地址
            //请求流水线暂停
            output                              hold_flag_o                ,
 
