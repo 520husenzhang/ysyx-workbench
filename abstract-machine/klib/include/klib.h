@@ -16,7 +16,7 @@ extern "C" {
 void *memset(void *dest, int set, unsigned len)  ;
 void  *memcpy    (void *dest, const void *src, size_t count);
 //void  *memmove   (void *dst, const void *src, size_t n);
-void *memmove    (void *dest, const void *src, int n)  ;
+void    *memmove  (void *dest, const void *src, int n)  ;
 int     memcmp    (char *str1,char *str2,int len) ;
 size_t strlen    (const char *s);
 char  *strcat    (char *dst, const char *src);
