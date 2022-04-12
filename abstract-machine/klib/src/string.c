@@ -164,6 +164,8 @@ void *memset(void *dest, int set, unsigned len)
 }
 
 
+
+
 void *memmove(void *dest, const void *src, int n)
 {
 	/*因为char类型为1字节，所以将数据转化为char*
