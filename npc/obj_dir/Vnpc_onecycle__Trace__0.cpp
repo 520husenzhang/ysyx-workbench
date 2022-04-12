@@ -41,7 +41,7 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
         tracep->chgSData(oldp+15,(vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS),12);
         tracep->chgQData(oldp+16,(vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM),64);
         tracep->chgBit(oldp+18,(vlSelf->npc_onecycle__DOT__csr_we_EX_MEM));
-        tracep->chgSData(oldp+19,(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o),12);
+        tracep->chgSData(oldp+19,(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM),12);
         tracep->chgQData(oldp+20,(vlSelf->npc_onecycle__DOT__reg1_op_ID_EX),64);
         tracep->chgQData(oldp+22,(vlSelf->npc_onecycle__DOT__reg2_op_ID_EX),64);
         tracep->chgBit(oldp+24,(vlSelf->npc_onecycle__DOT__reg_we_ID_EX));
@@ -54,7 +54,7 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
         tracep->chgBit(oldp+34,(vlSelf->npc_onecycle__DOT__mem_we_EX_MEM));
         tracep->chgBit(oldp+35,(vlSelf->npc_onecycle__DOT__mem_ce_EX_MEM));
         tracep->chgQData(oldp+36,(vlSelf->npc_onecycle__DOT__wdata_EX_MEM),64);
-        tracep->chgQData(oldp+38,((QData)((IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))),64);
+        tracep->chgQData(oldp+38,((QData)((IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))),64);
         tracep->chgSData(oldp+40,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_s),12);
         tracep->chgSData(oldp+41,(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb),12);
         tracep->chgQData(oldp+42,(vlSelf->npc_onecycle__DOT__u_EX__DOT__mem_waddr_s),64);
@@ -198,7 +198,7 @@ void Vnpc_onecycle___024root__trace_chg_sub_0(Vnpc_onecycle___024root* vlSelf, V
     tracep->chgQData(oldp+185,(vlSelf->mem_waddr),64);
     tracep->chgBit(oldp+187,(vlSelf->mem_we));
     tracep->chgBit(oldp+188,(vlSelf->mem_ce));
-    tracep->chgQData(oldp+189,(((((IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o) 
+    tracep->chgQData(oldp+189,(((((IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM) 
                                   == (IData)(vlSelf->npc_onecycle__DOT__csr_raddr_ID_CSR_REGS)) 
                                  & (IData)(vlSelf->npc_onecycle__DOT__csr_we_EX_MEM))
                                  ? vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM

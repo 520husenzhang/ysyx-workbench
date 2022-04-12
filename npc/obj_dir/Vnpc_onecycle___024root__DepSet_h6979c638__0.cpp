@@ -976,7 +976,7 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__0(Vnpc_onecycle___024ro
                                        >> 0xbU))))) 
              << 0xdU) | (QData)((IData)(((IData)(vlSelf->npc_onecycle__DOT__u_EX__DOT__imm_type_sb) 
                                          << 1U)))) 
-           + vlSelf->npc_onecycle__DOT__pc_IF_ID);
+           + (QData)((IData)(vlSelf->npc_onecycle__DOT__pc_IF_ID)));
 }
 
 VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024root* vlSelf) {
@@ -1045,44 +1045,44 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___sequent__TOP__0(Vnpc_onecycle___024
               ? vlSelf->npc_onecycle__DOT__u_EX__DOT__inst_jump_addr
               : (4ULL + vlSelf->npc_onecycle__DOT__u_IF__DOT__PC));
         if (vlSelf->npc_onecycle__DOT__csr_we_EX_MEM) {
-            if ((0x305U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                if ((0x342U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                    if ((0x341U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                        if ((0x304U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                            if ((0x300U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                                if ((0x340U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+            if ((0x305U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                if ((0x342U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                    if ((0x341U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                        if ((0x304U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                            if ((0x300U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                                if ((0x340U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                                     vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mscratch 
                                         = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
                                 }
                             }
                         }
                     }
-                    if ((0x341U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+                    if ((0x341U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                         vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mepc 
                             = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
                     }
                 }
             }
-            if ((0x305U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+            if ((0x305U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                 vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mtvec 
                     = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
             }
-            if ((0x305U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                if ((0x342U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                    if ((0x341U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                        if ((0x304U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+            if ((0x305U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                if ((0x342U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                    if ((0x341U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                        if ((0x304U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                             vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mie 
                                 = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
                         }
-                        if ((0x304U != (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
-                            if ((0x300U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+                        if ((0x304U != (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
+                            if ((0x300U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                                 vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mstatus 
                                     = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
                             }
                         }
                     }
                 }
-                if ((0x342U == (IData)(vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o))) {
+                if ((0x342U == (IData)(vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM))) {
                     vlSelf->npc_onecycle__DOT__u_CSR_REGS__DOT__mcause 
                         = vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM;
                 }
@@ -1317,8 +1317,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
         if ((0x20U & vlSelf->inst)) {
             if ((0x10U & vlSelf->inst)) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1331,8 +1331,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                     = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
             } else if ((8U & vlSelf->inst)) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1345,8 +1345,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                     = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
             } else if ((4U & vlSelf->inst)) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1360,12 +1360,12 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             } else if ((2U & vlSelf->inst)) {
                 if ((1U & (~ vlSelf->inst))) {
                     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 } else {
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 }
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1399,8 +1399,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                 }
             } else {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1414,8 +1414,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             }
         } else {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1430,8 +1430,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             if ((8U & vlSelf->inst)) {
                 if ((4U & vlSelf->inst)) {
                     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1441,12 +1441,12 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                 } else if ((2U & vlSelf->inst)) {
                     if ((1U & (~ vlSelf->inst))) {
                         vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                        vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                        vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                        vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                        vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                         vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                         vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     } else {
-                        vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                        vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                         vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     }
                     vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1455,8 +1455,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                         = (1U & (vlSelf->inst | (IData)(vlSelf->npc_onecycle__DOT__reg_we_ID_EX)));
                 } else {
                     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1470,8 +1470,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                     = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
             } else if ((4U & vlSelf->inst)) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1485,8 +1485,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             } else if ((2U & vlSelf->inst)) {
                 if ((1U & (~ vlSelf->inst))) {
                     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1498,7 +1498,7 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                     vlSelf->npc_onecycle__DOT__wd_EX_MEM 
                         = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
                 } else {
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
                         = vlSelf->npc_onecycle__DOT__reg_we_ID_EX;
@@ -1507,8 +1507,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                 }
             } else {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1522,8 +1522,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             }
         } else if ((8U & vlSelf->inst)) {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1534,8 +1534,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             vlSelf->npc_onecycle__DOT__wd_EX_MEM = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
         } else if ((4U & vlSelf->inst)) {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1547,12 +1547,12 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
         } else if ((2U & vlSelf->inst)) {
             if ((1U & (~ vlSelf->inst))) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             } else {
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             }
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1564,8 +1564,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                 ((1U & vlSelf->inst) ? 0U : (IData)(vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX));
         } else {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1579,8 +1579,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
         if ((8U & vlSelf->inst)) {
             if ((4U & vlSelf->inst)) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1590,12 +1590,12 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             } else if ((2U & vlSelf->inst)) {
                 if ((1U & (~ vlSelf->inst))) {
                     vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 } else {
-                    vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                    vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                     vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 }
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1604,8 +1604,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                     = (1U & (vlSelf->inst | (IData)(vlSelf->npc_onecycle__DOT__reg_we_ID_EX)));
             } else {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1617,8 +1617,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             vlSelf->npc_onecycle__DOT__wd_EX_MEM = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
         } else if ((4U & vlSelf->inst)) {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1630,8 +1630,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
         } else if ((2U & vlSelf->inst)) {
             if ((1U & (~ vlSelf->inst))) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1643,7 +1643,7 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
                 vlSelf->npc_onecycle__DOT__wd_EX_MEM 
                     = vlSelf->npc_onecycle__DOT__reg_waddr_ID_EX;
             } else {
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
                     = vlSelf->npc_onecycle__DOT__reg_we_ID_EX;
@@ -1652,8 +1652,8 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
             }
         } else {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__wreg_EX_MEM 
@@ -1666,31 +1666,31 @@ VL_INLINE_OPT void Vnpc_onecycle___024root___combo__TOP__1(Vnpc_onecycle___024ro
     } else {
         if ((8U & vlSelf->inst)) {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
         } else if ((4U & vlSelf->inst)) {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
         } else if ((2U & vlSelf->inst)) {
             if ((1U & (~ vlSelf->inst))) {
                 vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             } else {
-                vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+                vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
                 vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             }
         } else {
             vlSelf->npc_onecycle__DOT__csr_we_EX_MEM = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
-            vlSelf->npc_onecycle__DOT____Vcellout__u_EX__csr_waddr_o = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
+            vlSelf->npc_onecycle__DOT__csr_waddr_EX_MEM = 0U;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
             vlSelf->npc_onecycle__DOT__csr_wdata_EX_MEM = 0ULL;
         }
