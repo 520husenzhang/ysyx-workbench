@@ -56,7 +56,7 @@ sim:
 	@echo "-- RUN ---------------------"
 	@rm -rf logs
 	@mkdir -p logs
-	@obj_dir/Vrisc_v
+	@obj_dir/Vnpc_onecycle
 
 	@echo
 	@echo "-- COVERAGE ----------------"
