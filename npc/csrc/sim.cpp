@@ -196,6 +196,7 @@ int main() {
        if(inst_read(top->pc,top->rom_ce)== inst_ebreak)  {
            break;      
        }
+         printf("here");
       top->inst = inst_read(top->pc,top->rom_ce);
       top->mem_rdata= ram_read_write( top->mem_wdata ,  top->mem_waddr , top->mem_raddr,  top->mem_we,   top->mem_ce ); 
   }
